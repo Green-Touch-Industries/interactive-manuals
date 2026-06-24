@@ -1,0 +1,546 @@
+{
+  "modelId": "xtreme-pro-series",
+  "title": "Xtreme Pro Series",
+  "subtitle": "XA102, XB103, XC104",
+  "toolsRequired": [
+    "Power Drill with 3/8\" High-Speed Steel Bit",
+    "Tape Measure (Imperial/Standard)",
+    "Marker or Center Punch",
+    "Level (Spirit or Digital)",
+    "10mm, 16mm, and 17mm Wrenches or Ratchet Set",
+    "Phillips Head Screwdriver (#2 or #3)",
+    "5mm Allen Key (Included in package)",
+    "Safety Glasses and Work Gloves"
+  ],
+  "videos": [
+    {
+      "title": "Xtreme Pro Series Overview & Features",
+      "url": "https://www.youtube.com/watch?v=mcONXeAmIy8",
+      "translation": {
+        "es": {
+          "title": "Descripción General y Características de la Serie Xtreme Pro"
+        }
+      }
+    },
+    {
+      "title": "Technical Walkthrough: Enclosed Trailer Install",
+      "url": "https://www.youtube.com/watch?v=K4xCukIux3Y",
+      "translation": {
+        "es": {
+          "title": "Recorrido Técnico: Instalación en Remolque Cerrado"
+        }
+      }
+    },
+    {
+      "title": "ESK100 Engine Support Kit Technical Setup",
+      "url": "https://www.youtube.com/watch?v=ggRqFXiRWuY",
+      "translation": {
+        "es": {
+          "title": "Configuración Técnica del Kit de Soporte del Motor ESK100"
+        }
+      }
+    }
+  ],
+  "hardwareKey": [
+    {
+      "id": "A",
+      "name": "Wood Screws",
+      "specs": "For Enclosed Trailer / Wood Wall Mounting (Wall MUST be 1/2\" thick or thicker). Size: 42 mm in length (Philips Head).",
+      "quantity": "12 units",
+      "image": "/hw_wood_screws.jpg",
+      "facePart": "Left Eyebrow",
+      "translation": {
+        "es": {
+          "name": "Tornillos para Madera",
+          "specs": "Para montaje en remolque cerrado / pared de madera (la pared DEBE tener un grosor de 1/2\" o más). Tamaño: 42 mm de longitud (Cabeza Phillips)."
+        }
+      }
+    },
+    {
+      "id": "B",
+      "name": "Hex Teks Self-Drilling Screws",
+      "specs": "Specifically for mounting to metal studs in enclosed units. Size: 43 mm in length x 10 mm hex bolt (head).",
+      "quantity": "12 units",
+      "image": "/hw_hex_teks.jpg",
+      "facePart": "Right Eyebrow",
+      "translation": {
+        "es": {
+          "name": "Tornillos Autotaladrantes Hex Teks",
+          "specs": "Específicamente para montaje en perfiles metálicos en unidades cerradas. Tamaño: 43 mm de longitud x perno hexagonal de 10 mm (cabeza)."
+        }
+      }
+    },
+    {
+      "id": "C",
+      "name": "Carriage Bolts + Nylock Nuts & Square Washers",
+      "specs": "Standard mounting hardware for open trailer top rails. Size: 80 mm in length + 16 mm nuts + square washers (40 mm x 25 mm x 4 mm).",
+      "quantity": "4 Sets",
+      "image": "/hw_long_bolts.jpg",
+      "facePart": "Eyes",
+      "translation": {
+        "es": {
+          "name": "Pernos de Carro + Tuercas Nylock y Arandelas Cuadradas",
+          "specs": "Herraje de montaje estándar para rieles superiores de remolques abiertos. Tamaño: 80 mm de longitud + tuercas de 16 mm + arandelas cuadradas (40 mm x 25 mm x 4 mm)."
+        }
+      }
+    },
+    {
+      "id": "D",
+      "name": "5MM ALLEN WRENCH",
+      "specs": "Required for CX111 Aluminum blocks and ESK100 adjustment.",
+      "quantity": "1 unit",
+      "image": "/hw_allen_key.jpg",
+      "facePart": "Nose",
+      "translation": {
+        "es": {
+          "name": "LLAVE ALLEN DE 5 MM",
+          "specs": "Requerida para los bloques de aluminio CX111 y el ajuste del ESK100."
+        }
+      }
+    },
+    {
+      "id": "E",
+      "name": "Upper Lip: Hex Bolts & Washers",
+      "specs": "Used for ESK100 Support Arm(s) and main assembly points. Size: Short Hex (17 mm x 32 mm) + Thin Hex (17 mm x 40 mm). Round Washers (20 mm OD x 10 mm ID x 2 mm). Small Round Washers (12 mm OD x 6 mm ID x 1.5 mm).",
+      "quantity": "15 Sets",
+      "image": "/hw_smile_plate.jpg",
+      "facePart": "Upper Smile",
+      "translation": {
+        "es": {
+          "name": "Labio Superior: Pernos Hexagonales y Arandelas",
+          "specs": "Utilizados para los brazos de soporte ESK100 y los puntos de montaje principales. Tamaño: Hexagonal Corto (17 mm x 32 mm) + Hexagonal Delgado (17 mm x 40 mm). Arandelas Redondas (20 mm DE x 10 mm DI x 2 mm). Arandelas Redondas Pequeñas (12 mm DE x 6 mm DI x 1.5 mm)."
+        }
+      }
+    },
+    {
+      "id": "F",
+      "name": "Lower Lip: Allen Bolts & Nyloc Nuts",
+      "specs": "Essential for enclosed trailers or advanced rail setups. Size: 5 mm Allen Head x 31 mm. Small Round Washers (12 mm OD x 6 mm ID x 1.5 mm). 10 mm Small Nyloc Nuts.",
+      "quantity": "12 Sets",
+      "image": "/hw_offset_bracket.jpg",
+      "facePart": "Lower Smile",
+      "translation": {
+        "es": {
+          "name": "Labio Inferior: Pernos Allen y Tuercas Nyloc",
+          "specs": "Esencial para unidades cerradas o montajes avanzados. Tamaño: Cabeza Allen de 5 mm x 31 mm. Arandelas Redondas Pequeñas (12 mm DE x 6 mm DI x 1.5 mm). Tuercas Nyloc de 10 mm."
+        }
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "hardware-identification",
+      "title": "Hardware Identification",
+      "category": "all",
+      "content": "Lay out all hardware items to verify inventory. Use the \"Hardware Face\" schematic below to identify each part before beginning installation.",
+      "image": "/hw_face.jpg",
+      "tips": [
+        "Organize bolts by size (10mm, 16mm, 17mm) to avoid mounting errors.",
+        "CRITICAL: You may have 4 extra small bolts (40 mm in length; these are 16 mm hex bolts with 16 mm nuts) and 4 nyloc nuts remaining. These are secondary components and are not required for the primary assembly shown in the schematic.",
+        "The 5mm Allen key is used ONLY for the Offset Bracket Hardware, Advanced Open-Trailer Mounting, and the CX111 Aluminum Block Kit."
+      ],
+      "translation": {
+        "es": {
+          "title": "Identificación de Herrajes",
+          "content": "Distribuya todos los elementos de herrajes para verificar el inventario. Utilice el esquema de 'Cara de Herrajes' a continuación para identificar cada pieza antes de comenzar la instalación.",
+          "tips": [
+            "Organice los pernos por tamaño (10 mm, 16 mm, 17 mm) para evitar errores de montaje.",
+            "CRÍTICO: Es posible que sobren 4 pernos extra pequeños (40 mm de longitud; estos son pernos hexagonales de 16 mm con tuercas de 16 mm) y 4 tuercas nyloc. Estos son componentes secundarios y no son necesarios para el montaje principal que se muestra en el esquema.",
+            "La llave Allen de 5 mm se usa ÚNICAMENTE para los herrajes del soporte de desplazamiento, el montaje avanzado en remolque abierto y el kit de bloques de aluminio CX111."
+          ]
+        }
+      }
+    },
+    {
+      "id": "tower-spacing",
+      "title": "Tower Spacing & Alignment",
+      "category": "all",
+      "content": "Measure and mark your trailer rail/wall for tower installation. Standard spacing is 36 3/4\" center-to-center.",
+      "image": "/install_spacing.jpg",
+      "tips": [
+        "Scenario A (Trimmers): Space for your shortest trimmer.",
+        "CRITICAL: Scenario B (Curved Shaft) — Measure the straight section of the shaft. This distance MUST determine your tower spacing. Drilling before verifying CX111 seats on the straight section will result in incorrect mounting and re-drilling.",
+        "Mount over a trailer crossbar for maximum stability."
+      ],
+      "warnings": [
+        "DO NOT WELD the baseplates. Bolting is required to maintain warranty."
+      ],
+      "translation": {
+        "es": {
+          "title": "Espaciado y Alineación de las Torres",
+          "content": "Mida y marque el riel/pared de su remolque para la instalación de las torres. El espaciado estándar es de 36 3/4\" de centro a centro.",
+          "tips": [
+            "Escenario A (Cortabordes): Espacie para su cortabordes más corto.",
+            "CRÍTICO: Escenario B (Eje Curvo): Mida la sección recta del eje. Esta distancia DEBE determinar el espaciado de sus torres. Perforar antes de verificar que el CX111 se asiente en la sección recta resultará en un montaje incorrecto y en tener que volver a perforar.",
+            "Monte sobre un travesaño del remolque para una estabilidad máxima."
+          ],
+          "warnings": [
+            "NO SUELDE las placas base. Es necesario atornillar para mantener la garantía."
+          ]
+        }
+      }
+    },
+    {
+      "id": "mounting-configuration",
+      "title": "Mounting Configuration Selection",
+      "category": "all",
+      "content": "Please select the type of trailer configuration you will be installing the racks on to proceed.",
+      "translation": {
+        "es": {
+          "title": "Selección de Configuración de Montaje",
+          "content": "Seleccione el tipo de configuración de remolque en el que instalará los soportes para continuar."
+        }
+      }
+    },
+    {
+      "id": "standard-open-trailer",
+      "title": "Standard Open-Trailer Top-Rail",
+      "category": "open",
+      "content": "Mount the bases securely to the top rail using the following hardware: (4) Long Carriage Bolts (80 mm), (4) Large Rectangular Washers, and (4) 16 mm Nuts.",
+      "image": "/install_open_trailer.jpg",
+      "requiredHardware": [
+        {
+          "name": "Long Carriage Bolts (80mm)",
+          "quantity": "4 pcs"
+        },
+        {
+          "name": "Large Rectangular Washers",
+          "quantity": "4 pcs"
+        },
+        {
+          "name": "16mm Nuts",
+          "quantity": "4 pcs"
+        }
+      ],
+      "tips": [
+        "Pre-drilling is recommended for ease of installation.",
+        "Ensure the towers are plumb before finalizing the mounting bolts."
+      ],
+      "translation": {
+        "es": {
+          "title": "Protocolo: Riel Superior de Remolque Abierto Estándar",
+          "content": "Monte las bases de forma segura en el riel superior utilizando los siguientes herrajes: (4) Pernos de carro largos (80 mm), (4) Arandelas rectangulares grandes y (4) Tuercas de 16 mm.",
+          "tips": [
+            "Se recomienda realizar una perforación previa para facilitar la instalación.",
+            "Asegúrese de que las torres estén a plomo antes de apretar definitivamente los pernos de montaje."
+          ]
+        }
+      }
+    },
+    {
+      "id": "round-rail-trailer",
+      "title": "Open-Trailers with Round Side Rails",
+      "category": "round",
+      "content": "Trailers with round side rails utilize our included Triangular Brackets for a secure clamp. Follow the standard spacing guide before securing.",
+      "image": "/install_round_rail.jpg",
+      "requiredHardware": [
+        {
+          "name": "Long Carriage Bolts (80mm - store bought)",
+          "quantity": "6 pcs"
+        },
+        {
+          "name": "Nyloc Nuts (16mm - store bought)",
+          "quantity": "6 pcs"
+        },
+        {
+          "name": "Included Triangular Brackets",
+          "quantity": "4 pcs"
+        },
+        {
+          "name": "Included Long Carriage Bolts (80mm)",
+          "quantity": "4 pcs"
+        },
+        {
+          "name": "Included Nyloc Nuts (16mm)",
+          "quantity": "4 pcs"
+        }
+      ],
+      "tips": [
+        "HARDWARE UPGRADE: While long carriage bolts are included for the tower mounting, we strongly recommend purchasing (6) additional 80mm Bolts with 16mm Nyloc nuts and large rectangular washers from a local hardware store for a pro-grade, four-bracket installation.",
+        "BRACE PLACEMENT: Place one brace on the front and one on the back of each side of the rack for maximum clamp force.",
+        "ALIGNMENT: Ensure carriage bolts pass through the triangular bracket and the green square hole on the back/bottom of each side of the rack.",
+        "Check tension frequently after the first few hours of use."
+      ],
+      "translation": {
+        "es": {
+          "title": "Protocolo: Remolques con Rieles Laterales Redondos",
+          "content": "Los remolques con rieles laterales redondos utilizan nuestros soportes triangulares incluidos para una sujeción segura. Siga la guía de espaciado estándar antes de asegurar.",
+          "tips": [
+            "MEJORA DE HERRAJES: Si bien se incluyen pernos de carro largos para el montaje de la torre, recomendamos encarecidamente comprar (6) pernos adicionales de 80 mm con tuercas Nyloc de 16 mm y arandelas rectangulares grandes en una ferretería local para una instalación de cuatro soportes de grado profesional.",
+            "COLOCACIÓN DE REFUERZOS: Coloque un refuerzo en la parte delantera y otro en la parte trasera de cada lado del soporte para una fuerza de sujeción máxima.",
+            "ALINEACIÓN: Asegúrese de que los pernos del carro pasen a través del soporte triangular y el orificio cuadrado verde en la parte posterior/inferior de cada lado del soporte.",
+            "Verifique la tensión con frecuencia después de las primeras horas de uso."
+          ]
+        }
+      }
+    },
+    {
+      "id": "advanced-open-trailer",
+      "title": "Advanced Open-Trailer Mounting",
+      "category": "advanced",
+      "content": "Use the open-trailer offset mounting brackets to clear existing lip or rail obstructions on your open trailer.",
+      "image": "/install_open_mount.jpg",
+      "requiredHardware": [
+        {
+          "name": "Allen Bolts (31mm)",
+          "quantity": "12 pcs"
+        },
+        {
+          "name": "Nuts (10mm)",
+          "quantity": "12 pcs"
+        },
+        {
+          "name": "Round Washers",
+          "quantity": "12 pcs"
+        },
+        {
+          "name": "Offset Brackets",
+          "quantity": "4 pcs"
+        }
+      ],
+      "tips": [
+        "Ensure brackets are flush against the rail before finalizing the mounting hardware.",
+        "Use the pre-drilled holes in the offset brackets as a guide."
+      ],
+      "translation": {
+        "es": {
+          "title": "Montaje Avanzado de Remolque Abierto",
+          "content": "Utilice los soportes de montaje desplazados para remolque abierto para salvar las obstrucciones existentes del borde o del riel en su remolque abierto.",
+          "tips": [
+            "Asegúrese de que los soportes estén al ras contra el riel antes de finalizar los herrajes de montaje.",
+            "Utilice los orificios pretaladrados en los soportes desplazados como guía."
+          ]
+        }
+      }
+    },
+    {
+      "id": "enclosed-trailer",
+      "title": "Enclosed Unit / Interior Wall",
+      "category": "enclosed",
+      "content": "Utilize Z-bracket wall mounts. Secure brackets into wall studs or structural framing. For wood walls, ensure a minimum of 1/2\" plywood substrate is present to support the dynamic load of multiple trimmers (2-4).",
+      "image": "/install_enclosed_mount.jpg",
+      "requiredHardware": [
+        {
+          "name": "Hex Wood or Tek Screws",
+          "quantity": "12"
+        },
+        {
+          "name": "Tower Standoff Brackets",
+          "quantity": "4"
+        }
+      ],
+      "action": {
+        "label": "Shop CX115 Bracket Kit",
+        "url": "https://trailerracks.com/products/cx115-enclosed-trailer-bracket-kit",
+        "translation": {
+          "es": {
+            "label": "Comprar Kit de Soporte CX115"
+          }
+        }
+      },
+      "translation": {
+        "es": {
+          "title": "Unidad Cerrada / Pared Interior",
+          "content": "Utilice soportes de pared en Z. Asegure los soportes en los montantes de la pared o en la estructura. Para paredes de madera, asegúrese de que haya un sustrato de madera contrachapada de al menos 1/2\" para soportar la carga dinámica de múltiples cortabordes (2-4)."
+        }
+      }
+    },
+    {
+      "id": "cx111-support",
+      "title": "Trimmer Preparation (CX111: Support Side)",
+      "category": "all",
+      "content": "Mount the Support Side of the CX111 Aluminum Block to the trimmer shaft. The alignment pin provides stability within the support eyelet.",
+      "image": "/install_outward_pin.jpg",
+      "requiredHardware": [
+        {
+          "name": "CX111 Aluminum Block Kit: Support Side",
+          "quantity": "1 kit"
+        }
+      ],
+      "action": {
+        "label": "Source CX111 Block Kits",
+        "url": "https://trailerracks.com/products/cx111-aluminum-block-kit",
+        "translation": {
+          "es": {
+            "label": "Comprar Kits de Bloque CX111"
+          }
+        }
+      },
+      "tips": [
+        "REPEAT FOR EACH POSITION: The following trimmer preparation steps (CX111 and ESK100) must be performed for every trimmer position on your rack (2, 3, or 4 times respectively).",
+        "VIBRATION BUFFER: Leave approximately 1/4\" of 'play' or slack when seating the shaft into the support end. This intentional gap allows the rack to absorb movement, reducing direct vibrational load on the engine. {IMAGE:/esk100_vibration_gap.jpg}",
+        "PIN DIRECTION: The alignment pin can face either INWARD or OUTWARD to properly seat, depending on your trimmer model and personal preference."
+      ],
+      "translation": {
+        "es": {
+          "title": "Preparación del Cortabordes (CX111: Lado de Soporte)",
+          "content": "Monte el lado de soporte del bloque de aluminio CX111 en el eje del cortabordes. El pasador de alineación proporciona estabilidad dentro del ojal de soporte.",
+          "tips": [
+            "REPETIR PARA CADA POSICIÓN: Los siguientes pasos de preparación del cortabordes (CX111 y ESK100) deben realizarse para cada posición de cortabordes en su soporte (2, 3 o 4 veces respectivamente).",
+            "AMORTIGUADOR DE VIBRACIONES: Deje aproximadamente 1/4\" de 'juego' o holgura al asentar el eje en el extremo de soporte. Este espacio intencional permite que el soporte absorba el movimiento, reduciendo la carga de vibración directa en el motor.",
+            "DIRECCIÓN DEL PASADOR: El pasador de alineación puede mirar hacia ADENTRO o hacia AFUERA para asentarse correctamente, según su modelo de cortabordes y su preferencia personal."
+          ]
+        }
+      }
+    },
+    {
+      "id": "cx111-locking",
+      "title": "Trimmer Preparation (CX111) - Locking Side",
+      "category": "all",
+      "content": "Install the Locking side of the CX111 Aluminum Block on the trimmer shaft for the locking side tower.",
+      "image": "/install_locking_side.jpg",
+      "requiredHardware": [
+        {
+          "name": "CX111 Aluminum Block Kit: Locking Side",
+          "quantity": "1 kit"
+        }
+      ],
+      "action": {
+        "label": "Source CX111 Block Kits",
+        "url": "https://trailerracks.com/products/cx111-aluminum-block-kit",
+        "translation": {
+          "es": {
+            "label": "Comprar Kits de Bloque CX111"
+          }
+        }
+      },
+      "tips": [
+        "Ensure the block is positioned so the alignment mechanisms properly engage with the locking side tower.",
+        "REPEAT FOR EACH POSITION: Apply one CX111 set to each trimmer you intend to secure on the rack."
+      ],
+      "translation": {
+        "es": {
+          "title": "Preparación del Cortabordes (CX111) - Lado de Bloqueo",
+          "content": "Instale el lado de bloqueo del bloque de aluminio CX111 en el eje del cortabordes para la torre del lado de bloqueo.",
+          "tips": [
+            "Asegúrese de que el bloque esté colocado de modo que los mecanismos de alineación encajen correctamente con la torre del lado de bloqueo.",
+            "REPETIR PARA CADA POSICIÓN: Aplique un juego de CX111 a cada cortabordes que desee asegurar en el soporte."
+          ]
+        }
+      }
+    },
+    {
+      "id": "esk100",
+      "title": "Engine Support Assembly (ESK100)",
+      "category": "all",
+      "content": "The ESK100 is vital for extending the life of your equipment. It provides a static platform for the trimmer engine, reducing stress on the shaft and the rack's clamping points.",
+      "image": [
+        "/esk100_step1.jpg",
+        "/esk100_step2.jpg",
+        "/esk100_step3.jpg",
+        "/esk100_step4.jpg",
+        "/esk100_assembled.jpg"
+      ],
+      "subSteps": [
+        {
+          "title": "01 ARMATURE MOUNTING",
+          "text": "Slide the Engine Support Arm into the welded channel on the reverse side of the Locking Tower. Secure using (2) 17mm x 32mm Hex Bolts and Large Washers. Ensure the arm is perfectly level."
+        },
+        {
+          "title": "02 BRACKET ASSEMBLY",
+          "text": "Attach the Engine Support Arm Bracket to the end of the Armature. This bracket acts as the pivot point for the platform reach adjustment."
+        },
+        {
+          "title": "03 PLATFORM INTEGRATION",
+          "text": "Mount the Motor Platform and the Motor Platform Arm. The arm should slide telescopically through the bracket to accommodate various trimmer shaft lengths."
+        },
+        {
+          "title": "04 CALIBRATION & REACH",
+          "text": "Slide the Motor Platform Bracket to its optimal position. The platform must sit directly beneath the engine casing with a 1/16\" clearance to act as a shock buffer."
+        },
+        {
+          "title": "05 FINAL LOCKDOWN",
+          "text": "Torque all hardware. Verify the five-point assembly is rigid. Your engine is now protected from frame-rattle and vertical bounce."
+        }
+      ],
+      "requiredHardware": [
+        {
+          "name": "Hex Bolts (17mm x 32mm)",
+          "quantity": "2 pcs"
+        },
+        {
+          "name": "Large Round Washers",
+          "quantity": "2 pcs"
+        },
+        {
+          "name": "Hex Bolts (10mm x 40mm)",
+          "quantity": "2 pcs"
+        },
+        {
+          "name": "Small Round Washers",
+          "quantity": "2 pcs"
+        },
+        {
+          "name": "MTP002 Motor Pad (Internal Hardware)",
+          "quantity": "1 kit"
+        }
+      ],
+      "action": {
+        "label": "Maintenance: ESK100 Support Kit",
+        "url": "https://trailerracks.com/products/esk100-engine-support-kit",
+        "translation": {
+          "es": {
+            "label": "Mantenimiento: Kit de Soporte ESK100"
+          }
+        }
+      },
+      "tips": [
+        "REPEAT FOR EACH POSITION: One ESK100 kit should be installed per trimmer position to ensure maximum engine protection for the entire fleet.",
+        "VIBRATION BUFFER: The platform is a shock-buffer, not weight-bearing support. It should not carry the engine's full weight at rest. {IMAGE:/esk100_vibration_gap.jpg}"
+      ],
+      "translation": {
+        "es": {
+          "title": "Ensamblaje de Soporte del Motor (ESK100)",
+          "content": "El ESK100 es vital para prolongar la vida útil de su equipo. Proporciona una plataforma estática para el motor del cortabordes, reduciendo la tensión en el eje y en los puntos de sujeción del soporte.",
+          "subSteps": [
+            {
+              "title": "01 MONTAJE DE LA ARMADURA",
+              "text": "Deslice el brazo de soporte del motor en el canal soldado en la parte posterior de la torre de bloqueo. Asegúrelo con (2) pernos hexagonales de 17 mm x 32 mm y arandelas grandes. Asegúrese de que el brazo esté perfectamente nivelado."
+            },
+            {
+              "title": "02 ENSAMBLAJE DEL SOPORTE",
+              "text": "Conecte el soporte del brazo de soporte del motor al extremo de la armadura. Este soporte actúa como punto de pivote para el ajuste de alcance de la plataforma."
+            },
+            {
+              "title": "03 INTEGRACIÓN DE LA PLATAFORMA",
+              "text": "Monte la plataforma del motor y el brazo de la plataforma del motor. El brazo debe deslizarse telescópicamente a través del soporte para adaptarse a varias longitudes de eje de cortabordes."
+            },
+            {
+              "title": "04 CALIBRACIÓN Y ALCANCE",
+              "text": "Deslice el soporte de la plataforma del motor a su posición óptima. La plataforma debe quedar directamente debajo de la carcasa del motor con un espacio de 1/16\" para actuar como amortiguador."
+            },
+            {
+              "title": "05 CIERRE FINAL",
+              "text": "Apriete todos los herrajes. Verifique que el conjunto de cinco puntos sea rígido. Su motor ahora está protegido contra las vibraciones del chasis y el rebote vertical."
+            }
+          ],
+          "tips": [
+            "REPETIR PARA CADA POSICIÓN: Se debe instalar un kit ESK100 por cada posición de cortabordes para garantizar la máxima protección del motor para toda la flota.",
+            "AMORTIGUADOR DE VIBRACIONES: La plataforma es un amortiguador, no un soporte de carga. No debe soportar todo el peso del motor en reposo."
+          ]
+        }
+      }
+    },
+    {
+      "id": "post-install-lockdown",
+      "title": "Post-Install Lockdown",
+      "category": "all",
+      "content": "Perform a final safety audit to ensure your Xtreme Pro Series rack is ready for the road. Checked components are road-legal and secure.",
+      "image": "post-install-lockdown",
+      "warnings": [
+        "Re-tighten all bolts after the first 24 hours of operation.",
+        "Check alignment pins regularly for wear or debris."
+      ],
+      "translation": {
+        "es": {
+          "title": "Bloqueo Posterior a la Instalación",
+          "content": "Realice una auditoría de seguridad final para asegurarse de que su soporte de la serie Xtreme Pro esté listo para el camino. Los componentes marcados son legales para el camino y seguros.",
+          "warnings": [
+            "Vuelva a apretar todos los pernos después de las primeras 24 horas de operación.",
+            "Revise los pasadores de alineación regularmente para detectar desgaste o escombros."
+          ]
+        }
+      }
+    }
+  ]
+}
