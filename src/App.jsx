@@ -22,8 +22,8 @@ const VIDEO_ID_MAP = {
 
 const productCatalog = [
   {
-    category: 'Open Enclosed (Trimmer) Racks',
-    categoryEs: 'Soportes Abiertos / Cerrados (Trimmer)',
+    category: 'Xtreme Pro Series',
+    categoryEs: 'Serie Xtreme Pro',
     products: [
       { id: 'xtreme-pro', title: 'Trimmer Racks', titleEs: 'Soportes de Cortabordes', subtitle: 'XA102, XB103, XC104', image: '/assets/manuals/xtreme-pro/hero.png', status: 'active' },
       { id: 'bps100', title: 'BPS100 Blower Rack', titleEs: 'Soporte de Soplador BPS100', subtitle: 'Backpack Blower Rack', image: '/assets/manuals/bps100/hero.png', status: 'active' },
@@ -35,8 +35,8 @@ const productCatalog = [
     ]
   },
   {
-    category: 'Classic Trailer Racks',
-    categoryEs: 'Soportes de Remolque Classic',
+    category: 'Classic Series',
+    categoryEs: 'Serie Classic',
     products: [
       { id: 'classic-trimmer', title: 'Classic Trimmer Racks', titleEs: 'Soportes de Cortabordes Classic', subtitle: 'LA011 & LB012', image: '/assets/manuals/classic-trimmer/hero.png', status: 'active' },
       { id: 'classic-enclosed', title: 'Classic Enclosed Trimmer Racks', titleEs: 'Soportes de Cortabordes Cerrados Classic', subtitle: 'SKU: LE015', image: '/assets/manuals/classic-enclosed/hero.png', status: 'active' },
@@ -196,7 +196,7 @@ function App() {
 
   // Navigation states
   const [selectedProduct, setSelectedProduct] = useState(null); // 'xtreme-pro', 'bps100', 'spc21', 'wc001', or null
-  const [selectedCategory, setSelectedCategory] = useState(null); // 'Open Enclosed (Trimmer) Racks', 'Classic Trailer Racks', 'Mounting Solutions', or null
+  const [selectedCategory, setSelectedCategory] = useState(null); // 'Xtreme Pro Series', 'Classic Series', 'Mounting Solutions', or null
   const [selectedModel, setSelectedModel] = useState(null); // Sub-model for trimmer racks, or product title for others
   const [selectedConfig, setSelectedConfig] = useState(null); // 'open', 'round', 'advanced', 'enclosed', etc.
   const [showOpenSubOptions, setShowOpenSubOptions] = useState(false);
@@ -587,12 +587,12 @@ function App() {
           {/* LOBBY VIEW (3 CATEGORIES) */}
           {!selectedCategory ? (
             <div className="lobby-container">
-              {/* Category 1: Open Enclosed (Trimmer) Racks */}
-              <button type="button" className="lobby-category-card" onClick={() => setSelectedCategory('Open Enclosed (Trimmer) Racks')}>
+              {/* Category 1: Xtreme Pro Series */}
+              <button type="button" className="lobby-category-card" onClick={() => setSelectedCategory('Xtreme Pro Series')}>
                 <div className="lobby-image-wrapper">
                   <img 
                     src={getAssetUrl('/assets/manuals/xtreme-pro/hero.png')} 
-                    alt="Open Enclosed (Trimmer) Racks" 
+                    alt="Xtreme Pro Series" 
                     className="lobby-image"
                     fetchpriority="high"
                     onError={(e) => { e.target.src = getAssetUrl('/vite.svg'); }}
@@ -600,7 +600,7 @@ function App() {
                 </div>
                 <div className="lobby-card-body">
                   <h2 className="lobby-card-title">
-                    {lang === 'en' ? 'Open Enclosed (Trimmer) Racks' : 'Soportes Abiertos / Cerrados (Trimmer)'}
+                    {lang === 'en' ? 'Xtreme Pro Series' : 'Serie Xtreme Pro'}
                   </h2>
                   <p className="lobby-card-subtitle">
                     {lang === 'en' 
@@ -613,12 +613,12 @@ function App() {
                 </div>
               </button>
 
-              {/* Category 2: Classic Trailer Racks */}
-              <button type="button" className="lobby-category-card" onClick={() => setSelectedCategory('Classic Trailer Racks')}>
+              {/* Category 2: Classic Series */}
+              <button type="button" className="lobby-category-card" onClick={() => setSelectedCategory('Classic Series')}>
                 <div className="lobby-image-wrapper">
                   <img 
                     src={getAssetUrl('/assets/manuals/classic-trimmer/hero.png')} 
-                    alt="Classic Trailer Racks" 
+                    alt="Classic Series" 
                     className="lobby-image"
                     fetchpriority="high"
                     onError={(e) => { e.target.src = getAssetUrl('/vite.svg'); }}
@@ -626,7 +626,7 @@ function App() {
                 </div>
                 <div className="lobby-card-body">
                   <h2 className="lobby-card-title">
-                    {lang === 'en' ? 'Classic Trailer Racks' : 'Soportes de Remolque Classic'}
+                    {lang === 'en' ? 'Classic Series' : 'Serie Classic'}
                   </h2>
                   <p className="lobby-card-subtitle">
                     {lang === 'en' 
@@ -672,7 +672,7 @@ function App() {
                 <h2 className="category-title" style={{ margin: 0 }}>
                   {lang === 'en' 
                     ? selectedCategory 
-                    : selectedCategory === 'Open Enclosed (Trimmer) Racks' ? 'Soportes Abiertos / Cerrados (Trimmer)' : selectedCategory === 'Classic Trailer Racks' ? 'Soportes de Remolque Classic' : 'Soluciones de Montaje'}
+                    : selectedCategory === 'Xtreme Pro Series' ? 'Serie Xtreme Pro' : selectedCategory === 'Classic Series' ? 'Serie Classic' : 'Soluciones de Montaje'}
                 </h2>
                 <button 
                   className="toggle-button"
