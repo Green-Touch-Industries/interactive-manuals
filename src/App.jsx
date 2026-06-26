@@ -69,8 +69,15 @@ const productCatalog = [
 // Base path asset resolver
 const getAssetUrl = (path) => {
   if (!path) return '';
-  const cleanPath = path.startsWith('/') ? path.slice(1) : path;
-  return `${import.meta.env.BASE_URL}${cleanPath}`;}
+  let cleanPath = path.startsWith('/') ? path.slice(1) : path;
+  
+  // Performance optimization: dynamically serve optimized WebP versions of manual assets
+  if (cleanPath.startsWith('assets/manuals/') && cleanPath.endsWith('.png')) {
+    cleanPath = cleanPath.replace(/\.png$/, '.webp');
+  }
+  
+  return `${import.meta.env.BASE_URL}${cleanPath}`;
+};
 
 // Web Audio API Sound Synthesizer (Singleton)
 let audioCtxSingleton = null;
@@ -549,8 +556,8 @@ function App() {
             </button>
           )}
 
-          {/* Change Manual Button (Staging Only) */}
-          {selectedProduct && isStaging && (
+          {/* Change Manual Button */}
+          {selectedProduct && (
             <button 
               className="toggle-button"
               onClick={resetToMainMenu}
@@ -587,6 +594,7 @@ function App() {
                     src={getAssetUrl('/assets/manuals/xtreme-pro/hero.png')} 
                     alt="Open Enclosed (Trimmer) Racks" 
                     className="lobby-image"
+                    fetchpriority="high"
                     onError={(e) => { e.target.src = getAssetUrl('/vite.svg'); }}
                   />
                 </div>
@@ -612,6 +620,7 @@ function App() {
                     src={getAssetUrl('/assets/manuals/classic-trimmer/hero.png')} 
                     alt="Classic Open Trailer Racks" 
                     className="lobby-image"
+                    fetchpriority="high"
                     onError={(e) => { e.target.src = getAssetUrl('/vite.svg'); }}
                   />
                 </div>
@@ -637,6 +646,7 @@ function App() {
                     src={getAssetUrl('/assets/manuals/ei086/hero.png')} 
                     alt="Mounting Solutions" 
                     className="lobby-image"
+                    fetchpriority="high"
                     onError={(e) => { e.target.src = getAssetUrl('/vite.svg'); }}
                   />
                 </div>
@@ -688,6 +698,7 @@ function App() {
                           src={getAssetUrl(prod.image)} 
                           alt={prod.title} 
                           className="lobby-image"
+                          loading="lazy"
                           onError={(e) => { e.target.src = getAssetUrl('/vite.svg'); }}
                         />
                       </div>
@@ -834,9 +845,12 @@ function App() {
                         key={step.id}
                         onClick={() => {
                           setCurrentStepIndex(idx);
+                          if (window.innerWidth <= 992) {
+                            setRoadmapExpanded(false);
+                          }
                           window.scrollTo({ top: 0, behavior: 'smooth' });
                         }}
-                        className={`sidebar-step-btn ${currentStepIndex === idx ? 'active' : ''}`}
+                        className={`sidebar-step-btn ${currentStepIndex === idx ? 'active' : ''} ${idx < currentStepIndex ? 'completed' : ''}`}
                       >
                         <div className="flex items-center gap-4" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
                           <span className="sidebar-step-num">
@@ -1027,7 +1041,8 @@ function App() {
                             className={`config-large-card ${selectedConfig === 'enclosed' ? 'active' : ''}`}
                             onClick={() => {
                               setSelectedConfig('enclosed');
-                              handleAdvance();
+                              setCurrentStepIndex(3);
+                              window.scrollTo({ top: 0, behavior: 'smooth' });
                             }}
                           >
                             <div className="config-card-icon-wrapper">
@@ -1049,7 +1064,8 @@ function App() {
                               className={`config-large-card ${selectedConfig === 'open' ? 'active' : ''}`}
                               onClick={() => {
                                 setSelectedConfig('open');
-                                handleAdvance();
+                                setCurrentStepIndex(3);
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
                               }}
                             >
                               <div className="config-card-icon-wrapper">
@@ -1066,7 +1082,8 @@ function App() {
                               className={`config-large-card ${selectedConfig === 'round' ? 'active' : ''}`}
                               onClick={() => {
                                 setSelectedConfig('round');
-                                handleAdvance();
+                                setCurrentStepIndex(3);
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
                               }}
                             >
                               <div className="config-card-icon-wrapper">
@@ -1083,7 +1100,8 @@ function App() {
                               className={`config-large-card ${selectedConfig === 'advanced' ? 'active' : ''}`}
                               onClick={() => {
                                 setSelectedConfig('advanced');
-                                handleAdvance();
+                                setCurrentStepIndex(3);
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
                               }}
                             >
                               <div className="config-card-icon-wrapper">
@@ -1115,7 +1133,8 @@ function App() {
                           className={`config-large-card ${selectedConfig === 'open' ? 'active' : ''}`}
                           onClick={() => {
                             setSelectedConfig('open');
-                            handleAdvance();
+                            setCurrentStepIndex(3);
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
                           }}
                         >
                           <div className="config-card-icon-wrapper">
@@ -1133,7 +1152,8 @@ function App() {
                           className={`config-large-card ${selectedConfig === 'enclosed' ? 'active' : ''}`}
                           onClick={() => {
                             setSelectedConfig('enclosed');
-                            handleAdvance();
+                            setCurrentStepIndex(3);
+                            window.scrollTo({ top: 0, behavior: 'smooth' });
                           }}
                         >
                           <div className="config-card-icon-wrapper">
@@ -1180,8 +1200,8 @@ function App() {
                           <button
                             key={sIdx}
                             onClick={() => setActiveSubStepIndex(sIdx)}
-                            className={`toggle-button ${sIdx === activeSubStepIndex ? 'active' : ''}`}
-                            style={{ padding: '0.35rem 0.85rem', fontSize: '0.7rem', flexShrink: 0 }}
+                            className={`toggle-button sub-step-btn ${sIdx === activeSubStepIndex ? 'active' : ''}`}
+                            style={{ fontSize: '0.7rem', flexShrink: 0 }}
                           >
                             {sIdx + 1 < 10 ? `0${sIdx + 1}` : sIdx + 1}
                           </button>
@@ -1471,8 +1491,8 @@ function App() {
 
       {/* DIAGNOSTICS OVERLAY MODAL */}
       {diagnosticOpen && !activeVideo && manualData && manualData.diagnostics && (
-        <div className="modal-overlay diagnostics-overlay">
-          <div className="modal-container diagnostics-container">
+        <div className="modal-overlay diagnostics-overlay" onClick={() => { setDiagnosticOpen(false); setActiveSymptom(null); }}>
+          <div className="modal-container diagnostics-container" onClick={(e) => e.stopPropagation()}>
             <div className="diagnostics-accent-line" />
             <div className="diagnostics-watermark">
               <ShieldAlert size={120} />
@@ -1679,8 +1699,8 @@ function App() {
 
       {/* VIDEO PLAYER LIGHTBOX */}
       {activeVideo && (
-        <div className="modal-overlay" style={{ zIndex: 110 }}>
-          <div className="modal-container" style={{ maxWidth: '800px', aspectRatio: '16/9' }}>
+        <div className="modal-overlay" style={{ zIndex: 110 }} onClick={() => setActiveVideo(null)}>
+          <div className="modal-container" style={{ maxWidth: '800px', aspectRatio: '16/9' }} onClick={(e) => e.stopPropagation()}>
             <button className="modal-close" onClick={() => setActiveVideo(null)}>
               <X size={16} />
             </button>
@@ -1731,8 +1751,8 @@ function App() {
             </div>
             <p className="system-ready-text">
               {lang === "en" 
-                ? "Your Xtreme Pro Series Trimmer Rack is now road-certified. Maintenance check-off complete. Safe travels from Green Touch Industries."
-                : "Su soporte para cortabordes de la serie Xtreme Pro ya está certificado para la carretera. Control de mantenimiento completo. Viajes seguros de parte de Green Touch Industries."}
+                ? `Your ${t(manualData?.title)} is now road-certified. Maintenance check-off complete. Safe travels from Green Touch Industries.`
+                : `Su ${t(manualData?.title)} ya está certificado para la carretera. Control de mantenimiento completo. Viajes seguros de parte de Green Touch Industries.`}
             </p>
             <div className="system-ready-buttons">
               <button 
