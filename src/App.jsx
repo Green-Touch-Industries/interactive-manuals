@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import { 
   Check, 
   ShieldAlert, 
@@ -72,47 +72,65 @@ const getAssetUrl = (path) => {
   const cleanPath = path.startsWith('/') ? path.slice(1) : path;
   return `${import.meta.env.BASE_URL}${cleanPath}`;}
 
-// Web Audio API Sound Synthesizer
+// Web Audio API Sound Synthesizer (Singleton)
+let audioCtxSingleton = null;
+
 const playAudioSynth = (type) => {
   try {
     const AudioContextClass = window.AudioContext || window.webkitAudioContext;
     if (!AudioContextClass) return;
-    const ctx = new AudioContextClass();
+    
+    if (!audioCtxSingleton) {
+      audioCtxSingleton = new AudioContextClass();
+    }
+    
+    const ctx = audioCtxSingleton;
+    if (ctx.state === 'suspended') {
+      ctx.resume();
+    }
+    
     const osc = ctx.createOscillator();
     const gainNode = ctx.createGain();
     
     osc.connect(gainNode);
     gainNode.connect(ctx.destination);
     
+    const now = ctx.currentTime;
+    
     if (type === "pop") {
       osc.type = "sine";
-      osc.frequency.setValueAtTime(400, ctx.currentTime);
-      osc.frequency.exponentialRampToValueAtTime(600, ctx.currentTime + 0.1);
-      gainNode.gain.setValueAtTime(0.3, ctx.currentTime);
-      gainNode.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.1);
-      osc.start();
-      osc.stop(ctx.currentTime + 0.1);
+      osc.frequency.setValueAtTime(400, now);
+      osc.frequency.exponentialRampToValueAtTime(600, now + 0.1);
+      gainNode.gain.setValueAtTime(0.3, now);
+      gainNode.gain.exponentialRampToValueAtTime(0.01, now + 0.1);
+      osc.start(now);
+      osc.stop(now + 0.1);
     } 
     else if (type === "success") {
       osc.type = "triangle";
-      osc.frequency.setValueAtTime(440, ctx.currentTime);
-      osc.frequency.setValueAtTime(554.37, ctx.currentTime + 0.1);
-      osc.frequency.setValueAtTime(659.25, ctx.currentTime + 0.2);
-      gainNode.gain.setValueAtTime(0, ctx.currentTime);
-      gainNode.gain.linearRampToValueAtTime(0.2, ctx.currentTime + 0.05);
-      gainNode.gain.setValueAtTime(0.2, ctx.currentTime + 0.2);
-      gainNode.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.4);
-      osc.start();
-      osc.stop(ctx.currentTime + 0.4);
+      osc.frequency.setValueAtTime(440, now);
+      osc.frequency.setValueAtTime(554.37, now + 0.1);
+      osc.frequency.setValueAtTime(659.25, now + 0.2);
+      gainNode.gain.setValueAtTime(0, now);
+      gainNode.gain.linearRampToValueAtTime(0.2, now + 0.05);
+      gainNode.gain.setValueAtTime(0.2, now + 0.2);
+      gainNode.gain.linearRampToValueAtTime(0, now + 0.4);
+      osc.start(now);
+      osc.stop(now + 0.4);
     } 
     else if (type === "click") {
       osc.type = "square";
-      osc.frequency.setValueAtTime(150, ctx.currentTime);
-      gainNode.gain.setValueAtTime(0.1, ctx.currentTime);
-      gainNode.gain.linearRampToValueAtTime(0.01, ctx.currentTime + 0.05);
-      osc.start();
-      osc.stop(ctx.currentTime + 0.05);
+      osc.frequency.setValueAtTime(150, now);
+      gainNode.gain.setValueAtTime(0.1, now);
+      gainNode.gain.linearRampToValueAtTime(0.01, now + 0.05);
+      osc.start(now);
+      osc.stop(now + 0.05);
     }
+
+    osc.onended = () => {
+      osc.disconnect();
+      gainNode.disconnect();
+    };
   } catch (e) {
     console.error("Audio Synthesis error", e);
   }
@@ -170,7 +188,7 @@ function App() {
   const isStaging = checkStaging();
 
   // Navigation states
-  const [selectedProduct, setSelectedProduct] = useState(isStaging ? null : 'xtreme-pro'); // 'xtreme-pro', 'bps100', 'spc21', 'wc001', or null
+  const [selectedProduct, setSelectedProduct] = useState(null); // 'xtreme-pro', 'bps100', 'spc21', 'wc001', or null
   const [selectedCategory, setSelectedCategory] = useState(null); // 'Open Enclosed (Trimmer) Racks', 'Classic Open Trailer Racks', 'Mounting Solutions', or null
   const [selectedModel, setSelectedModel] = useState(null); // Sub-model for trimmer racks, or product title for others
   const [selectedConfig, setSelectedConfig] = useState(null); // 'open', 'round', 'advanced', 'enclosed', etc.
@@ -205,86 +223,68 @@ function App() {
 
   const manualsCache = useRef({});
 
+  // HTML lang attribute synchronization
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
+
   // Fetch product manual data dynamically when selectedProduct changes
   useEffect(() => {
+    // Reset all navigation and checklist states on product swap to avoid OOB crashes and session state leaks
+    setCurrentStepIndex(0);
+    setActiveSubStepIndex(0);
+    setCheckedItems({});
+    setLockdownCheckedItems({});
+    setSelectedConfig(null);
+    setShowOpenSubOptions(false);
+    setShowSystemReady(false);
+
     if (!selectedProduct) {
       setManualData(null);
       return;
     }
     
-    // Check cache first
-    if (manualsCache.current[selectedProduct]) {
-      const data = manualsCache.current[selectedProduct];
-      setManualData(data);
-      if (selectedProduct !== 'xtreme-pro') {
-        setSelectedModel(data.title);
+    // Check persistent session storage cache first
+    const cacheKey = `manual_${selectedProduct}`;
+    const cachedData = sessionStorage.getItem(cacheKey);
+    if (cachedData) {
+      try {
+        const data = JSON.parse(cachedData);
+        setManualData(data);
+        if (selectedProduct !== 'xtreme-pro') {
+          setSelectedModel(data.title);
+        }
+        return;
+      } catch (e) {
+        sessionStorage.removeItem(cacheKey);
       }
-      return;
     }
     
-    const filename = selectedProduct ? `${selectedProduct}.json` : null;
+    // Setup AbortController to prevent race conditions on fast catalog clicking
+    const abortController = new AbortController();
+    const filename = `${selectedProduct}.json`;
                      
-    if (filename) {
-      fetch(getAssetUrl(`/manuals/${filename}`))
-        .then((res) => res.json())
-        .then((data) => {
-          // Store in cache
-          manualsCache.current[selectedProduct] = data;
-          setManualData(data);
-          // For products without sub-models, set selectedModel directly to product title to bypass sub-model screen
-          if (selectedProduct !== 'xtreme-pro') {
-            setSelectedModel(data.title);
-          }
-        })
-        .catch((err) => console.error("Error loading manual data:", err));
-    }
-  }, [selectedProduct]);
+    fetch(getAssetUrl(`/manuals/${filename}`), { signal: abortController.signal })
+      .then((res) => {
+        if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+        return res.json();
+      })
+      .then((data) => {
+        sessionStorage.setItem(cacheKey, JSON.stringify(data));
+        setManualData(data);
+        if (selectedProduct !== 'xtreme-pro') {
+          setSelectedModel(data.title);
+        }
+      })
+      .catch((err) => {
+        if (err.name === 'AbortError') return; // Silently capture aborted request
+        console.error("Error loading manual data:", err);
+      });
 
-  // Prefetch steps and hardware images in the background to ensure instant visual updates
-  useEffect(() => {
-    if (!manualData) return;
-    
-    const urlsToPrefetch = [];
-    const addUrl = (path) => {
-      if (path && typeof path === 'string') {
-        urlsToPrefetch.push(getAssetUrl(path));
-      }
+    return () => {
+      abortController.abort();
     };
-    
-    // Scan steps, sub-step options, and hardware for image files to pre-fetch
-    if (manualData.steps) {
-      manualData.steps.forEach(step => {
-        if (Array.isArray(step.image)) {
-          step.image.forEach(img => addUrl(img));
-        } else {
-          addUrl(step.image);
-        }
-        
-        if (step.subSteps) {
-          step.subSteps.forEach(sub => {
-            if (Array.isArray(sub.image)) {
-              sub.image.forEach(img => addUrl(img));
-            } else {
-              addUrl(sub.image);
-            }
-          });
-        }
-      });
-    }
-    
-    if (manualData.hardware) {
-      manualData.hardware.forEach(hw => {
-        addUrl(hw.image);
-      });
-    }
-    
-    // Remove duplicates and preload images
-    const uniqueUrls = [...new Set(urlsToPrefetch)];
-    uniqueUrls.forEach(url => {
-      const img = new Image();
-      img.src = url;
-    });
-  }, [manualData]);
+  }, [selectedProduct]);
 
   // Reset active sub-step index when changing steps
   useEffect(() => {
@@ -378,13 +378,70 @@ function App() {
     return text;
   };
 
-  // Filter steps dynamically based on selected mounting configuration
-  const steps = manualData ? (manualData.steps || []).filter(step => {
-    // If step category is not specified or is "all", always show it
-    if (!step.category || step.category === 'all') return true;
-    // Otherwise, show only if it matches the selected configuration category
-    return step.category === selectedConfig;
-  }) : [];
+  // Filter steps dynamically based on selected mounting configuration (memoized)
+  const steps = useMemo(() => {
+    if (!manualData) return [];
+    return (manualData.steps || []).filter(step => {
+      // If step category is not specified or is "all", always show it
+      if (!step.category || step.category === 'all') return true;
+      // Otherwise, show only if it matches the selected configuration category
+      return step.category === selectedConfig;
+    });
+  }, [manualData, selectedConfig]);
+
+  // Progressive lookahead preloader (Preloads only current step and next 2 steps)
+  useEffect(() => {
+    if (!manualData || !steps || steps.length === 0) return;
+    
+    const preloadedUrls = new Set();
+    const preloadImage = (path) => {
+      if (!path || typeof path !== 'string') return;
+      const url = getAssetUrl(path);
+      if (preloadedUrls.has(url)) return;
+      
+      preloadedUrls.add(url);
+      const img = new Image();
+      img.src = url;
+      window._preloadedImages = window._preloadedImages || [];
+      window._preloadedImages.push(img);
+    };
+
+    // Phase A: Preload all Hardware Images only during step 1 (Hardware Identification)
+    if (currentStepIndex === 0 && manualData.hardware) {
+      manualData.hardware.forEach(hw => preloadImage(hw.image));
+    }
+
+    // Phase B: Preload current step images
+    const activeStep = steps[currentStepIndex];
+    if (activeStep) {
+      if (Array.isArray(activeStep.image)) {
+        activeStep.image.forEach(img => preloadImage(img));
+      } else {
+        preloadImage(activeStep.image);
+      }
+    }
+
+    // Phase C: Lookahead Preloading (Next 2 Steps only)
+    for (let i = 1; i <= 2; i++) {
+      const nextStep = steps[currentStepIndex + i];
+      if (nextStep) {
+        if (Array.isArray(nextStep.image)) {
+          nextStep.image.forEach(img => preloadImage(img));
+        } else {
+          preloadImage(nextStep.image);
+        }
+        
+        const nextSubsteps = nextStep.subSteps || [];
+        nextSubsteps.forEach(sub => {
+          if (Array.isArray(sub.image)) {
+            sub.image.forEach(img => preloadImage(img));
+          } else {
+            preloadImage(sub.image);
+          }
+        });
+      }
+    }
+  }, [manualData, currentStepIndex, steps]);
 
   const currentStep = steps[currentStepIndex];
   
@@ -427,7 +484,7 @@ function App() {
 
   // Reset application to main menu
   const resetToMainMenu = () => {
-    setSelectedProduct(isStaging ? null : 'xtreme-pro');
+    setSelectedProduct(null);
     setSelectedCategory(null);
     setSelectedModel(null);
     setSelectedConfig(null);
@@ -435,6 +492,7 @@ function App() {
     setCurrentStepIndex(0);
     setActiveSubStepIndex(0);
     setCheckedItems({});
+    setLockdownCheckedItems({});
     setExpandedPanels({ hardware: true, tools: true });
   };
 
@@ -1119,7 +1177,7 @@ function App() {
                             key={sIdx}
                             onClick={() => setActiveSubStepIndex(sIdx)}
                             className={`toggle-button ${sIdx === activeSubStepIndex ? 'active' : ''}`}
-                            style={{ padding: '0.35rem 0.85rem', fontSize: '0.7rem', shrink: 0 }}
+                            style={{ padding: '0.35rem 0.85rem', fontSize: '0.7rem', flexShrink: 0 }}
                           >
                             {sIdx + 1 < 10 ? `0${sIdx + 1}` : sIdx + 1}
                           </button>

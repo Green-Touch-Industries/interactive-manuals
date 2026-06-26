@@ -1,7 +1,16 @@
+let activeAnimationId = null;
+
 export const triggerConfetti = (canvasId) => {
   const canvas = document.getElementById(canvasId);
   if (!canvas) return;
   const ctx = canvas.getContext('2d');
+  
+  // Cancel active rendering loop before starting a new one to prevent canvas flicker
+  if (activeAnimationId) {
+    cancelAnimationFrame(activeAnimationId);
+    activeAnimationId = null;
+  }
+  
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
   
@@ -39,9 +48,10 @@ export const triggerConfetti = (canvasId) => {
       }
     });
     if (active) {
-      requestAnimationFrame(animate);
+      activeAnimationId = requestAnimationFrame(animate);
     } else {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
+      activeAnimationId = null;
     }
   };
   animate();
