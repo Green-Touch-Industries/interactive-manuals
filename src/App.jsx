@@ -14,6 +14,7 @@ import {
   ArrowLeft,
   ExternalLink
 } from 'lucide-react';
+import { triggerConfetti } from './utils/particles';
 
 const VIDEO_ID_MAP = {
   "spr002-replacement": "d_vLAt-i-S8"
@@ -69,7 +70,86 @@ const productCatalog = [
 const getAssetUrl = (path) => {
   if (!path) return '';
   const cleanPath = path.startsWith('/') ? path.slice(1) : path;
-  return `${import.meta.env.BASE_URL}${cleanPath}`;
+  return `${import.meta.env.BASE_URL}${cleanPath}`;}
+
+// Web Audio API Sound Synthesizer
+const playAudioSynth = (type) => {
+  try {
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContextClass) return;
+    const ctx = new AudioContextClass();
+    const osc = ctx.createOscillator();
+    const gainNode = ctx.createGain();
+    
+    osc.connect(gainNode);
+    gainNode.connect(ctx.destination);
+    
+    if (type === "pop") {
+      osc.type = "sine";
+      osc.frequency.setValueAtTime(400, ctx.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(600, ctx.currentTime + 0.1);
+      gainNode.gain.setValueAtTime(0.3, ctx.currentTime);
+      gainNode.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.1);
+      osc.start();
+      osc.stop(ctx.currentTime + 0.1);
+    } 
+    else if (type === "success") {
+      osc.type = "triangle";
+      osc.frequency.setValueAtTime(440, ctx.currentTime);
+      osc.frequency.setValueAtTime(554.37, ctx.currentTime + 0.1);
+      osc.frequency.setValueAtTime(659.25, ctx.currentTime + 0.2);
+      gainNode.gain.setValueAtTime(0, ctx.currentTime);
+      gainNode.gain.linearRampToValueAtTime(0.2, ctx.currentTime + 0.05);
+      gainNode.gain.setValueAtTime(0.2, ctx.currentTime + 0.2);
+      gainNode.gain.linearRampToValueAtTime(0, ctx.currentTime + 0.4);
+      osc.start();
+      osc.stop(ctx.currentTime + 0.4);
+    } 
+    else if (type === "click") {
+      osc.type = "square";
+      osc.frequency.setValueAtTime(150, ctx.currentTime);
+      gainNode.gain.setValueAtTime(0.1, ctx.currentTime);
+      gainNode.gain.linearRampToValueAtTime(0.01, ctx.currentTime + 0.05);
+      osc.start();
+      osc.stop(ctx.currentTime + 0.05);
+    }
+  } catch (e) {
+    console.error("Audio Synthesis error", e);
+  }
+};
+
+// Navigator Haptic Vibration Feedback
+const triggerHaptic = (type = "light") => {
+  if (!window.navigator || !window.navigator.vibrate) return;
+  try {
+    if (type === "light") {
+      window.navigator.vibrate(10);
+    } else if (type === "medium") {
+      window.navigator.vibrate(30);
+    } else if (type === "heavy") {
+      window.navigator.vibrate(50);
+    } else if (type === "success") {
+      window.navigator.vibrate([30, 50, 40]);
+    }
+  } catch (e) {
+    console.error("Haptics feedback error", e);
+  }
+};
+
+const triggerSoundAndHaptic = (type) => {
+  playAudioSynth(type);
+  triggerHaptic(type === "pop" ? "light" : "medium");
+};
+
+const translateLockdownItem = (itemText) => {
+  const translations = {
+    "All baseplate carriage bolts double-checked (16mm)": "Pernos de carruaje de placa base verificados (16 mm)",
+    "CX111 Aluminum blocks secured (5mm Allen Key)": "Bloques de aluminio CX111 asegurados (llave Allen de 5 mm)",
+    "Engine Support Kit positioned with 1/16\" gap": "Kit de soporte del motor posicionado con espacio de 1/16\"",
+    "Tower alignment verifies 36 3/4\" spacing": "Alineación de la torre verifica espaciado de 36 3/4\"",
+    "Nyloc nuts engaged beyond the bolt threads": "Tuercas Nyloc enganchadas más allá de las roscas del perno"
+  };
+  return translations[itemText] || itemText;
 };
 
 function App() {
@@ -104,6 +184,8 @@ function App() {
   
   // Interactive Checklist states
   const [checkedItems, setCheckedItems] = useState({});
+  const [lockdownCheckedItems, setLockdownCheckedItems] = useState({});
+  const [showSystemReady, setShowSystemReady] = useState(false);
   const [expandedPanels, setExpandedPanels] = useState({
     hardware: true,
     tools: true
@@ -209,10 +291,14 @@ function App() {
     setActiveSubStepIndex(0);
   }, [currentStepIndex]);
 
-  // Scroll to top on any major view state changes
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'auto' });
-  }, [selectedProduct, selectedModel, selectedCategory]);
+  const triggerSuccessEffects = () => {
+    playAudioSynth("success");
+    triggerHaptic("success");
+    // Run confetti animation after a small delay to ensure canvas is rendered
+    setTimeout(() => {
+      triggerConfetti("confetti-canvas");
+    }, 100);
+  };
 
   // Helper to fetch translated text safely supporting both schema structures
   const t = (obj, language = lang) => {
@@ -245,12 +331,15 @@ function App() {
 
   // Toggle collapsible sections
   const togglePanel = (panel) => {
+    triggerSoundAndHaptic("click");
     setExpandedPanels(prev => ({ ...prev, [panel]: !prev[panel] }));
   };
 
   // Toggle checklist item
   const toggleCheckItem = (id) => {
+    const nextVal = !checkedItems[id];
     setCheckedItems(prev => ({ ...prev, [id]: !prev[id] }));
+    triggerSoundAndHaptic(nextVal ? "click" : "pop");
   };
 
   // Dynamic calculations for hardware sets based on active trimmer rack model
@@ -306,6 +395,7 @@ function App() {
 
   // Advance workflow (handles sub-steps before major steps)
   const handleAdvance = () => {
+    triggerSoundAndHaptic("click");
     if (hasSubSteps && activeSubStepIndex < subSteps.length - 1) {
       setActiveSubStepIndex(prev => prev + 1);
     } else {
@@ -316,6 +406,7 @@ function App() {
 
   // Backwards workflow (handles sub-steps before major steps)
   const handlePrevious = () => {
+    triggerSoundAndHaptic("pop");
     if (hasSubSteps && activeSubStepIndex > 0) {
       setActiveSubStepIndex(prev => prev - 1);
     } else {
@@ -746,6 +837,12 @@ function App() {
                           : selectedModel === 'XB103' 
                           ? '/assets/manuals/xtreme-pro/hw_face_xb.jpg' 
                           : '/assets/manuals/xtreme-pro/hw_face_xc.jpg';
+                      } else if (currentStep.id === 'post-install-lockdown' && selectedProduct === 'xtreme-pro') {
+                        imgPath = selectedModel === 'XA102' 
+                          ? '/assets/manuals/xtreme-pro/rack2.png' 
+                          : selectedModel === 'XB103' 
+                          ? '/assets/manuals/xtreme-pro/rack3.png' 
+                          : '/assets/manuals/xtreme-pro/rack4.png';
                       } else if (Array.isArray(currentStep.image)) {
                         imgPath = currentStep.image[activeSubStepIndex] || currentStep.image[0];
                       } else {
@@ -762,6 +859,12 @@ function App() {
                               : selectedModel === 'XB103' 
                               ? '/assets/manuals/xtreme-pro/hw_face_xb.jpg' 
                               : '/assets/manuals/xtreme-pro/hw_face_xc.jpg')
+                          : currentStep.id === 'post-install-lockdown' && selectedProduct === 'xtreme-pro'
+                          ? (selectedModel === 'XA102' 
+                              ? '/assets/manuals/xtreme-pro/rack2.png' 
+                              : selectedModel === 'XB103' 
+                              ? '/assets/manuals/xtreme-pro/rack3.png' 
+                              : '/assets/manuals/xtreme-pro/rack4.png')
                           : Array.isArray(currentStep.image)
                           ? (currentStep.image[activeSubStepIndex] || currentStep.image[0])
                           : currentStep.image
@@ -783,6 +886,52 @@ function App() {
                     ? formatMeasurementText(getTxt(activeSubStep, 'text'))
                     : formatMeasurementText(getTxt(currentStep, 'content'))}
                 </p>
+
+                {/* POST-INSTALL LOCKDOWN CHECKLIST */}
+                {currentStep.id === 'post-install-lockdown' && (
+                  <div className="lockdown-checklist-container">
+                    <div className="lockdown-checklist-header">
+                      <div>
+                        <h3 className="lockdown-checklist-title">
+                          {lang === 'en' ? 'Post-Install Lockdown' : 'Bloqueo Posterior a la Instalación'}
+                        </h3>
+                        <p className="lockdown-checklist-subtitle">
+                          {lang === 'en' ? 'Verification Timer & Security Audit' : 'Temporizador de Verificación y Auditoría de Seguridad'}
+                        </p>
+                      </div>
+                      <ShieldAlert size={32} className="text-green-primary" />
+                    </div>
+                    <div className="lockdown-checklist-items">
+                      {[
+                        "All baseplate carriage bolts double-checked (16mm)",
+                        "CX111 Aluminum blocks secured (5mm Allen Key)",
+                        'Engine Support Kit positioned with 1/16" gap',
+                        'Tower alignment verifies 36 3/4" spacing',
+                        "Nyloc nuts engaged beyond the bolt threads"
+                      ].map((itemText, idx) => {
+                        const isChecked = !!lockdownCheckedItems[idx];
+                        return (
+                          <button
+                            key={idx}
+                            onClick={() => {
+                              const updated = { ...lockdownCheckedItems, [idx]: !isChecked };
+                              setLockdownCheckedItems(updated);
+                              triggerSoundAndHaptic(updated[idx] ? "click" : "pop");
+                            }}
+                            className={`lockdown-checklist-card ${isChecked ? "checked" : ""}`}
+                          >
+                            <div className={`lockdown-checkbox ${isChecked ? "checked" : ""}`}>
+                              {isChecked && <Check size={14} className="text-black" />}
+                            </div>
+                            <span className="lockdown-item-text">
+                              {formatMeasurementText(lang === 'en' ? itemText : translateLockdownItem(itemText))}
+                            </span>
+                          </button>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
 
                 {/* CONFIGURATION SELECTION (Mounting Configuration Step) */}
                 {currentStep.id === 'mounting-configuration' && (
@@ -1245,9 +1394,12 @@ function App() {
               ) : (
                 <button 
                   className="advance-btn"
-                  onClick={resetToMainMenu}
+                  onClick={() => {
+                    triggerSuccessEffects();
+                    setShowSystemReady(true);
+                  }}
                 >
-                  {lang === 'en' ? 'Finish & Back to Menu' : 'Finalizar y Volver'}
+                  {lang === 'en' ? 'Finish Installation ✓' : 'Finalizar Instalación ✓'}
                 </button>
               )}
             </div>
@@ -1495,6 +1647,57 @@ function App() {
             className="lightbox-img" 
             onClick={(e) => e.stopPropagation()} 
           />
+        </div>
+      )}
+      {/* SYSTEM READY OVERLAY */}
+      {showSystemReady && (
+        <div className="system-ready-overlay">
+          <canvas id="confetti-canvas" className="confetti-canvas"></canvas>
+          <div className="system-ready-card">
+            <div className="system-ready-icon-container">
+              <Check className="text-black" size={48} />
+            </div>
+            <h2 className="system-ready-title">
+              {lang === "en" ? "SYSTEM READY" : "SISTEMA LISTO"}
+            </h2>
+            <div className="system-ready-divider-row">
+              <span className="system-ready-line"></span>
+              <p className="system-ready-subtitle">
+                {lang === "en" ? "Installation Verified" : "Instalación Verificada"}
+              </p>
+              <span className="system-ready-line"></span>
+            </div>
+            <p className="system-ready-text">
+              {lang === "en" 
+                ? "Your Xtreme Pro Series Trimmer Rack is now road-certified. Maintenance check-off complete. Safe travels from Green Touch Industries."
+                : "Su soporte para cortabordes de la serie Xtreme Pro ya está certificado para la carretera. Control de mantenimiento completo. Viajes seguros de parte de Green Touch Industries."}
+            </p>
+            <div className="system-ready-buttons">
+              <button 
+                onClick={() => {
+                  triggerSoundAndHaptic("click");
+                  setShowSystemReady(false);
+                  setCurrentStepIndex(0);
+                  setActiveSubStepIndex(0);
+                  setCheckedItems({});
+                  setLockdownCheckedItems({});
+                  resetToMainMenu();
+                }}
+                className="system-ready-btnprimary"
+              >
+                {lang === "en" ? "RESTART FOR NEW INSTALL" : "REINICIAR PARA NUEVA INSTALACIÓN"}
+              </button>
+              <button 
+                onClick={() => {
+                  triggerSoundAndHaptic("pop");
+                  setShowSystemReady(false);
+                }}
+                className="system-ready-btnsecondary"
+              >
+                {lang === "en" ? "REVIEW FINAL STEPS" : "REVISAR PASOS FINALES"}
+              </button>
+            </div>
+          </div>
         </div>
       )}
     </div>

@@ -2045,3 +2045,352 @@ h1, h2, h3, h4, h5, h6 {
   position: sticky;
   top: 1.5rem;
 }
+
+/* 1. TECHNICAL BLUEPRINT IMAGE PORTAL */
+.step-image-container {
+  background-color: #05080f !important;
+  background-image: 
+    linear-gradient(rgba(50, 205, 50, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(50, 205, 50, 0.02) 1px, transparent 1px) !important;
+  background-size: 24px 24px !important; /* Tech grid sizing */
+  border: 1px dashed rgba(50, 205, 50, 0.25) !important;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.8), 0 10px 30px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.step-image-container:hover {
+  border-color: rgba(50, 205, 50, 0.5) !important;
+  box-shadow: inset 0 0 30px rgba(50, 205, 50, 0.05), 0 15px 35px rgba(0, 0, 0, 0.6);
+}
+
+.step-image-container::before {
+  content: 'GTI INTERACTIVE CAD // SPEC V2026';
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.75rem;
+  font-family: var(--font-display), monospace;
+  font-size: 9px;
+  font-weight: 900;
+  color: var(--text-green-primary);
+  letter-spacing: 0.15em;
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* 2. CONNECTED GLOW-NODE PROGRESS TIMELINE */
+.sidebar-panel-content {
+  position: relative;
+  padding-left: 1.75rem;
+  margin-left: 0.75rem;
+  border-left: 2px solid rgba(255, 255, 255, 0.03); /* Vertical timeline line */
+}
+
+/* Base style overrides for sidebar step buttons */
+.sidebar-step-btn {
+  position: relative;
+  width: 100%;
+  background: transparent;
+  border: none;
+  text-align: left;
+  padding: 0.5rem 0;
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+  outline: none;
+}
+
+/* Timeline glow circle nodes */
+.sidebar-step-btn::before {
+  content: '';
+  position: absolute;
+  left: -2.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #000;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 10;
+}
+
+/* Active node state */
+.sidebar-step-btn.active::before {
+  background: var(--text-green-primary);
+  border-color: var(--text-green-primary);
+  box-shadow: 0 0 10px var(--text-green-primary), 0 0 20px rgba(50, 205, 50, 0.4);
+}
+
+/* Completed node state (preceding active step) */
+.sidebar-step-btn.completed::before {
+  background: transparent;
+  border-color: var(--text-green-primary);
+}
+
+/* Active label styling */
+.sidebar-step-btn.active .sidebar-step-label {
+  color: var(--text-green-primary) !important;
+  font-weight: bold;
+}
+
+/* 3. POST-INSTALL LOCKDOWN CHECKLIST */
+.lockdown-checklist-container {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(50, 205, 50, 0.02);
+  border: 1px solid rgba(50, 205, 50, 0.15);
+  border-radius: 4px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.lockdown-checklist-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding-bottom: 1rem;
+}
+
+.lockdown-checklist-title {
+  font-size: 1.25rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-style: italic;
+  letter-spacing: -0.02em;
+  color: var(--text-green-primary);
+  margin: 0;
+}
+
+.lockdown-checklist-subtitle {
+  font-size: 0.65rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #6b7280;
+  margin: 0.25rem 0 0 0;
+}
+
+.lockdown-checklist-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.lockdown-checklist-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.25s ease;
+}
+
+.lockdown-checklist-card:hover {
+  border-color: rgba(50, 205, 50, 0.3);
+  background: rgba(50, 205, 50, 0.03);
+}
+
+.lockdown-checklist-card.checked {
+  background: var(--text-green-primary);
+  border-color: var(--text-green-primary);
+  color: #000;
+}
+
+.lockdown-checkbox {
+  width: 1.25rem;
+  height: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: transparent;
+  transition: all 0.2s ease;
+}
+
+.lockdown-checkbox.checked {
+  border-color: #000;
+  background: transparent;
+}
+
+.lockdown-checklist-card.checked .lockdown-checkbox {
+  border-color: #000;
+}
+
+.lockdown-item-text {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+/* 4. SYSTEM READY FULLSCREEN OVERLAY */
+.system-ready-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background-color: rgba(5, 7, 12, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  animation: overlay-fade-in 0.4s ease-out forwards;
+}
+
+.confetti-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 505;
+}
+
+.system-ready-card {
+  position: relative;
+  z-index: 510;
+  max-width: 32rem;
+  width: 100%;
+  text-align: center;
+  padding: 3rem;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(50, 205, 50, 0.3);
+  box-shadow: 0 0 50px rgba(50, 205, 50, 0.15), inset 0 0 20px rgba(50, 205, 50, 0.05);
+  border-radius: 4px;
+  animation: card-slide-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.system-ready-icon-container {
+  width: 6rem;
+  height: 6rem;
+  margin: 0 auto 2rem auto;
+  background: var(--text-green-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transform: rotate(3deg);
+  box-shadow: 0 0 40px rgba(50, 205, 50, 0.4);
+}
+
+.system-ready-title {
+  font-family: var(--font-display), sans-serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-style: italic;
+  letter-spacing: -0.03em;
+  color: #fff;
+  line-height: 0.95;
+  margin: 0;
+}
+
+.system-ready-divider-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 0.75rem 0 1.5rem 0;
+}
+
+.system-ready-line {
+  height: 1px;
+  width: 2rem;
+  background: var(--text-green-primary);
+  opacity: 0.5;
+}
+
+.system-ready-subtitle {
+  font-size: 0.65rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  color: var(--text-green-primary);
+  margin: 0;
+}
+
+.system-ready-text {
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #9ca3af;
+  max-width: 24rem;
+  margin: 0 auto;
+}
+
+.system-ready-buttons {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.system-ready-btnprimary {
+  width: 100%;
+  background: var(--text-green-primary);
+  border: 1px solid var(--text-green-primary);
+  color: #000;
+  padding: 1rem;
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.system-ready-btnprimary:hover {
+  background: #fff;
+  border-color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.system-ready-btnsecondary {
+  width: 100%;
+  background: transparent;
+  border: none;
+  color: #6b7280;
+  padding: 0.75rem;
+  font-size: 0.65rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.system-ready-btnsecondary:hover {
+  color: #fff;
+}
+
+/* Animations */
+@keyframes overlay-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes card-slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
