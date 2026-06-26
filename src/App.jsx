@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { 
   Check, 
   ShieldAlert, 
@@ -121,10 +121,22 @@ function App() {
     : null;
   const hasSteps = selectedSymptomObj && selectedSymptomObj.steps && selectedSymptomObj.steps.length > 0;
 
+  const manualsCache = useRef({});
+
   // Fetch product manual data dynamically when selectedProduct changes
   useEffect(() => {
     if (!selectedProduct) {
       setManualData(null);
+      return;
+    }
+    
+    // Check cache first
+    if (manualsCache.current[selectedProduct]) {
+      const data = manualsCache.current[selectedProduct];
+      setManualData(data);
+      if (selectedProduct !== 'xtreme-pro') {
+        setSelectedModel(data.title);
+      }
       return;
     }
     
@@ -134,6 +146,8 @@ function App() {
       fetch(getAssetUrl(`/manuals/${filename}`))
         .then((res) => res.json())
         .then((data) => {
+          // Store in cache
+          manualsCache.current[selectedProduct] = data;
           setManualData(data);
           // For products without sub-models, set selectedModel directly to product title to bypass sub-model screen
           if (selectedProduct !== 'xtreme-pro') {
@@ -143,6 +157,52 @@ function App() {
         .catch((err) => console.error("Error loading manual data:", err));
     }
   }, [selectedProduct]);
+
+  // Prefetch steps and hardware images in the background to ensure instant visual updates
+  useEffect(() => {
+    if (!manualData) return;
+    
+    const urlsToPrefetch = [];
+    const addUrl = (path) => {
+      if (path && typeof path === 'string') {
+        urlsToPrefetch.push(getAssetUrl(path));
+      }
+    };
+    
+    // Scan steps, sub-step options, and hardware for image files to pre-fetch
+    if (manualData.steps) {
+      manualData.steps.forEach(step => {
+        if (Array.isArray(step.image)) {
+          step.image.forEach(img => addUrl(img));
+        } else {
+          addUrl(step.image);
+        }
+        
+        if (step.subSteps) {
+          step.subSteps.forEach(sub => {
+            if (Array.isArray(sub.image)) {
+              sub.image.forEach(img => addUrl(img));
+            } else {
+              addUrl(sub.image);
+            }
+          });
+        }
+      });
+    }
+    
+    if (manualData.hardware) {
+      manualData.hardware.forEach(hw => {
+        addUrl(hw.image);
+      });
+    }
+    
+    // Remove duplicates and preload images
+    const uniqueUrls = [...new Set(urlsToPrefetch)];
+    uniqueUrls.forEach(url => {
+      const img = new Image();
+      img.src = url;
+    });
+  }, [manualData]);
 
   // Reset active sub-step index when changing steps
   useEffect(() => {
@@ -663,7 +723,7 @@ function App() {
           </aside>
 
           {/* MAIN INSTRUCTION PANE */}
-          <main className="display-pane">
+          <main key={currentStepIndex} className="display-pane" style={{ animation: 'fade-in 0.3s ease-out' }}>
             <div className="display-title-section">
               <div className="display-subtitle">
                 {selectedModel} • {lang === 'en' ? 'Step' : 'Paso'} {String(currentStepIndex + 1).padStart(2, '0')}
@@ -1191,58 +1251,65 @@ function App() {
 
       {/* DIAGNOSTICS OVERLAY MODAL */}
       {diagnosticOpen && !activeVideo && manualData && manualData.diagnostics && (
-        <div className="modal-overlay">
-          <div className="modal-container">
-            <button className="modal-close" onClick={() => setDiagnosticOpen(false)}>
-              <X size={16} />
-            </button>
+        <div className="modal-overlay diagnostics-overlay">
+          <div className="modal-container diagnostics-container">
+            <div className="diagnostics-accent-line" />
+            <div className="diagnostics-watermark">
+              <ShieldAlert size={120} />
+            </div>
             
-            <div className="diagnostic-content">
-              <div className="diagnostic-header">
-                <span className="diagnostic-subtitle">
-                  {lang === 'en' ? 'Professional Troubleshooting Flow' : 'Flujo de Resolución de Problemas'}
-                </span>
-                <h3 className="diagnostic-title">{getTxt(manualData.diagnostics, 'title')}</h3>
+            <div className="diagnostics-header-bar">
+              <div>
+                <h2 className="diagnostics-main-title">
+                  {getTxt(manualData.diagnostics, 'title') || (lang === 'en' ? 'XTREME PRO SERIES FIELD DIAGNOSTIC' : 'DIAGNÓSTICO DE CAMPO SERIE XTREME PRO')}
+                </h2>
+                <p className="diagnostics-main-subtitle">
+                  {lang === 'en' ? 'Professional Troubleshooting Flow' : 'Flujo Profesional de Solución de Problemas'}
+                </p>
               </div>
-
+              <button 
+                onClick={() => { setDiagnosticOpen(false); setActiveSymptom(null); }}
+                className="diagnostics-close-btn"
+              >
+                <X size={24} />
+              </button>
+            </div>
+            
+            <div className="diagnostics-body">
               {/* Symptom content display */}
               {hasSteps ? (
                 <div className="space-y-8" style={{ animation: 'fade-in 0.3s' }}>
                   <button 
                     onClick={() => setActiveSymptom(null)} 
-                    className="flex items-center gap-2 text-[10px] font-black uppercase tracking-widest text-gray-400 hover:text-white transition-colors cursor-pointer"
-                    style={{ background: 'none', border: 'none', padding: 0 }}
+                    className="diagnostics-back-btn"
                   >
                     <ArrowLeft size={14} /> {lang === 'en' ? 'Back to Symptoms' : 'Volver a Síntomas'}
                   </button>
                   
                   <div className="space-y-4">
-                    <div className="p-6 bg-red-500/5 border-l-4 border-l-red-500 border-y border-r border-white/5">
-                      <h4 className="text-[10px] text-red-500 font-black uppercase tracking-[0.3em] mb-2">
+                    <div className="diagnostics-question-box">
+                      <h4 className="diagnostics-question-label">
                         {lang === 'en' ? 'Technical Question' : 'Pregunta Técnica'}
                       </h4>
-                      <p className="text-xl font-bold italic text-white leading-tight uppercase tracking-tight">
+                      <p className="diagnostics-question-text">
                         {getTxt(selectedSymptomObj, 'question')}
                       </p>
                     </div>
 
-                    <div className="space-y-4 pt-4">
-                      <p className="text-xs font-black uppercase tracking-widest text-gray-500">
+                    <div className="diagnostics-steps-section">
+                      <p className="diagnostics-steps-label">
                         {lang === 'en' ? 'Technical Diagnostic Steps' : 'Pasos de Diagnóstico Técnico'}
                       </p>
-                      <div className="space-y-4">
+                      <div className="diagnostics-steps-list">
                         {selectedSymptomObj.steps.map((step, stepIdx) => (
-                          <div 
-                            key={stepIdx} 
-                            className="p-6 bg-[#0a0a0a] border border-white/5 space-y-4 group hover:border-white/10 transition-colors"
-                          >
+                          <div key={stepIdx} className="diagnostics-step-card">
                             <div>
-                              <h5 className="text-sm font-black text-white italic uppercase tracking-wide group-hover:text-red-500 transition-colors">
+                              <h5 className="diagnostics-step-title">
                                 {getTxt(step, 'text')}
                               </h5>
                               {step.logic && (
-                                <p className="text-sm text-gray-400 mt-2 leading-relaxed">
-                                  <span className="text-red-500/50 font-black mr-2 uppercase">
+                                <p className="diagnostics-step-logic">
+                                  <span className="diagnostics-step-logic-tag">
                                     {lang === 'en' ? 'LOGIC:' : 'LÓGICA:'}
                                   </span>
                                   {getTxt(step, 'logic')}
@@ -1251,13 +1318,13 @@ function App() {
                             </div>
                             
                             {(step.action || step.video) && (
-                              <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                              <div className="diagnostics-step-actions">
                                 {step.action && (
                                   <a 
                                     href={step.action.url} 
                                     target="_blank" 
                                     rel="noopener noreferrer" 
-                                    className="inline-flex items-center gap-2 bg-white/5 hover:bg-white/10 text-[10px] font-black uppercase tracking-widest px-4 py-2 border border-white/10 transition-all text-white decoration-none"
+                                    className="diagnostics-action-btn"
                                   >
                                     {getTxt(step, 'actionLabel') || step.action.label} <ExternalLink size={12} />
                                   </a>
@@ -1269,7 +1336,7 @@ function App() {
                                       const embedUrl = `https://www.youtube.com/embed/${videoId}`;
                                       setActiveVideo({ url: embedUrl, title: getTxt(step, 'text') });
                                     }}
-                                    className="inline-flex items-center gap-2 bg-red-600 px-4 py-2 text-[10px] font-black uppercase tracking-widest text-white shadow-[0_10px_20px_rgba(220,38,38,0.2)] hover:scale-105 transition-all cursor-pointer border-none"
+                                    className="diagnostics-video-btn"
                                   >
                                     {lang === 'en' ? 'Watch Tech Tip' : 'Ver Consejo Técnico'} <Play size={12} fill="currentColor" />
                                   </button>
@@ -1282,11 +1349,11 @@ function App() {
                     </div>
                   </div>
                   
-                  <div className="p-6 md:p-8 bg-black/40 border border-white/5 rounded-sm mt-8">
-                    <p className="text-[10px] font-black uppercase tracking-widest text-gray-600 mb-4 text-center">
+                  <div className="diagnostics-maintenance-box">
+                    <p className="diagnostics-maintenance-label">
                       {lang === 'en' ? 'Maintenance Standard' : 'Estándar de Mantenimiento'}
                     </p>
-                    <p className="text-sm text-gray-400 italic text-center max-w-lg mx-auto">
+                    <p className="diagnostics-maintenance-text">
                       {lang === 'en' 
                         ? 'Commercial crews are advised to perform a full technical audit of base hardware every 1,500 miles or 6 months.' 
                         : 'Se recomienda a los equipos comerciales realizar una auditoría técnica completa de los herrajes de la base cada 1,500 millas o 6 meses.'}
@@ -1294,59 +1361,95 @@ function App() {
                   </div>
                 </div>
               ) : (
-                <div className="symptoms-grid">
-                  {getArray(manualData.diagnostics, 'symptoms').map((symptom) => (
-                    <div 
-                      key={symptom.id} 
-                      className="symptom-card"
-                      onClick={() => setActiveSymptom(activeSymptom === symptom.id ? null : symptom.id)}
-                    >
-                      <h4 className="symptom-title" style={{ color: activeSymptom === symptom.id ? 'var(--green-primary)' : 'white' }}>
-                        {getTxt(symptom, 'title')}
-                      </h4>
-                      <p className="symptom-desc">{getTxt(symptom, 'description')}</p>
-                      
-                      {/* Render active symptom's solution box */}
-                      {activeSymptom === symptom.id && (
-                        <div 
-                          className="bg-black/60 p-4 border border-green-primary/30 mt-4 rounded-sm text-sm"
-                          style={{ animation: 'fade-in 0.3s' }}
-                        >
-                          <strong className="text-green-primary block mb-1">
-                            {lang === 'en' ? 'RECOMMENDED RESOLUTION:' : 'RESOLUCIÓN RECOMENDADA:'}
-                          </strong>
-                          <span className="text-gray-300 leading-relaxed block">{getTxt(symptom, 'solution')}</span>
-                        </div>
-                      )}
-                    </div>
-                  ))}
-                </div>
-              )}
-
-              {/* Troubleshooting Videos Library */}
-              {!hasSteps && manualData.videos && manualData.videos.length > 0 && (
-                <div className="tech-videos-section">
-                  <h5 className="tech-videos-title">{lang === 'en' ? 'Technical Video Library' : 'Biblioteca de Videos Técnicos'}</h5>
-                  <div className="tech-videos-list">
-                    {manualData.videos.map((vid, vIdx) => {
-                      const videoId = vid.url.includes('v=') ? vid.url.split('v=')[1] : vid.url.split('/').pop();
-                      const embedUrl = `https://www.youtube.com/embed/${videoId}`;
-                      return (
-                        <div 
-                          key={vIdx} 
-                          className="video-item"
-                          onClick={() => setActiveVideo({ url: embedUrl, title: getTxt(vid, 'title') })}
-                        >
-                          <div className="video-play-box">
-                            <Play size={12} className="text-red-primary video-play-icon" style={{ marginLeft: '1px' }} />
-                          </div>
-                          <div className="video-info">
-                            <span className="video-title">{getTxt(vid, 'title')}</span>
-                          </div>
-                        </div>
-                      );
-                    })}
+                <div className="space-y-8">
+                  <div className="diagnostics-intro-section">
+                    <p className="diagnostics-intro-step">
+                      {lang === 'en' ? 'Step 1: Identify Symptom' : 'Paso 1: Identificar el Síntoma'}
+                    </p>
+                    <h3 className="diagnostics-intro-question">
+                      {lang === 'en' ? 'What mechanical issue are you experiencing in the field?' : '¿Qué problema mecánico está experimentando en el campo?'}
+                    </h3>
                   </div>
+
+                  <div className="diagnostics-symptoms-grid">
+                    {getArray(manualData.diagnostics, 'symptoms').map((symptom) => (
+                      <button 
+                        key={symptom.id}
+                        onClick={() => setActiveSymptom(activeSymptom === symptom.id ? null : symptom.id)}
+                        className="diagnostics-symptom-card group"
+                        style={{ display: 'block', width: '100%', height: 'auto' }}
+                      >
+                        <div className="diagnostics-symptom-card-content">
+                          <h4 className="diagnostics-symptom-card-title">
+                            {getTxt(symptom, 'title')}
+                          </h4>
+                          <p className="diagnostics-symptom-card-desc">
+                            {getTxt(symptom, 'description') || getTxt(symptom, 'question')}
+                          </p>
+                        </div>
+                        
+                        {/* Render active symptom's solution box inline if there are no steps */}
+                        {!symptom.steps && activeSymptom === symptom.id && (
+                          <div 
+                            className="bg-black/60 p-4 border border-green-primary/30 mt-4 rounded-sm text-sm"
+                            style={{ 
+                              animation: 'fade-in 0.3s', 
+                              marginTop: '1rem', 
+                              border: '1px solid var(--green-primary)', 
+                              background: 'rgba(0,0,0,0.6)', 
+                              padding: '1rem',
+                              borderRadius: '2px'
+                            }}
+                          >
+                            <strong className="text-green-primary block mb-1" style={{ color: 'var(--green-primary)', display: 'block', marginBottom: '0.25rem', fontSize: '0.75rem', fontWeight: 900 }}>
+                              {lang === 'en' ? 'RECOMMENDED RESOLUTION:' : 'RESOLUCIÓN RECOMENDADA:'}
+                            </strong>
+                            <span className="text-gray-300 leading-relaxed block" style={{ color: '#d1d5db', fontSize: '0.8rem', lineHeight: 1.5, display: 'block' }}>{getTxt(symptom, 'solution')}</span>
+                          </div>
+                        )}
+
+                        <div className="diagnostics-symptom-card-watermark">
+                          <ShieldAlert size={48} />
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+
+                  {/* Troubleshooting Videos Library */}
+                  {manualData.videos && manualData.videos.length > 0 && (
+                    <div className="pt-12 space-y-6">
+                      <div className="diagnostics-video-lib-separator">
+                        <span className="diagnostics-video-lib-separator-line"></span>
+                        <h4 className="diagnostics-video-lib-title">
+                          {lang === 'en' ? 'Technical Video Library' : 'Biblioteca de Videos Técnicos'}
+                        </h4>
+                        <span className="diagnostics-video-lib-separator-line"></span>
+                      </div>
+
+                      <div className="diagnostics-video-lib-grid">
+                        {manualData.videos.map((vid, vIdx) => {
+                          const videoId = vid.url.includes('v=') ? vid.url.split('v=')[1].split('&')[0] : vid.url.split('/').pop();
+                          const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+                          return (
+                            <button 
+                              key={vIdx}
+                              onClick={() => setActiveVideo({ url: embedUrl, title: getTxt(vid, 'title') })}
+                              className="diagnostics-video-item group"
+                            >
+                              <div className="diagnostics-video-item-content">
+                                <div className="diagnostics-video-play-box">
+                                  <Play size={12} fill="currentColor" />
+                                </div>
+                                <p className="diagnostics-video-title">
+                                  {getTxt(vid, 'title')}
+                                </p>
+                              </div>
+                            </button>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
                 </div>
               )}
             </div>
