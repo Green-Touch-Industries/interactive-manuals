@@ -135,6 +135,11 @@ function App() {
     setActiveSubStepIndex(0);
   }, [currentStepIndex]);
 
+  // Scroll to top on any major view state changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'auto' });
+  }, [selectedProduct, selectedModel, selectedCategory]);
+
   // Helper to fetch translated text safely supporting both schema structures
   const t = (obj, language = lang) => {
     if (!obj) return '';
