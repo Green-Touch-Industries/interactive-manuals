@@ -1376,3 +1376,136 @@ h1, h2, h3, h4, h5, h6 {
 .config-back-btn:hover {
   color: var(--green-primary);
 }
+
+/* Sidebar Collapsible Accordion Panels */
+.sidebar-panels-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.sidebar-panel {
+  border: 1px solid var(--border-dim);
+  border-radius: 4px;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.sidebar-panel-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.4);
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.sidebar-panel-title {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--text-white);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sidebar-panel-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--green-primary);
+  border-radius: 50%;
+}
+
+.sidebar-panel-content {
+  padding: 0 1rem 1rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebar-step-btn {
+  width: 100%;
+  text-align: left;
+  padding: 0.625rem 1rem;
+  border-radius: 4px;
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.2s ease-in-out;
+}
+
+.sidebar-step-btn:hover:not(.active) {
+  background: rgba(255, 255, 255, 0.02);
+  opacity: 1;
+}
+
+.sidebar-step-btn.active {
+  border-color: rgba(50, 205, 50, 0.3);
+  background: rgba(50, 205, 50, 0.1);
+}
+
+.sidebar-step-num {
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.sidebar-step-btn.active .sidebar-step-num {
+  color: var(--green-primary);
+}
+
+.sidebar-step-label {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--text-muted);
+}
+
+.sidebar-step-btn.active .sidebar-step-label {
+  color: var(--text-white);
+}
+
+/* Diagnostics Panel Header Style */
+.diagnostics-panel {
+  border: 1px solid rgba(231, 76, 60, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  background: rgba(231, 76, 60, 0.05);
+}
+
+.diagnostics-panel-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.diagnostics-panel-title {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.25em;
+  color: var(--red-primary);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}

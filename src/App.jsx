@@ -8,7 +8,6 @@ import {
   Maximize2, 
   Info, 
   ChevronRight,
-  BookOpen,
   Settings,
   Hammer,
   Package,
@@ -115,6 +114,7 @@ function App() {
   const [activeSymptom, setActiveSymptom] = useState(null);
   const [lightboxImage, setLightboxImage] = useState(null);
   const [activeVideo, setActiveVideo] = useState(null);
+  const [roadmapExpanded, setRoadmapExpanded] = useState(true);
 
   const selectedSymptomObj = manualData && manualData.diagnostics && manualData.diagnostics.symptoms
     ? manualData.diagnostics.symptoms.find(s => s.id === activeSymptom)
@@ -591,43 +591,75 @@ function App() {
       {selectedProduct && selectedModel && manualData && (
         <div className="main-content" style={{ animation: 'fade-in 0.4s' }}>
           {/* SIDEBAR NAVIGATION */}
-          <aside className="sidebar glass-panel">
-            <div>
-              <div className="roadmap-header">
-                <BookOpen size={14} className="text-green-primary" />
-                <span className="roadmap-title">{lang === 'en' ? 'Progress Roadmap' : 'Hoja de Ruta'}</span>
-              </div>
-              <div className="stepper-container">
-                {steps.map((step, idx) => (
-                  <div 
-                    key={step.id} 
-                    className={`step-item ${idx === currentStepIndex ? 'active' : ''}`}
-                    onClick={() => {
-                      setCurrentStepIndex(idx);
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    }}
-                  >
-                    <div className="step-number">{String(idx + 1).padStart(2, '0')}</div>
-                    <div className="step-label">{getTxt(step, 'title')}</div>
+          <aside className="sidebar glass-panel" style={{ padding: '1.5rem', height: '100%', overflowY: 'auto' }}>
+            <div className="sidebar-panels-container">
+              
+              {/* Collapsible Progress Roadmap Section */}
+              <div className="sidebar-panel">
+                <button 
+                  onClick={() => setRoadmapExpanded(!roadmapExpanded)}
+                  className="sidebar-panel-header"
+                >
+                  <h3 className="sidebar-panel-title">
+                    <div className="sidebar-panel-dot" />
+                    {lang === 'en' ? 'Progress Roadmap' : 'Hoja de Ruta'}
+                  </h3>
+                  <ChevronRight 
+                    size={14} 
+                    className="text-gray-600 group-hover:text-green-primary transition-colors" 
+                    style={{ 
+                      transform: roadmapExpanded ? 'rotate(90deg)' : 'rotate(0deg)',
+                      transition: 'transform 0.2s ease-in-out'
+                    }} 
+                  />
+                </button>
+                
+                {roadmapExpanded && (
+                  <div className="sidebar-panel-content">
+                    {steps.map((step, idx) => (
+                      <button
+                        key={step.id}
+                        onClick={() => {
+                          setCurrentStepIndex(idx);
+                          window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }}
+                        className={`sidebar-step-btn ${currentStepIndex === idx ? 'active' : ''}`}
+                      >
+                        <div className="flex items-center gap-4" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                          <span className="sidebar-step-num">
+                            {String(idx + 1).padStart(2, '0')}
+                          </span>
+                          <p className="sidebar-step-label">
+                            {getTxt(step, 'title')}
+                          </p>
+                        </div>
+                      </button>
+                    ))}
                   </div>
-                ))}
+                )}
               </div>
-            </div>
 
-            {/* Diagnostics Modal Trigger */}
-            {manualData.diagnostics && (
-              <button 
-                className="diagnostics-btn"
-                onClick={() => {
-                  setDiagnosticOpen(true);
-                  setActiveSymptom(null);
-                }}
-              >
-                <ShieldAlert size={16} />
-                <span>{lang === 'en' ? 'Diagnostics' : 'Diagnósticos'}</span>
-                <ChevronRight size={14} style={{ marginLeft: 'auto' }} />
-              </button>
-            )}
+              {/* Diagnostics Collapsible Header/Button */}
+              {manualData.diagnostics && (
+                <div className="diagnostics-panel">
+                  <button 
+                    onClick={() => {
+                      setDiagnosticOpen(true);
+                      setActiveSymptom(null);
+                    }} 
+                    className="diagnostics-panel-header group"
+                    title={lang === 'en' ? 'Technical Troubleshooting' : 'Solución de Problemas Técnicos'}
+                  >
+                    <h3 className="diagnostics-panel-title">
+                      <ShieldAlert size={14} className="text-red-500" />
+                      {lang === 'en' ? 'Diagnostics' : 'Diagnóstico'}
+                    </h3>
+                    <ChevronRight size={14} className="text-red-500/40 group-hover:text-red-500 transition-colors" />
+                  </button>
+                </div>
+              )}
+
+            </div>
           </aside>
 
           {/* MAIN INSTRUCTION PANE */}
