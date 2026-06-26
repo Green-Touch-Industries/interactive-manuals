@@ -1,0 +1,282 @@
+{
+  "modelId": "spc21",
+  "title": "Lockable Sprayer Cage",
+  "subtitle": "SPC21",
+  "toolsRequired": [
+    "Power Drill with 10mm Drill Bit",
+    "Marker or Pencil",
+    "10mm Wrench or Socket Set",
+    "Phillips Head Screwdriver"
+  ],
+  "videos": [
+    {
+      "title": "SPC21 Overview and Setup",
+      "url": "https://www.youtube.com/watch?v=mcONXeAmIy8",
+      "translation": {
+        "es": {
+          "title": "Descripción General y Configuración de SPC21"
+        }
+      }
+    }
+  ],
+  "hardwareKey": [
+    {
+      "id": "A",
+      "name": "Large Carriage Bolts (10mm)",
+      "specs": "For mounting the base plate to an open trailer top rail.",
+      "quantity": "2",
+      "image": "/assets/manuals/xtreme-pro/hw_long_bolts.jpg",
+      "translation": {
+        "es": {
+          "name": "Pernos de Carro Grandes (10 mm)",
+          "specs": "Para montar la placa base en el riel superior de un remolque abierto."
+        }
+      }
+    },
+    {
+      "id": "B",
+      "name": "10mm Lock Nuts",
+      "specs": "Secures the large carriage bolts.",
+      "quantity": "2",
+      "image": "/assets/manuals/xtreme-pro/hw_allen_key.jpg",
+      "translation": {
+        "es": {
+          "name": "Contratuercas de 10 mm",
+          "specs": "Asegura los pernos de carro grandes."
+        }
+      }
+    },
+    {
+      "id": "C",
+      "name": "Square Washers",
+      "specs": "Provides stable metal backing underneath the trailer rail.",
+      "quantity": "2",
+      "image": "/assets/manuals/xtreme-pro/hw_long_bolts.jpg",
+      "translation": {
+        "es": {
+          "name": "Arandelas Cuadradas",
+          "specs": "Proporciona un respaldo metálico estable debajo del riel del remolque."
+        }
+      }
+    },
+    {
+      "id": "D",
+      "name": "Self-Tapping Screws",
+      "specs": "For wall mounting directly to steel stud ribs inside enclosed trailers.",
+      "quantity": "4",
+      "image": "/assets/manuals/xtreme-pro/hw_hex_teks.jpg",
+      "translation": {
+        "es": {
+          "name": "Tornillos Autotaladrantes",
+          "specs": "Para montaje en pared directamente en perfiles de acero dentro de remolques cerrados."
+        }
+      }
+    },
+    {
+      "id": "E",
+      "name": "Small Carriage Bolts & Nuts",
+      "specs": "Used to connect the backplate to the baseplate.",
+      "quantity": "4 Sets",
+      "image": "/assets/manuals/xtreme-pro/hw_wood_screws.jpg",
+      "translation": {
+        "es": {
+          "name": "Pernos y Tuercas de Carro Pequeños",
+          "specs": "Se utilizan para conectar la placa posterior a la placa base."
+        }
+      }
+    },
+    {
+      "id": "F",
+      "name": "Angled Brackets",
+      "specs": "Hardware to compile and position the wand holder and holster.",
+      "quantity": "2",
+      "image": "/assets/manuals/xtreme-pro/hw_offset_bracket.jpg",
+      "translation": {
+        "es": {
+          "name": "Soportes en Ángulo",
+          "specs": "Herrajes para armar y colocar el soporte de la varilla y su funda."
+        }
+      }
+    },
+    {
+      "id": "G",
+      "name": "Anti-Vibration Pad",
+      "specs": "3M adhesive-backed protective rubber cushion for base plate.",
+      "quantity": "1",
+      "image": "/assets/manuals/xtreme-pro/hw_smile_plate.jpg",
+      "translation": {
+        "es": {
+          "name": "Almohadilla Antivibración",
+          "specs": "Almohadilla protectora de goma con adhesivo 3M para la placa base."
+        }
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "hardware-identification",
+      "title": "Hardware Identification",
+      "category": "all",
+      "content": "Lay out all hardware parts and verify you have everything before starting installation.",
+      "image": "/assets/manuals/spc21/hero.png",
+      "translation": {
+        "es": {
+          "title": "Identificación de Herrajes",
+          "content": "Distribuya todas las piezas de herrajes y verifique que tenga todo antes de comenzar la instalación."
+        }
+      }
+    },
+    {
+      "id": "mounting-configuration",
+      "title": "Mounting Configuration Selection",
+      "category": "all",
+      "content": "Select your installation environment: Open Trailer (rail mount) or Enclosed Trailer (wall stud mount).",
+      "translation": {
+        "es": {
+          "title": "Selección de Configuración de Montaje",
+          "content": "Seleccione su entorno de instalación: Remolque Abierto (montaje en riel) o Remolque Cerrado (montaje en perfil de pared)."
+        }
+      }
+    },
+    {
+      "id": "open-trailer-mount",
+      "title": "Open Trailer: Baseplate Mounting",
+      "category": "open",
+      "content": "Choose a location on your rail to mount the sprayer cage. Using the pre-existing holes on the bottom of the base plate, mark the location where you will drill (2) 10 mm holes. After drilling, insert the (2) large carriage bolts through the base of the rack and trailer rail. Fasten them using the (2) 10 mm lock nuts and (2) square washers provided.",
+      "image": "/assets/manuals/spc21/open_instructions.png",
+      "translation": {
+        "es": {
+          "title": "Remolque Abierto: Montaje de Placa Base",
+          "content": "Elija una ubicación en su riel para montar la jaula del rociador. Utilizando los orificios preexistentes en la parte inferior de la placa base, marque la ubicación donde perforará (2) orificios de 10 mm. Después de perforar, inserte los (2) pernos de carro grandes a través de la base del soporte y el riel del remolque. Asegúrelos utilizando las (2) contratuercas de 10 mm y las (2) arandelas cuadradas proporcionadas."
+        }
+      }
+    },
+    {
+      "id": "anti-vibration-pad",
+      "title": "Anti-Vibration Pad Installation",
+      "category": "all",
+      "content": "Remove the 3M adhesive strips from the base of the rubber anti-vibration pad. Place the rubber pad over the surface of the bottom of the base plate.",
+      "image": "/assets/manuals/spc21/spc21-1.png",
+      "translation": {
+        "es": {
+          "title": "Instalación de la Almohadilla Antivibración",
+          "content": "Retire las tiras adhesivas 3M de la base de la almohadilla antivibración de goma. Coloque la almohadilla de goma sobre la superficie de la parte inferior de la placa base."
+        }
+      }
+    },
+    {
+      "id": "backplate-adjust",
+      "title": "Backplate & Locking Lid Adjustment",
+      "category": "all",
+      "content": "Place your backpack sprayer into the base plate of the sprayer rack. Take the backplate and place it over the top of your backpack sprayer and behind the rear of the base plate. Make sure the lid of the backpack sprayer is protruding through the locking lid on the top of the backplate. Make sure there is very little space between the locking lid and backpack sprayer.",
+      "image": "/assets/manuals/spc21/spc21-2.png",
+      "tips": [
+        "The locking lid plate is adjustable both forward and backward. Simply remove the carriage bolts and locking nuts and position the plate accordingly. Reassemble the plate with the carriage bolts and locking nuts. Some backpack sprayers will not require adjustment."
+      ],
+      "translation": {
+        "es": {
+          "title": "Ajuste de Placa Posterior y Tapa de Bloqueo",
+          "content": "Coloque su rociador de mochila en la placa base del soporte. Tome la placa posterior y colóquela sobre la parte superior del rociador y detrás de la parte posterior de la placa base. Asegúrese de que la tapa del rociador sobresalga a través de la tapa de bloqueo en la parte superior de la placa posterior. Asegúrese de que haya muy poco espacio entre la tapa de bloqueo y el rociador.",
+          "tips": [
+            "La placa de la tapa de bloqueo se puede ajustar tanto hacia adelante como hacia atrás. Simplemente retire los pernos de carro y las contratuercas y coloque la placa en consecuencia. Vuelva a montar la placa con los pernos de carro y las contratuercas. Algunos rociadores de mochila no requerirán ajuste."
+          ]
+        }
+      }
+    },
+    {
+      "id": "backplate-secure",
+      "title": "Secure Backplate to Baseplate",
+      "category": "all",
+      "content": "Once you have your height and locking lid plate adjusted, fasten the backplate to the baseplate using the (4) small 10 mm carriage bolts, (4) square washers and (4) 10 mm locking nuts to the rear side of the back of the baseplate. The rounded head of the carriage bolts should be on the rear exterior of the rack.",
+      "image": "/assets/manuals/spc21/open_instructions.png",
+      "translation": {
+        "es": {
+          "title": "Asegurar Placa Posterior a Placa Base",
+          "content": "Una vez ajustada la altura y la placa de la tapa de bloqueo, sujete la placa posterior a la placa base utilizando los (4) pernos de carro pequeños de 10 mm, (4) arandelas cuadradas y (4) contratuercas de 10 mm en el lado posterior de la base. La cabeza redondeada de los pernos debe quedar en el exterior posterior del soporte."
+        }
+      }
+    },
+    {
+      "id": "wand-holster-assembly",
+      "title": "Wand Holder & Holster Assembly",
+      "category": "all",
+      "content": "Using the angled brackets provided in the packaging, attach the top wand holder and the bottom wand holster together with the small bolt and nut. Place the small nut into the wand holder and holster plastic slots before assembling them to the angled plates.",
+      "image": "/assets/manuals/spc21/open_instructions.png",
+      "translation": {
+        "es": {
+          "title": "Ensamblaje del Soporte y la Funda de la Varilla",
+          "content": "Utilizando los soportes en ángulo provistos en el empaque, una el soporte superior de la varilla y la funda inferior con el perno y tuerca pequeños. Coloque la tuerca pequeña en las ranuras plásticas del soporte y la funda antes de ensamblarlos en las placas en ángulo."
+        }
+      }
+    },
+    {
+      "id": "wand-mount",
+      "title": "Mount Wand Assembly to Cage",
+      "category": "all",
+      "content": "Use the small phillips head bolts to secure the wand tube and holster assemblies to either the right or left side of the sprayer rack. Whichever side of your backpack sprayer has the hose coming out of the tank, will be the side you will want to mount your wand holder/holster assemblies.",
+      "image": "/assets/manuals/spc21/open_instructions.png",
+      "tips": [
+        "There are pre-drilled holes on both sides of the rack that allows you to choose a location that works best with your sprayer wand holder/holster."
+      ],
+      "translation": {
+        "es": {
+          "title": "Montar la Varilla en la Jaula",
+          "content": "Utilice los pernos phillips pequeños para asegurar el tubo de la varilla y los conjuntos de funda a la derecha o izquierda de la jaula. El lado de donde sale la manguera del tanque del rociador será el lado donde querrá montar los soportes de la varilla.",
+          "tips": [
+            "Hay orificios pretaladrados a ambos lados del bastidor que le permiten elegir la ubicación que mejor funcione con el soporte de la varilla."
+          ]
+        }
+      }
+    },
+    {
+      "id": "enclosed-trailer-mount",
+      "title": "Enclosed Trailer Mounting",
+      "category": "enclosed",
+      "content": "To install in an enclosed trailer, box truck, or garage, choose a location on your wall that has a structural stud located behind it. Using the fully assembled Sprayer Cage and the (4) self-tapping screws, fasten the entire unit to the wall stud.",
+      "image": "/assets/manuals/spc21/enclosed_instructions.jpg",
+      "tips": [
+        "If your wall has thin plywood, you may use (2) 2x4's or another layer of plywood to add thickness and structural stability."
+      ],
+      "translation": {
+        "es": {
+          "title": "Montaje en Remolque Cerrado",
+          "content": "Para instalar en un remolque cerrado, camión o garaje, elija una ubicación en la pared que tenga un perfil estructural detrás. Utilizando la jaula del rociador completamente ensamblada y los (4) tornillos autotaladrantes, sujete la unidad al montante de la pared.",
+          "tips": [
+            "Si la pared tiene madera contrachapada delgada, puede usar (2) 2x4 u otra capa de madera para agregar grosor y estabilidad estructural."
+          ]
+        }
+      }
+    }
+  ],
+  "diagnostics": {
+    "title": "SPC21 FIELD DIAGNOSTICS",
+    "symptoms": [
+      {
+        "id": "spc21-symptom-1",
+        "title": "Lid Plate Misalignment",
+        "description": "The lockable lid plate does not close properly over the sprayer lid.",
+        "solution": "Loosen the height adjustment carriage bolts, adjust the backplate height up/down and slide the top locking plate forward/backward to align with the neck. Re-tighten.",
+        "translation": {
+          "es": {
+            "title": "Desalineación de la Tapa",
+            "description": "La placa de la tapa con cerradura no cierra correctamente sobre la tapa del rociador.",
+            "solution": "Afloje los pernos de ajuste de altura, ajuste la placa posterior hacia arriba o hacia abajo y deslice la placa de bloqueo superior hacia adelante o atrás para alinearla. Vuelva a apretar."
+          }
+        }
+      },
+      {
+        "id": "spc21-symptom-2",
+        "title": "Wand Holster Swings Loose",
+        "description": "The wand holder or holster assembly rotates or wobbles.",
+        "solution": "Ensure the small locknut is nested inside the hexagonal plastic pocket of the wand block before tightening the mounting bolt.",
+        "translation": {
+          "es": {
+            "title": "La Funda de la Varilla se Siente Floja",
+            "description": "El soporte de la varilla o la funda rotan o se tambalean.",
+            "solution": "Asegúrese de que la contratuerca pequeña esté asentada dentro del alojamiento plástico hexagonal del bloque de la varilla antes de apretar el perno de montaje."
+          }
+        }
+      }
+    ]
+  }
+}

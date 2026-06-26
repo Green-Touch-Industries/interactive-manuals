@@ -1,0 +1,106 @@
+{
+  "modelId": "ei086",
+  "title": "Stake Pocket Adapter",
+  "subtitle": "SKU: EI086",
+  "toolsRequired": [
+    "Tape Measure",
+    "1/2\" Wrench or Socket Set",
+    "Power Drill with 1/2\" Drill Bit (optional)"
+  ],
+  "videos": [],
+  "hardwareKey": [
+    {
+      "id": "A",
+      "name": "Stake Pocket Mount Post",
+      "specs": "Heavy-duty galvanized steel 1.575\" (40mm) square mount post.",
+      "quantity": "1",
+      "image": "/assets/manuals/ei086/hero.png",
+      "translation": {
+        "es": {
+          "name": "Poste de Montaje de Bolsillo de Estaca",
+          "specs": "Poste de montaje cuadrado de acero galvanizado de alta resistencia de 1.575\" (40 mm)."
+        }
+      }
+    },
+    {
+      "id": "B",
+      "name": "Securing Hex Bolt & Nut",
+      "specs": "Hex head bolt and lock nut to clamp the post into the pocket.",
+      "quantity": "1 set",
+      "image": "/assets/manuals/xtreme-pro/hw_long_bolts.jpg",
+      "translation": {
+        "es": {
+          "name": "Perno Hexagonal y Tuerca de Seguridad",
+          "specs": "Perno de cabeza hexagonal y contratuerca para sujetar el poste en el bolsillo."
+        }
+      }
+    },
+    {
+      "id": "C",
+      "name": "Flat Washer",
+      "specs": "Large washer to distribute tension force on truck bed sheet metal.",
+      "quantity": "1",
+      "image": "/assets/manuals/xtreme-pro/hw_wood_screws.jpg",
+      "translation": {
+        "es": {
+          "name": "Arandela Plana",
+          "specs": "Arandela grande para distribuir la fuerza de tensión en la chapa de la caja del camión."
+        }
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "hardware-identification",
+      "title": "Hardware Identification",
+      "category": "all",
+      "content": "Verify your EI086 package contents. The kit includes one stake pocket mount post, one hex bolt, one washer, and one lock nut. Note: Most trimmer racks require two kits (one for each post side).",
+      "image": "/assets/manuals/ei086/hero.png",
+      "translation": {
+        "es": {
+          "title": "Identificación de Herrajes",
+          "content": "Verifique el contenido del paquete EI086. El kit incluye un poste de montaje de bolsillo de estaca, un perno hexagonal, una arandela y una contratuerca. Nota: La mayoría de los soportes de cortabordes requieren dos kits (uno para cada lado del poste)."
+        }
+      }
+    },
+    {
+      "id": "select-pocket",
+      "title": "Select Stake Pocket",
+      "category": "all",
+      "content": "Select the truck bed stake pocket you want to install your mount into. Ensure the pocket interior is clean and free of debris or bedliner overspray.",
+      "image": "/assets/manuals/ei086/hero.png",
+      "translation": {
+        "es": {
+          "title": "Seleccionar el Bolsillo de Estaca",
+          "content": "Seleccione el bolsillo de estaca de la caja del camión en el que desea instalar su soporte. Asegúrese de que el interior del bolsillo esté limpio y libre de residuos o exceso de pintura protectora de caja."
+        }
+      }
+    },
+    {
+      "id": "drop-mount",
+      "title": "Drop Mount into Pocket",
+      "category": "all",
+      "content": "Drop the Stake Pocket Mount post into the selected pocket. CRITICAL CONSTRAINT: If installing the Truck Rail System (Item# AA101), the pre-drilled holes in the post MUST point toward the front and back of the truck bed. If installing a single rack, you may orient it in any direction.",
+      "image": "/assets/manuals/ei086/hardware.jpg",
+      "translation": {
+        "es": {
+          "title": "Colocar el Soporte en el Bolsillo",
+          "content": "Coloque el poste de soporte de bolsillo de estaca en el bolsillo seleccionado. RESTRICCIÓN CRÍTICA: Si va a instalar el sistema de rieles para camión (artículo n.º AA101), los orificios perforados en el poste DEBEN apuntar hacia la parte delantera y trasera de la caja del camión. Si instala un solo soporte, puede orientarlo en cualquier dirección."
+        }
+      }
+    },
+    {
+      "id": "align-and-secure",
+      "title": "Align Holes and Secure",
+      "category": "all",
+      "content": "Line up the Stake Pocket Mount bolt hole with the pre-drilled pocket hole on the interior of the truck bed. Secure with the hex bolt, washer, and lock nut. NOTE: Leave at least a 1/2\" gap between the top of the truck bed and the base of the Stake Pocket Mount to allow room for rack bolt installation. If your truck bed has no factory hole, you must drill a 1/2\" hole through the pocket frame.",
+      "image": "/assets/manuals/ei086/hardware.jpg",
+      "translation": {
+        "es": {
+          "title": "Alinear Orificios y Asegurar",
+          "content": "Alinee el orificio del perno del soporte de bolsillo de estaca con el orificio del bolsillo preperforado en el interior de la caja del camión. Asegúrelo con el perno hexagonal, la arandela y la contratuerca. NOTA: Deje un espacio de al menos 1/2\" entre la parte superior de la caja del camión y la base del soporte para permitir la instalación de los pernos del soporte. Si su camión no tiene un orificio de fábrica, debe perforar un orificio de 1/2\" a través del bastidor del bolsillo."
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,107 @@
+{
+  "modelId": "classic-trimmer",
+  "title": "Classic Trimmer Racks",
+  "subtitle": "LA011 & LB012",
+  "toolsRequired": [
+    "Tape Measure",
+    "Marker or Pencil",
+    "1/2\" Wrench or Socket Set",
+    "Power Drill with 3/8\" Drill Bit"
+  ],
+  "videos": [],
+  "hardwareKey": [
+    {
+      "id": "A",
+      "name": "Trimmer Rack Posts",
+      "specs": "PVC-coated hooks, available in 2-position (LA011) or 3-position (LB012) configurations.",
+      "quantity": "1 Pair (Locking + Support)",
+      "image": "/assets/manuals/classic-trimmer/la011.png",
+      "translation": {
+        "es": {
+          "name": "Postes de Soporte de Cortabordes",
+          "specs": "Ganchos recubiertos de PVC, disponibles en configuraciones de 2 posiciones (LA011) o 3 posiciones (LB012)."
+        }
+      }
+    },
+    {
+      "id": "B",
+      "name": "Master Lock #3 Padlocks",
+      "specs": "Keyed locks with 40mm body and 19mm shackle clearance.",
+      "quantity": "2",
+      "image": "/assets/manuals/xtreme-pro/hw_long_bolts.jpg",
+      "translation": {
+        "es": {
+          "name": "Candados Master Lock #3",
+          "specs": "Candados con llave, cuerpo de 40 mm y espacio libre de grillete de 19 mm."
+        }
+      }
+    },
+    {
+      "id": "C",
+      "name": "Mounting Bolts & Nuts",
+      "specs": "Hex bolts, flat washers, and lock nuts for base plate mounting.",
+      "quantity": "4 sets",
+      "image": "/assets/manuals/xtreme-pro/hw_wood_screws.jpg",
+      "translation": {
+        "es": {
+          "name": "Pernos y Tuercas de Montaje",
+          "specs": "Pernos hexagonales, arandelas planas y contratuercas para el montaje de la placa base."
+        }
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "hardware-identification",
+      "title": "Hardware Identification",
+      "category": "all",
+      "content": "Verify your package contents. The Classic Series Trimmer Rack includes 1 locking post, 1 support post, 2 padlocks, 2 lock pins with lanyards, and mounting hardware.",
+      "image": "/assets/manuals/classic-trimmer/la011.png",
+      "translation": {
+        "es": {
+          "title": "Identificación de Herrajes",
+          "content": "Verifique el contenido del paquete. El soporte de cortabordes de la serie Classic incluye 1 poste de bloqueo, 1 poste de soporte, 2 candados, 2 pasadores de bloqueo con cables y herrajes de montaje."
+        }
+      }
+    },
+    {
+      "id": "position-posts",
+      "title": "Position Posts on Trailer Rail",
+      "category": "all",
+      "content": "Place the locking post and support post on the top rail of your open trailer. CRITICAL CONSTRAINT: Space the posts exactly 36 3/4\" apart (center-to-center). Align them vertically to ensure the trimmer shafts sit straight.",
+      "image": "/assets/manuals/classic-trimmer/instructions.png",
+      "translation": {
+        "es": {
+          "title": "Posicionar Postes en el Riel del Remolque",
+          "content": "Coloque el poste de bloqueo y el poste de soporte en el riel superior de su remolque abierto. RESTRICCIÓN CRÍTICA: Espacie los postes exactamente a 36 3/4\" de distancia (de centro a centro). Alinéelos verticalmente para asegurarse de que los ejes del cortabordes queden rectos."
+        }
+      }
+    },
+    {
+      "id": "drill-and-bolt",
+      "title": "Drill and Secure Base Bolts",
+      "category": "all",
+      "content": "Mark the mounting holes using the base plates as templates. Drill 3/8\" holes through the marked points. Secure the base plates to the trailer rail using the hex bolts, washers, and lock nuts. NOTE: For thin trailer rails, install support extensions (sold separately) to brace the posts directly to the trailer floor.",
+      "image": "/assets/manuals/classic-trimmer/instructions.png",
+      "translation": {
+        "es": {
+          "title": "Perforar y Asegurar Pernos de la Base",
+          "content": "Marque los orificios de montaje utilizando las placas base como plantilla. Perfore orificios de 3/8\" en los puntos marcados. Asegure las placas base al riel del remolque con los pernos hexagonales, arandelas y contratuercas. NOTA: Para rieles de remolque delgados, instale extensiones de soporte (se venden por separado) para apoyar los postes directamente en el piso del remolque."
+        }
+      }
+    },
+    {
+      "id": "lock-trimmers",
+      "title": "Secure and Lock Trimmers",
+      "category": "all",
+      "content": "Place your trimmers in the PVC-coated hooks. Swing the locking caps closed and insert the padlock shackles through the lock slots. Check mounting hardware periodically to ensure it remains tight.",
+      "image": "/assets/manuals/classic-trimmer/lb012.png",
+      "translation": {
+        "es": {
+          "title": "Asegurar y Bloquear Cortabordes",
+          "content": "Coloque sus cortabordes en los ganchos recubiertos de PVC. Cierre las tapas de bloqueo e inserte los grilletes del candado a través de las ranuras de bloqueo. Revise periódicamente los herrajes de montaje para asegurarse de que permanezcan apretados."
+        }
+      }
+    }
+  ]
+}

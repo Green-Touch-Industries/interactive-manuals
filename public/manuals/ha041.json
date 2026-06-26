@@ -1,0 +1,65 @@
+{
+  "modelId": "ha041",
+  "title": "Locking Hedge Trimmer Rack",
+  "subtitle": "SKU: HA041",
+  "toolsRequired": [
+    "Drill with 3/8\" Bit",
+    "Socket Set"
+  ],
+  "videos": [],
+  "hardwareKey": [],
+  "steps": [
+    {
+      "id": "hardware-identification",
+      "title": "Hardware Identification",
+      "category": "all",
+      "content": "Verify package contents including hedge rack, locks, and bolts.",
+      "image": "/assets/manuals/ha041/hero.png",
+      "translation": {
+        "es": {
+          "title": "Identificaci\u00f3n de Herrajes",
+          "content": "Verify package contents including hedge rack, locks, and bolts."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Trailer rail Mount",
+      "category": "all",
+      "content": "For open trailers, drill 3/8\" holes directly over upright support posts and bolt rack on. Use support extensions if rail flexes.",
+      "image": "/assets/manuals/ha041/hero.png",
+      "translation": {
+        "es": {
+          "title": "Trailer rail Mount",
+          "content": "For open trailers, drill 3/8\" holes directly over upright support posts and bolt rack on. Use support extensions if rail flexes."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Enclosed Mounting",
+      "category": "all",
+      "content": "For enclosed trailers, mount rack at 45-degree angle for optimal support. Drill screws through wall into steel support frame.",
+      "image": "/assets/manuals/ha041/hero.png",
+      "translation": {
+        "es": {
+          "title": "Enclosed Mounting",
+          "content": "For enclosed trailers, mount rack at 45-degree angle for optimal support. Drill screws through wall into steel support frame."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Secure Trimmer",
+      "category": "all",
+      "content": "Place hedge trimmer in locking bracket and padlock shut.",
+      "image": "/assets/manuals/ha041/hero.png",
+      "translation": {
+        "es": {
+          "title": "Secure Trimmer",
+          "content": "Place hedge trimmer in locking bracket and padlock shut."
+        }
+      }
+    }
+  ]
+}

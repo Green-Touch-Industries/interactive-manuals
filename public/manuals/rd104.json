@@ -1,0 +1,51 @@
+{
+  "modelId": "rd104",
+  "title": "UTV Bed Rail System (RD104)",
+  "subtitle": "Lowe's Axis 500 UTV Mount",
+  "toolsRequired": [
+    "Socket Set"
+  ],
+  "videos": [],
+  "hardwareKey": [],
+  "steps": [
+    {
+      "id": "hardware-identification",
+      "title": "Hardware Identification",
+      "category": "all",
+      "content": "Verify UTV side rail bars, mounting clamps, and screws.",
+      "translation": {
+        "es": {
+          "title": "Identificaci\u00f3n de Herrajes",
+          "content": "Verifique los rieles laterales de UTV, las abrazaderas de montaje y los tornillos."
+        }
+      },
+      "image": "/assets/manuals/rd104/hero.png"
+    },
+    {
+      "id": "step-2",
+      "title": "Clamp to Bed Sides",
+      "category": "all",
+      "content": "Bolt rail clamps directly onto the UTV bed side rails without drilling.",
+      "translation": {
+        "es": {
+          "title": "Sujetar a los lados de la caja",
+          "content": "Atornille las abrazaderas de los rieles directamente sobre los rieles laterales de la caja del UTV sin perforar."
+        }
+      },
+      "image": "/assets/manuals/rd104/hero.png"
+    },
+    {
+      "id": "step-3",
+      "title": "Mount Accessories",
+      "category": "all",
+      "content": "Secure trimmer or blower rack attachments onto the bed rail system posts.",
+      "translation": {
+        "es": {
+          "title": "Montar accesorios",
+          "content": "Asegure los accesorios del soporte del cortabordes o soplador en los postes del sistema de rieles de la caja."
+        }
+      },
+      "image": "/assets/manuals/rd104/hero.png"
+    }
+  ]
+}

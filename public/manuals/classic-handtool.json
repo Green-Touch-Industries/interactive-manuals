@@ -1,0 +1,53 @@
+{
+  "modelId": "classic-handtool",
+  "title": "Hand Tool Racks",
+  "subtitle": "TA051-GRE & TC053-GRE",
+  "toolsRequired": [
+    "Drill with Phillips Bit",
+    "Marker",
+    "Level"
+  ],
+  "videos": [],
+  "hardwareKey": [],
+  "steps": [
+    {
+      "id": "hardware-identification",
+      "title": "Hardware Identification",
+      "category": "all",
+      "content": "Verify package contents including handtool rack rails and mounting screws.",
+      "image": "/assets/manuals/classic-handtool/hero.png",
+      "translation": {
+        "es": {
+          "title": "Identificaci\u00f3n de Herrajes",
+          "content": "Verify package contents including handtool rack rails and mounting screws."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Mount to Studs",
+      "category": "all",
+      "content": "Position rack horizontally on trailer wall or garage wall studs. Drill self-tapping screws directly through slots into steel ribs/studs.",
+      "image": "/assets/manuals/classic-handtool/hero.png",
+      "translation": {
+        "es": {
+          "title": "Mount to Studs",
+          "content": "Position rack horizontally on trailer wall or garage wall studs. Drill self-tapping screws directly through slots into steel ribs/studs."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Organize Tools",
+      "category": "all",
+      "content": "Slide shovels, rakes, and brooms vertically into organizing slots. Use lock pins if necessary.",
+      "image": "/assets/manuals/classic-handtool/hero.png",
+      "translation": {
+        "es": {
+          "title": "Organize Tools",
+          "content": "Slide shovels, rakes, and brooms vertically into organizing slots. Use lock pins if necessary."
+        }
+      }
+    }
+  ]
+}

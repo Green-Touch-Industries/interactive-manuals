@@ -1,0 +1,52 @@
+{
+  "modelId": "td21",
+  "title": "Lockable Shovel & Tool Rack",
+  "subtitle": "SKU: TD21-GRE",
+  "toolsRequired": [
+    "Drill",
+    "Wrench Set"
+  ],
+  "videos": [],
+  "hardwareKey": [],
+  "steps": [
+    {
+      "id": "hardware-identification",
+      "title": "Hardware Identification",
+      "category": "all",
+      "content": "Verify TD21 rack body, lock bar, and screws.",
+      "image": "/assets/manuals/td21/hero.png",
+      "translation": {
+        "es": {
+          "title": "Identificaci\u00f3n de Herrajes",
+          "content": "Verify TD21 rack body, lock bar, and screws."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Secure Rack",
+      "category": "all",
+      "content": "Bolt rack base securely to trailer rail or wall framing.",
+      "image": "/assets/manuals/td21/hero.png",
+      "translation": {
+        "es": {
+          "title": "Secure Rack",
+          "content": "Bolt rack base securely to trailer rail or wall framing."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Lock Shovels",
+      "category": "all",
+      "content": "Place shovel shafts into organizing hooks, swing securement bar shut, and engage lock.",
+      "image": "/assets/manuals/td21/hero.png",
+      "translation": {
+        "es": {
+          "title": "Lock Shovels",
+          "content": "Place shovel shafts into organizing hooks, swing securement bar shut, and engage lock."
+        }
+      }
+    }
+  ]
+}

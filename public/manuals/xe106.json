@@ -1,0 +1,53 @@
+{
+  "modelId": "xe106",
+  "title": "Water Cooler Rack",
+  "subtitle": "SKU: XE106-GRE",
+  "toolsRequired": [
+    "Tape Measure",
+    "Drill with 27/64\" Bit",
+    "Socket Set"
+  ],
+  "videos": [],
+  "hardwareKey": [],
+  "steps": [
+    {
+      "id": "hardware-identification",
+      "title": "Hardware Identification",
+      "category": "all",
+      "content": "Verify package contents. Includes cooler base frame, tensioning straps, and mounting bolts.",
+      "image": "/assets/manuals/xe106/hero.png",
+      "translation": {
+        "es": {
+          "title": "Identificaci\u00f3n de Herrajes",
+          "content": "Verify package contents. Includes cooler base frame, tensioning straps, and mounting bolts."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Trailer Mounting",
+      "category": "all",
+      "content": "For open trailers, drill with 27/64\" bit through rail and secure base. For enclosed, secure into stud framing using self-tapping screws.",
+      "image": "/assets/manuals/xe106/hero.png",
+      "translation": {
+        "es": {
+          "title": "Trailer Mounting",
+          "content": "For open trailers, drill with 27/64\" bit through rail and secure base. For enclosed, secure into stud framing using self-tapping screws."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Strap Adjustment",
+      "category": "all",
+      "content": "Place water cooler on base plate. Press release button to thread strap, then pull loop tightly to cinch cooler securely.",
+      "image": "/assets/manuals/xe106/hero.png",
+      "translation": {
+        "es": {
+          "title": "Strap Adjustment",
+          "content": "Place water cooler on base plate. Press release button to thread strap, then pull loop tightly to cinch cooler securely."
+        }
+      }
+    }
+  ]
+}

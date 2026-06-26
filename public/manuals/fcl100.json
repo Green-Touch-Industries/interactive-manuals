@@ -1,0 +1,80 @@
+{
+  "modelId": "fcl100",
+  "title": "5-Gallon Fuel Can Cage",
+  "subtitle": "SKU: FCL100-GRE",
+  "toolsRequired": [
+    "Tape Measure",
+    "Marker or Pencil",
+    "Power Drill with 10mm Drill Bit",
+    "10mm Wrench or Socket Set"
+  ],
+  "videos": [],
+  "hardwareKey": [],
+  "steps": [
+    {
+      "id": "hardware-identification",
+      "title": "Hardware Identification",
+      "category": "all",
+      "content": "Verify your FCL100 package contents. The kit includes the main fuel can cage, padlock with keys, and mounting carriage bolts.",
+      "image": "/assets/manuals/fcl100/hero.png",
+      "translation": {
+        "es": {
+          "title": "Identificaci\u00f3n de Herrajes",
+          "content": "Verify your FCL100 package contents. The kit includes the main fuel can cage, padlock with keys, and mounting carriage bolts."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Select Mounting Location",
+      "category": "all",
+      "content": "For open trailers, position on top rail directly over a post stud. For enclosed trailers, mount to a wall stud (waist high and near door suggested).",
+      "image": "/assets/manuals/fcl100/hero.png",
+      "translation": {
+        "es": {
+          "title": "Select Mounting Location",
+          "content": "For open trailers, position on top rail directly over a post stud. For enclosed trailers, mount to a wall stud (waist high and near door suggested)."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Drill and Secure",
+      "category": "all",
+      "content": "Mark holes, drill 10mm holes, and secure with carriage bolts and lock nuts. If in enclosed trailer, secure with (4) self-tapping screws.",
+      "image": "/assets/manuals/fcl100/hero.png",
+      "translation": {
+        "es": {
+          "title": "Drill and Secure",
+          "content": "Mark holes, drill 10mm holes, and secure with carriage bolts and lock nuts. If in enclosed trailer, secure with (4) self-tapping screws."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Base Pad Installation",
+      "category": "all",
+      "content": "Peel adhesive backing from the rubber cushion pad and press it firmly into the base of the cage to absorb fuel tank vibrations.",
+      "image": "/assets/manuals/fcl100/hero.png",
+      "translation": {
+        "es": {
+          "title": "Base Pad Installation",
+          "content": "Peel adhesive backing from the rubber cushion pad and press it firmly into the base of the cage to absorb fuel tank vibrations."
+        }
+      }
+    },
+    {
+      "id": "step-5",
+      "title": "SureCan Spout Usage",
+      "category": "all",
+      "content": "When placing a SureCan in the rack, ensure the rotating spout is aligned over the base cutout. This allows fueling without removing the can.",
+      "image": "/assets/manuals/fcl100/hero.png",
+      "translation": {
+        "es": {
+          "title": "SureCan Spout Usage",
+          "content": "When placing a SureCan in the rack, ensure the rotating spout is aligned over the base cutout. This allows fueling without removing the can."
+        }
+      }
+    }
+  ]
+}

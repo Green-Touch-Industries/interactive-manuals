@@ -1,0 +1,107 @@
+{
+  "modelId": "tbx100",
+  "title": "Unibox Storage System",
+  "subtitle": "Uni-Box TBX100",
+  "toolsRequired": [
+    "Tape Measure",
+    "Marker or Pencil",
+    "Power Drill with 3/8\" Drill Bit",
+    "1/2\" Wrench or Socket Set"
+  ],
+  "videos": [],
+  "hardwareKey": [
+    {
+      "id": "A",
+      "name": "Carriage Bolts (3/8\")",
+      "specs": "Heavy-duty bolts for securing the Uni-Box to trailer rails or wall posts.",
+      "quantity": "4",
+      "image": "/assets/manuals/xtreme-pro/hw_long_bolts.jpg",
+      "translation": {
+        "es": {
+          "name": "Pernos de Carro (3/8\")",
+          "specs": "Pernos de alta resistencia para asegurar la Uni-Box a los rieles o postes del remolque."
+        }
+      }
+    },
+    {
+      "id": "B",
+      "name": "Washers and Lock Nuts",
+      "specs": "Secures the carriage bolts from the reverse side.",
+      "quantity": "4",
+      "image": "/assets/manuals/xtreme-pro/hw_wood_screws.jpg",
+      "translation": {
+        "es": {
+          "name": "Arandelas y Contratuercas",
+          "specs": "Asegura los pernos de carro desde el lado opuesto."
+        }
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "hardware-identification",
+      "title": "Hardware Identification",
+      "category": "all",
+      "content": "Verify your TBX100 package contents. The Uni-Box package includes the heavy-duty lockable storage box, padlock with keys, and mounting hardware.",
+      "image": "/assets/manuals/tbx100/hero.png",
+      "translation": {
+        "es": {
+          "title": "Identificación de Herrajes",
+          "content": "Verifique el contenido del paquete TBX100. El paquete de la Uni-Box incluye la caja de almacenamiento con llave de alta resistencia, candado con llaves y herrajes de montaje."
+        }
+      }
+    },
+    {
+      "id": "determine-mounting",
+      "title": "Determine Mounting Location",
+      "category": "all",
+      "content": "Identify the desired mounting location. The Uni-Box can be mounted to the side rails of open trailers, the wall studs of enclosed trailers, or a shop/garage wall.",
+      "image": "/assets/manuals/tbx100/back.png",
+      "translation": {
+        "es": {
+          "title": "Determinar la Ubicación de Montaje",
+          "content": "Identifique la ubicación de montaje deseada. La Uni-Box se puede montar en los rieles laterales de remolques abiertos, los montantes de pared de remolques cerrados o en la pared de un taller/garaje."
+        }
+      }
+    },
+    {
+      "id": "drill-holes",
+      "title": "Mark and Drill Holes",
+      "category": "all",
+      "content": "Hold the Uni-Box against the mounting rail or post. Using the slots in the back of the box as a guide, mark the drilling points. Drill 3/8\" holes through the marked locations.",
+      "image": "/assets/manuals/tbx100/open.png",
+      "translation": {
+        "es": {
+          "title": "Marcar y Perforar Orificios",
+          "content": "Sostenga la Uni-Box contra el riel o poste de montaje. Usando las ranuras en la parte trasera de la caja como guía, marque los puntos de perforación. Perfore orificios de 3/8\" en las ubicaciones marcadas."
+        }
+      }
+    },
+    {
+      "id": "secure-box",
+      "title": "Secure Box to Surface",
+      "category": "all",
+      "content": "Align the back slots of the box with the drilled holes. Insert the 3/8\" carriage bolts through the box interior and mount surface. Secure from the outside with washers and lock nuts.",
+      "image": "/assets/manuals/tbx100/hero.png",
+      "translation": {
+        "es": {
+          "title": "Asegurar la Caja a la Superficie",
+          "content": "Alinee las ranuras traseras de la caja con los orificios perforados. Inserte los pernos de carro de 3/8\" a través del interior de la caja y la superficie de montaje. Asegure desde el exterior con arandelas y contratuercas."
+        }
+      }
+    },
+    {
+      "id": "maintenance",
+      "title": "Periodic Maintenance",
+      "category": "all",
+      "content": "Regularly check mounting hardware to ensure it remains tight. Periodically lubricate the hinges and padlock to protect against weather elements and ensure smooth operation.",
+      "image": "/assets/manuals/tbx100/hero.png",
+      "translation": {
+        "es": {
+          "title": "Mantenimiento Periódico",
+          "content": "Revise periódicamente los herrajes de montaje para asegurarse de que permanezcan apretados. Lubrique periódicamente las bisagras y el candado para protegerlos de la intemperie y garantizar un funcionamiento suave."
+        }
+      }
+    }
+  ]
+}

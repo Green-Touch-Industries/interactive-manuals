@@ -47,7 +47,7 @@
       "name": "Wood Screws",
       "specs": "For Enclosed Trailer / Wood Wall Mounting (Wall MUST be 1/2\" thick or thicker). Size: 42 mm in length (Philips Head).",
       "quantity": "12 units",
-      "image": "/hw_wood_screws.jpg",
+      "image": "/assets/manuals/xtreme-pro/hw_wood_screws.jpg",
       "facePart": "Left Eyebrow",
       "translation": {
         "es": {
@@ -61,7 +61,7 @@
       "name": "Hex Teks Self-Drilling Screws",
       "specs": "Specifically for mounting to metal studs in enclosed units. Size: 43 mm in length x 10 mm hex bolt (head).",
       "quantity": "12 units",
-      "image": "/hw_hex_teks.jpg",
+      "image": "/assets/manuals/xtreme-pro/hw_hex_teks.jpg",
       "facePart": "Right Eyebrow",
       "translation": {
         "es": {
@@ -75,7 +75,7 @@
       "name": "Carriage Bolts + Nylock Nuts & Square Washers",
       "specs": "Standard mounting hardware for open trailer top rails. Size: 80 mm in length + 16 mm nuts + square washers (40 mm x 25 mm x 4 mm).",
       "quantity": "4 Sets",
-      "image": "/hw_long_bolts.jpg",
+      "image": "/assets/manuals/xtreme-pro/hw_long_bolts.jpg",
       "facePart": "Eyes",
       "translation": {
         "es": {
@@ -89,7 +89,7 @@
       "name": "5MM ALLEN WRENCH",
       "specs": "Required for CX111 Aluminum blocks and ESK100 adjustment.",
       "quantity": "1 unit",
-      "image": "/hw_allen_key.jpg",
+      "image": "/assets/manuals/xtreme-pro/hw_allen_key.jpg",
       "facePart": "Nose",
       "translation": {
         "es": {
@@ -103,7 +103,7 @@
       "name": "Upper Lip: Hex Bolts & Washers",
       "specs": "Used for ESK100 Support Arm(s) and main assembly points. Size: Short Hex (17 mm x 32 mm) + Thin Hex (17 mm x 40 mm). Round Washers (20 mm OD x 10 mm ID x 2 mm). Small Round Washers (12 mm OD x 6 mm ID x 1.5 mm).",
       "quantity": "15 Sets",
-      "image": "/hw_smile_plate.jpg",
+      "image": "/assets/manuals/xtreme-pro/hw_smile_plate.jpg",
       "facePart": "Upper Smile",
       "translation": {
         "es": {
@@ -117,7 +117,7 @@
       "name": "Lower Lip: Allen Bolts & Nyloc Nuts",
       "specs": "Essential for enclosed trailers or advanced rail setups. Size: 5 mm Allen Head x 31 mm. Small Round Washers (12 mm OD x 6 mm ID x 1.5 mm). 10 mm Small Nyloc Nuts.",
       "quantity": "12 Sets",
-      "image": "/hw_offset_bracket.jpg",
+      "image": "/assets/manuals/xtreme-pro/hw_offset_bracket.jpg",
       "facePart": "Lower Smile",
       "translation": {
         "es": {
@@ -133,7 +133,7 @@
       "title": "Hardware Identification",
       "category": "all",
       "content": "Lay out all hardware items to verify inventory. Use the \"Hardware Face\" schematic below to identify each part before beginning installation.",
-      "image": "/hw_face.jpg",
+      "image": "/assets/manuals/xtreme-pro/hw_face.jpg",
       "tips": [
         "Organize bolts by size (10mm, 16mm, 17mm) to avoid mounting errors.",
         "CRITICAL: You may have 4 extra small bolts (40 mm in length; these are 16 mm hex bolts with 16 mm nuts) and 4 nyloc nuts remaining. These are secondary components and are not required for the primary assembly shown in the schematic.",
@@ -156,7 +156,7 @@
       "title": "Tower Spacing & Alignment",
       "category": "all",
       "content": "Measure and mark your trailer rail/wall for tower installation. Standard spacing is 36 3/4\" center-to-center.",
-      "image": "/install_spacing.jpg",
+      "image": "/assets/manuals/xtreme-pro/install_spacing.jpg",
       "tips": [
         "Scenario A (Trimmers): Space for your shortest trimmer.",
         "CRITICAL: Scenario B (Curved Shaft) — Measure the straight section of the shaft. This distance MUST determine your tower spacing. Drilling before verifying CX111 seats on the straight section will result in incorrect mounting and re-drilling.",
@@ -197,7 +197,7 @@
       "title": "Standard Open-Trailer Top-Rail",
       "category": "open",
       "content": "Mount the bases securely to the top rail using the following hardware: (4) Long Carriage Bolts (80 mm), (4) Large Rectangular Washers, and (4) 16 mm Nuts.",
-      "image": "/install_open_trailer.jpg",
+      "image": "/assets/manuals/xtreme-pro/install_open_trailer.jpg",
       "requiredHardware": [
         {
           "name": "Long Carriage Bolts (80mm)",
@@ -232,7 +232,7 @@
       "title": "Open-Trailers with Round Side Rails",
       "category": "round",
       "content": "Trailers with round side rails utilize our included Triangular Brackets for a secure clamp. Follow the standard spacing guide before securing.",
-      "image": "/install_round_rail.jpg",
+      "image": "/assets/manuals/xtreme-pro/install_round_rail.jpg",
       "requiredHardware": [
         {
           "name": "Long Carriage Bolts (80mm - store bought)",
@@ -279,7 +279,7 @@
       "title": "Advanced Open-Trailer Mounting",
       "category": "advanced",
       "content": "Use the open-trailer offset mounting brackets to clear existing lip or rail obstructions on your open trailer.",
-      "image": "/install_open_mount.jpg",
+      "image": "/assets/manuals/xtreme-pro/install_open_mount.jpg",
       "requiredHardware": [
         {
           "name": "Allen Bolts (31mm)",
@@ -318,7 +318,7 @@
       "title": "Enclosed Unit / Interior Wall",
       "category": "enclosed",
       "content": "Utilize Z-bracket wall mounts. Secure brackets into wall studs or structural framing. For wood walls, ensure a minimum of 1/2\" plywood substrate is present to support the dynamic load of multiple trimmers (2-4).",
-      "image": "/install_enclosed_mount.jpg",
+      "image": "/assets/manuals/xtreme-pro/install_enclosed_mount.jpg",
       "requiredHardware": [
         {
           "name": "Hex Wood or Tek Screws",
@@ -350,7 +350,7 @@
       "title": "Trimmer Preparation (CX111: Support Side)",
       "category": "all",
       "content": "Mount the Support Side of the CX111 Aluminum Block to the trimmer shaft. The alignment pin provides stability within the support eyelet.",
-      "image": "/install_outward_pin.jpg",
+      "image": "/assets/manuals/xtreme-pro/install_outward_pin.jpg",
       "requiredHardware": [
         {
           "name": "CX111 Aluminum Block Kit: Support Side",
@@ -388,7 +388,7 @@
       "title": "Trimmer Preparation (CX111) - Locking Side",
       "category": "all",
       "content": "Install the Locking side of the CX111 Aluminum Block on the trimmer shaft for the locking side tower.",
-      "image": "/install_locking_side.jpg",
+      "image": "/assets/manuals/xtreme-pro/install_locking_side.jpg",
       "requiredHardware": [
         {
           "name": "CX111 Aluminum Block Kit: Locking Side",
@@ -425,11 +425,11 @@
       "category": "all",
       "content": "The ESK100 is vital for extending the life of your equipment. It provides a static platform for the trimmer engine, reducing stress on the shaft and the rack's clamping points.",
       "image": [
-        "/esk100_step1.jpg",
-        "/esk100_step2.jpg",
-        "/esk100_step3.jpg",
-        "/esk100_step4.jpg",
-        "/esk100_assembled.jpg"
+        "/assets/manuals/xtreme-pro/esk100_step1.jpg",
+        "/assets/manuals/xtreme-pro/esk100_step2.jpg",
+        "/assets/manuals/xtreme-pro/esk100_step3.jpg",
+        "/assets/manuals/xtreme-pro/esk100_step4.jpg",
+        "/assets/manuals/xtreme-pro/esk100_assembled.jpg"
       ],
       "subSteps": [
         {

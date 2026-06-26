@@ -1,0 +1,53 @@
+{
+  "modelId": "pgo011",
+  "title": "Multi-Tool Garage Organizer",
+  "subtitle": "SKU: PGO011",
+  "toolsRequired": [
+    "Drill",
+    "Phillips Screws",
+    "Level"
+  ],
+  "videos": [],
+  "hardwareKey": [],
+  "steps": [
+    {
+      "id": "hardware-identification",
+      "title": "Hardware Identification",
+      "category": "all",
+      "content": "Verify organizer bar, shelf brackets, and wall screws.",
+      "image": "/assets/manuals/pgo011/hero.png",
+      "translation": {
+        "es": {
+          "title": "Identificaci\u00f3n de Herrajes",
+          "content": "Verify organizer bar, shelf brackets, and wall screws."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Locate Wall Stud",
+      "category": "all",
+      "content": "Find wall stud. Level organizer and screw directly through pre-drilled holes into stud.",
+      "image": "/assets/manuals/pgo011/hero.png",
+      "translation": {
+        "es": {
+          "title": "Locate Wall Stud",
+          "content": "Find wall stud. Level organizer and screw directly through pre-drilled holes into stud."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Place Equipment",
+      "category": "all",
+      "content": "Store trimmers, hedge trimmers, or power heads. Use securement rod to lock them in place.",
+      "image": "/assets/manuals/pgo011/hero.png",
+      "translation": {
+        "es": {
+          "title": "Place Equipment",
+          "content": "Store trimmers, hedge trimmers, or power heads. Use securement rod to lock them in place."
+        }
+      }
+    }
+  ]
+}

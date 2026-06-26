@@ -1,0 +1,51 @@
+{
+  "modelId": "aa101",
+  "title": "Truck Bed Rail System",
+  "subtitle": "SKU: AA101",
+  "toolsRequired": [
+    "Socket Set"
+  ],
+  "videos": [],
+  "hardwareKey": [],
+  "steps": [
+    {
+      "id": "hardware-identification",
+      "title": "Hardware Identification",
+      "category": "all",
+      "content": "Verify bed rails, pocket adapters, and clamp assemblies.",
+      "image": "/assets/manuals/aa101/hero.png",
+      "translation": {
+        "es": {
+          "title": "Identificaci\u00f3n de Herrajes",
+          "content": "Verify bed rails, pocket adapters, and clamp assemblies."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Install Pocket Adapters",
+      "category": "all",
+      "content": "Insert stake pocket mounts (EI086) in pockets and expand. Align holes front-to-back.",
+      "image": "/assets/manuals/aa101/hero.png",
+      "translation": {
+        "es": {
+          "title": "Install Pocket Adapters",
+          "content": "Insert stake pocket mounts (EI086) in pockets and expand. Align holes front-to-back."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Mount Rails",
+      "category": "all",
+      "content": "Bolt AA101 truck bed rail bars onto pocket adapter posts. Clamp equipment racks to rail.",
+      "image": "/assets/manuals/aa101/hero.png",
+      "translation": {
+        "es": {
+          "title": "Mount Rails",
+          "content": "Bolt AA101 truck bed rail bars onto pocket adapter posts. Clamp equipment racks to rail."
+        }
+      }
+    }
+  ]
+}

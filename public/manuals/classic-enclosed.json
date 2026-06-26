@@ -1,0 +1,66 @@
+{
+  "modelId": "classic-enclosed",
+  "title": "Classic Enclosed Trimmer Racks",
+  "subtitle": "SKU: LE015",
+  "toolsRequired": [
+    "Tape Measure",
+    "Level",
+    "Power Drill with Phillips Bit"
+  ],
+  "videos": [],
+  "hardwareKey": [],
+  "steps": [
+    {
+      "id": "hardware-identification",
+      "title": "Hardware Identification",
+      "category": "all",
+      "content": "Verify LE015 package contents. Includes 1 pair of wall-mounting posts, padlocks with keys, and self-tapping installation screws.",
+      "image": "/assets/manuals/classic-enclosed/hero.png",
+      "translation": {
+        "es": {
+          "title": "Identificaci\u00f3n de Herrajes",
+          "content": "Verify LE015 package contents. Includes 1 pair of wall-mounting posts, padlocks with keys, and self-tapping installation screws."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Align on Wall Studs",
+      "category": "all",
+      "content": "Locate steel frame studs in enclosed trailer wall. Position posts vertically, spacing them exactly 36 3/4\" apart (center-to-center).",
+      "image": "/assets/manuals/classic-enclosed/hero.png",
+      "translation": {
+        "es": {
+          "title": "Align on Wall Studs",
+          "content": "Locate steel frame studs in enclosed trailer wall. Position posts vertically, spacing them exactly 36 3/4\" apart (center-to-center)."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Drill and Secure",
+      "category": "all",
+      "content": "Use self-tapping screws to secure post base plates directly through trailer wall plywood and into steel framing ribs.",
+      "image": "/assets/manuals/classic-enclosed/hero.png",
+      "translation": {
+        "es": {
+          "title": "Drill and Secure",
+          "content": "Use self-tapping screws to secure post base plates directly through trailer wall plywood and into steel framing ribs."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Secure Trimmers",
+      "category": "all",
+      "content": "Place trimmers in hooks, close locking clips, and secure with Master Lock padlocks.",
+      "image": "/assets/manuals/classic-enclosed/hero.png",
+      "translation": {
+        "es": {
+          "title": "Secure Trimmers",
+          "content": "Place trimmers in hooks, close locking clips, and secure with Master Lock padlocks."
+        }
+      }
+    }
+  ]
+}

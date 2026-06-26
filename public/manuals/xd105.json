@@ -1,0 +1,52 @@
+{
+  "modelId": "xd105",
+  "title": "Line Spool Rack & Cutter",
+  "subtitle": "SKU: XD105",
+  "toolsRequired": [
+    "Drill",
+    "Wrench Set"
+  ],
+  "videos": [],
+  "hardwareKey": [],
+  "steps": [
+    {
+      "id": "hardware-identification",
+      "title": "Hardware Identification",
+      "category": "all",
+      "content": "Verify spool holder and integrated cutter components.",
+      "image": "/assets/manuals/xd105/hero.png",
+      "translation": {
+        "es": {
+          "title": "Identificaci\u00f3n de Herrajes",
+          "content": "Verify spool holder and integrated cutter components."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Mount to Rail/Wall",
+      "category": "all",
+      "content": "Secure spool bracket onto trailer rail or wall framing using the provided hardware.",
+      "image": "/assets/manuals/xd105/hero.png",
+      "translation": {
+        "es": {
+          "title": "Mount to Rail/Wall",
+          "content": "Secure spool bracket onto trailer rail or wall framing using the provided hardware."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Load Spool",
+      "category": "all",
+      "content": "Slide trimmer line spool onto post, secure with locking pin, and feed line end through integrated cutter hole.",
+      "image": "/assets/manuals/xd105/hero.png",
+      "translation": {
+        "es": {
+          "title": "Load Spool",
+          "content": "Slide trimmer line spool onto post, secure with locking pin, and feed line end through integrated cutter hole."
+        }
+      }
+    }
+  ]
+}

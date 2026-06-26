@@ -1,0 +1,52 @@
+{
+  "modelId": "cx115",
+  "title": "Enclosed Offset Brackets",
+  "subtitle": "SKU: CX115",
+  "toolsRequired": [
+    "Drill",
+    "Socket Set"
+  ],
+  "videos": [],
+  "hardwareKey": [],
+  "steps": [
+    {
+      "id": "hardware-identification",
+      "title": "Hardware Identification",
+      "category": "all",
+      "content": "Verify offset brackets and studs.",
+      "image": "/assets/manuals/cx115/hero.png",
+      "translation": {
+        "es": {
+          "title": "Identificaci\u00f3n de Herrajes",
+          "content": "Verify offset brackets and studs."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Mount to Ribs",
+      "category": "all",
+      "content": "Bolt bracket to enclosed trailer wall post stud to offset the mounting face.",
+      "image": "/assets/manuals/cx115/hero.png",
+      "translation": {
+        "es": {
+          "title": "Mount to Ribs",
+          "content": "Bolt bracket to enclosed trailer wall post stud to offset the mounting face."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Attach Rack",
+      "category": "all",
+      "content": "Secure equipment rack onto offset studs to provide spacing from plywood wall.",
+      "image": "/assets/manuals/cx115/hero.png",
+      "translation": {
+        "es": {
+          "title": "Attach Rack",
+          "content": "Secure equipment rack onto offset studs to provide spacing from plywood wall."
+        }
+      }
+    }
+  ]
+}

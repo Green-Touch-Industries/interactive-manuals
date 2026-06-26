@@ -1,0 +1,186 @@
+{
+  "modelId": "bps100",
+  "title": "Backpack Blower Rack",
+  "subtitle": "BPS100",
+  "toolsRequired": [
+    "Power Drill with 10mm Drill Bit",
+    "Tape Measure",
+    "Marker or Pencil",
+    "10mm Wrench or Socket Set",
+    "Phillips Head Screwdriver"
+  ],
+  "videos": [
+    {
+      "title": "BPS100 Setup Guide",
+      "url": "https://www.youtube.com/watch?v=mcONXeAmIy8",
+      "translation": {
+        "es": {
+          "title": "Guía de Configuración BPS100"
+        }
+      }
+    }
+  ],
+  "hardwareKey": [
+    {
+      "id": "A",
+      "name": "Mounting Bolts",
+      "specs": "10mm Hex Bolts for Open Trailer rail mounting.",
+      "quantity": "4",
+      "image": "/assets/manuals/xtreme-pro/hw_long_bolts.jpg",
+      "translation": {
+        "es": {
+          "name": "Pernos de Montaje",
+          "specs": "Pernos hexagonales de 10 mm para montaje en riel de remolque abierto."
+        }
+      }
+    },
+    {
+      "id": "B",
+      "name": "Nyloc Nuts",
+      "specs": "10mm Nyloc locking nuts.",
+      "quantity": "4",
+      "image": "/assets/manuals/xtreme-pro/hw_allen_key.jpg",
+      "translation": {
+        "es": {
+          "name": "Tuercas Nyloc",
+          "specs": "Tuercas de seguridad Nyloc de 10 mm."
+        }
+      }
+    },
+    {
+      "id": "C",
+      "name": "Self-Tapping Screws",
+      "specs": "Used for secure steel rib stud mounting in enclosed trailers.",
+      "quantity": "4",
+      "image": "/assets/manuals/xtreme-pro/hw_hex_teks.jpg",
+      "translation": {
+        "es": {
+          "name": "Tornillos Autotaladrantes",
+          "specs": "Utilizados para un montaje seguro en perfiles metálicos en remolques cerrados."
+        }
+      }
+    },
+    {
+      "id": "D",
+      "name": "Tube Holder Hardware",
+      "specs": "Small bolts & nuts to attach blower tube holder to the rack.",
+      "quantity": "2 Sets",
+      "image": "/assets/manuals/xtreme-pro/hw_wood_screws.jpg",
+      "translation": {
+        "es": {
+          "name": "Herraje para el Soporte del Tubo",
+          "specs": "Pernos y tuercas pequeños para fijar el soporte del tubo del soplador al soporte."
+        }
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "hardware-identification",
+      "title": "Hardware Identification",
+      "category": "all",
+      "content": "Verify you have all the mounting hardware. The BPS100 can be mounted to either an open trailer rail or an enclosed trailer steel stud wall.",
+      "image": "/assets/manuals/bps100/hero.png",
+      "translation": {
+        "es": {
+          "title": "Identificación de Herrajes",
+          "content": "Verifique que tenga todos los herrajes de montaje. El BPS100 se puede montar en el riel de un remolque abierto o en la pared con perfiles de acero de un remolque cerrado."
+        }
+      }
+    },
+    {
+      "id": "mounting-configuration",
+      "title": "Mounting Configuration Selection",
+      "category": "all",
+      "content": "Select your installation environment below: Open Trailer (Side or Front rail mount) or Enclosed Trailer (stud wall mount).",
+      "translation": {
+        "es": {
+          "title": "Selección de Configuración de Montaje",
+          "content": "Seleccione su entorno de instalación a continuación: Remolque Abierto (montaje en riel lateral o delantero) o Remolque Cerrado (montaje en pared con montantes)."
+        }
+      }
+    },
+    {
+      "id": "open-trailer-mount",
+      "title": "Open Trailer Mounting",
+      "category": "open",
+      "content": "Choose a mounting location on the rail of the trailer that is directly over an upright support. Drill 10mm holes in the marked locations. Bolt the rack in place using the mounting bolts, washers, and nyloc nuts. Mount the blower tube holder to the back of the rack.",
+      "image": "/assets/manuals/bps100/bps100-2.png",
+      "tips": [
+        "Aligning directly over an upright support maximizes stability and reduces vibration."
+      ],
+      "translation": {
+        "es": {
+          "title": "Montaje en Remolque Abierto",
+          "content": "Elija una ubicación de montaje en el riel del remolque que esté directamente sobre un soporte vertical. Perfore orificios de 10 mm en las ubicaciones marcadas. Atornille el soporte en su lugar con los pernos de montaje, arandelas y tuercas nyloc. Monte el soporte del tubo del soplador en la parte posterior del bastidor.",
+          "tips": [
+            "Alinearlo directamente sobre un soporte vertical maximiza la estabilidad y reduce la vibración."
+          ]
+        }
+      }
+    },
+    {
+      "id": "enclosed-trailer-mount",
+      "title": "Enclosed Trailer Mounting",
+      "category": "enclosed",
+      "content": "Choose a mounting location on the wall of your trailer. The location should be directly over a structural steel rib support. Secure the first self-tapping screw through the hole on the back of the rack and into the steel rib support. Install the remaining self-tapping screws. Place your blower in the rack and determine the best location for the blower tube holder.",
+      "image": "/assets/manuals/bps100/bps100-10.png",
+      "tips": [
+        "If additional clearance is needed off the wall, mount a 2x4 cut 16\" long vertically along the wall stud first, and then mount the blower rack to the 2x4."
+      ],
+      "translation": {
+        "es": {
+          "title": "Montaje en Remolque Cerrado",
+          "content": "Elija una ubicación de montaje en la pared de su remolque. La ubicación debe ser directamente sobre un perfil de acero estructural. Fije el primer tornillo autotaladrante a través del orificio en la parte posterior del bastidor y en el soporte de acero. Instale los tornillos autotaladrantes restantes. Coloque su soplador en el bastidor y determine la mejor ubicación para el soporte del tubo del soplador.",
+          "tips": [
+            "Si se necesita espacio adicional fuera de la pared, monte primero un 2x4 de 16\" de largo verticalmente a lo largo del montante de la pared y luego monte el bastidor del soplador en el 2x4."
+          ]
+        }
+      }
+    },
+    {
+      "id": "final-audit",
+      "title": "Post-Installation Check",
+      "category": "all",
+      "content": "Ensure the blower rack is firmly secured to the trailer frame or wall rib. Place your backpack blower in the rack and verify that the locking handle and tube holder hold it securely without excess play.",
+      "image": "/assets/manuals/bps100/bps100-12.png",
+      "translation": {
+        "es": {
+          "title": "Control Posterior a la Instalación",
+          "content": "Asegúrese de que el bastidor del soplador esté firmemente sujeto al chasis del remolque o al perfil de la pared. Coloque su soplador de mochila en el bastidor y verifique que la manija de bloqueo y el soporte del tubo lo sostengan de manera segura y sin holguras excesivas."
+        }
+      }
+    }
+  ],
+  "diagnostics": {
+    "title": "BPS100 FIELD DIAGNOSTICS",
+    "symptoms": [
+      {
+        "id": "bps100-symptom-1",
+        "title": "Blower Rack Loose / Excess Play",
+        "description": "The mounting points exhibit play or mechanical movement.",
+        "solution": "Verify the rack is anchored directly into a wall stud or over an upright rail support. Tighten all mounting hardware.",
+        "translation": {
+          "es": {
+            "title": "Bastidor del Soplador Flojo / Holgura Excesiva",
+            "description": "Los puntos de montaje muestran holgura o movimiento mecánico.",
+            "solution": "Verifique que el bastidor esté anclado directamente en un montante de pared o sobre un soporte de riel vertical. Apriete todos los herrajes de montaje."
+          }
+        }
+      },
+      {
+        "id": "bps100-symptom-2",
+        "title": "Blower Tube Holder Wobbling",
+        "description": "The tube holder bracket feels loose or doesn't support the tube weight.",
+        "solution": "Torque the small mounting bolts securing the tube holder bracket to the reverse side of the rack.",
+        "translation": {
+          "es": {
+            "title": "El Soporte del Tubo del Soplador Tambalea",
+            "description": "El soporte del tubo se siente flojo o no soporta el peso del tubo.",
+            "solution": "Apriete los pernos pequeños de montaje que aseguran el soporte del tubo en la parte posterior del bastidor."
+          }
+        }
+      }
+    ]
+  }
+}

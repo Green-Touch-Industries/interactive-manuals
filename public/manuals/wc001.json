@@ -1,0 +1,199 @@
+{
+  "modelId": "wc001",
+  "title": "Mower Wheel Tie-Down",
+  "subtitle": "Fastrap WC001",
+  "toolsRequired": [
+    "Power Drill with 1/8\" Drill Bit",
+    "Tape Measure",
+    "Marker or Pencil"
+  ],
+  "videos": [
+    {
+      "title": "Fastrap Demonstration",
+      "url": "https://www.youtube.com/watch?v=mcONXeAmIy8",
+      "translation": {
+        "es": {
+          "title": "Demostración de Fastrap"
+        }
+      }
+    }
+  ],
+  "hardwareKey": [
+    {
+      "id": "A",
+      "name": "Fastrap Strap & Tensioner",
+      "specs": "Heavy duty tie-down strap with built-in tensioning device and e-clips.",
+      "quantity": "2 (or 3 depending on weight)",
+      "image": "/assets/manuals/wc001/wc001-3.png",
+      "translation": {
+        "es": {
+          "name": "Correa y Tensor Fastrap",
+          "specs": "Correa de sujeción de alta resistencia con dispositivo tensor incorporado y clips e-track."
+        }
+      }
+    },
+    {
+      "id": "B",
+      "name": "Wheel Chocks",
+      "specs": "Heavy-duty powder coated steel chocks with e-track slots.",
+      "quantity": "4",
+      "image": "/assets/manuals/wc001/wc001-1.png",
+      "translation": {
+        "es": {
+          "name": "Calzos para Ruedas",
+          "specs": "Calzos de acero de alta resistencia con recubrimiento de polvo y ranuras para e-track."
+        }
+      }
+    },
+    {
+      "id": "C",
+      "name": "Mounting Screws",
+      "specs": "Wood screws for securing wheel chocks to trailer deck.",
+      "quantity": "16",
+      "image": "/assets/manuals/xtreme-pro/hw_wood_screws.jpg",
+      "translation": {
+        "es": {
+          "name": "Tornillos de Montaje",
+          "specs": "Tornillos para madera para asegurar los calzos al remolque."
+        }
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "hardware-identification",
+      "title": "Hardware Identification",
+      "category": "all",
+      "content": "Verify your Fastrap package contents. The kit includes 4 wheel chocks, heavy-duty straps with tensioners, and wood deck mounting screws.",
+      "image": "/assets/manuals/wc001/wc001-3.png",
+      "translation": {
+        "es": {
+          "title": "Identificación de Herrajes",
+          "content": "Verifique el contenido del paquete Fastrap. El kit incluye 4 calzos para ruedas, correas de alta resistencia con tensores y tornillos para montaje en cubierta de madera."
+        }
+      }
+    },
+    {
+      "id": "deck-thickness",
+      "title": "Trailer Deck Verification",
+      "category": "all",
+      "content": "Verify your trailer deck thickness. The trailer deck must be a minimum of 1 1/2\" thick to safely support the tension load of the straps.",
+      "image": "/assets/manuals/wc001/instructions.jpeg",
+      "warnings": [
+        "If the deck is less than 1 1/2\" thick, you MUST add a 3/4\" thick backing block underneath the trailer deck (making a total of 1 1/2\" thickness). Blocking must extend at least 4\" on all sides of the wheel chocks (See Fig 3)."
+      ],
+      "translation": {
+        "es": {
+          "title": "Verificación de la Plataforma del Remolque",
+          "content": "Verifique el espesor de la plataforma de su remolque. La plataforma del remolque debe tener un espesor mínimo de 1 1/2\" para soportar con seguridad la carga de tensión.",
+          "warnings": [
+            "Si la plataforma tiene menos de 1 1/2\" de espesor, DEBE agregar un bloque de soporte de 3/4\" de espesor debajo (para un grosor total de 1 1/2\"). El bloqueo debe extenderse al menos 4\" en todos los lados de los calzos (Ver Fig 3)."
+          ]
+        }
+      }
+    },
+    {
+      "id": "strap-snap",
+      "title": "Snap Strap into Wheel Chock",
+      "category": "all",
+      "content": "Before mounting the chocks to the trailer deck, snap the strap's e-clip end into the wheel chock. This ensures that the strap is connected and oriented correctly.",
+      "image": "/assets/manuals/wc001/wc001-1.png",
+      "translation": {
+        "es": {
+          "title": "Enganchar la Correa en el Calzo",
+          "content": "Antes de montar los calzos en la plataforma del remolque, enganche el extremo del clip e-track de la correa en el calzo de la rueda. Esto asegura que la correa esté conectada y orientada correctamente."
+        }
+      }
+    },
+    {
+      "id": "chock-spacing",
+      "title": "Wheel Chock Spacing Setup",
+      "category": "all",
+      "content": "Position your equipment on the trailer deck. Determine the spacing for the wheel chocks based on your tire size (See Fig 2). Mark the screw locations. The tire should be approximately 1/4\" off the trailer deck when wheel chocks are properly mounted.",
+      "image": "/assets/manuals/wc001/instructions.jpeg",
+      "tips": [
+        "Spacing guidelines:\n- 8\" Tire: 1 in. spacing\n- 10\" Tire: 1.5 in. spacing\n- 12\" Tire: 2.5 in. spacing\n- 14\" to 16\" Tire: 4 in. spacing\n- 18\" Tire: 4.5 in. spacing\n- 20\" Tire: 5 in. spacing\n- 22\" Tire: 5.5 in. spacing\n- 24\" Tire: 6 in. spacing\n- 26\" Tire: 6.5 in. spacing\n- 28\" Tire: 7 in. spacing"
+      ],
+      "translation": {
+        "es": {
+          "title": "Configuración de Espaciado de Calzos",
+          "content": "Coloque su equipo en el remolque. Determine el espaciado para los calzos según el tamaño de su neumático (Ver Fig 2). Marque las ubicaciones de los tornillos. El neumático debe quedar aproximadamente a 1/4\" de la cubierta del remolque cuando los calzos estén bien montados.",
+          "tips": [
+            "Pautas de espaciado:\n- Neumático de 8\": 1 pulg. de espacio\n- Neumático de 10\": 1.5 pulg. de espacio\n- Neumático de 12\": 2.5 pulg. de espacio\n- Neumáticos de 14\" a 16\": 4 pulg. de espacio\n- Neumático de 18\": 4.5 pulg. de espacio\n- Neumático de 20\": 5 pulg. de espacio\n- Neumático de 22\": 5.5 pulg. de espacio\n- Neumático de 24\": 6 pulg. de espacio\n- Neumático de 26\": 6.5 pulg. de espacio\n- Neumático de 28\": 7 pulg. de espacio"
+          ]
+        }
+      }
+    },
+    {
+      "id": "drill-secure",
+      "title": "Pre-drill and Secure Chocks",
+      "category": "all",
+      "content": "Pre-drill the marked locations using a 1/8\" drill bit. Position the wheel chocks and secure them using wood screws in all available mounting holes.",
+      "image": "/assets/manuals/wc001/wc001-1.png",
+      "translation": {
+        "es": {
+          "title": "Perforar y Asegurar los Calzos",
+          "content": "Realice una perforación previa en las ubicaciones marcadas con una broca de 1/8\". Coloque los calzos de las ruedas y asegúrelos con tornillos para madera en todos los orificios de montaje disponibles."
+        }
+      }
+    },
+    {
+      "id": "tensioning",
+      "title": "Thread Strap & Tension",
+      "category": "all",
+      "content": "Thread the strap over the tire and through the tensioning device (See Fig 1 Threading instructions). Adjust the length of the strap, flip the lever to tighten, and lock the mower securely in place.",
+      "image": "/assets/manuals/wc001/hero.jpg",
+      "tips": [
+        "The position of the tensioning device can be adjusted by changing the length of strap passing through the clip to ensure easy access to the leverage handle."
+      ],
+      "warnings": [
+        "Secure at least 2 wheels on all vehicles and equipment.",
+        "Use 1 Fastrap for every 800 lbs. of weight. Example: A vehicle weighing between 1601-2400 lbs. requires 3 Fastraps."
+      ],
+      "translation": {
+        "es": {
+          "title": "Enhebrar la Correa y Tensar",
+          "content": "Enhebre la correa sobre el neumático y a través del dispositivo tensor (Ver Fig 1 Instrucciones de enhebrado). Ajuste el largo de la correa, gire la palanca para apretar y bloquee el cortacésped de forma segura.",
+          "tips": [
+            "La posición del dispositivo tensor se puede ajustar cambiando la longitud de la correa que pasa a través del clip para garantizar un fácil acceso a la manija de palanca."
+          ],
+          "warnings": [
+            "Asegure al menos 2 ruedas en todos los vehículos y equipos.",
+            "Use 1 Fastrap por cada 800 libras de peso. Ejemplo: Un vehículo que pesa entre 1601 y 2400 libras requiere 3 Fastraps."
+          ]
+        }
+      }
+    }
+  ],
+  "diagnostics": {
+    "title": "FASTRAP FIELD DIAGNOSTICS",
+    "symptoms": [
+      {
+        "id": "wc001-symptom-1",
+        "title": "Strap Slipping or Loosening",
+        "description": "The strap slips through the buckle or the tensioner does not hold tight.",
+        "solution": "Ensure the strap is threaded correctly through the tensioner slot (see Fig 1). Replace the strap immediately if the webbing is frayed or damaged.",
+        "translation": {
+          "es": {
+            "title": "La Correa se Resbala o se Afloja",
+            "description": "La correa se desliza por la hebilla o el tensor no la mantiene apretada.",
+            "solution": "Asegúrese de que la correa esté enhebrada correctamente a través de la ranura del tensor (ver Fig 1). Reemplace la correa inmediatamente si la cinta está deshilachada o dañada."
+          }
+        }
+      },
+      {
+        "id": "wc001-symptom-2",
+        "title": "Chocks Pulling Out of Wood Deck",
+        "description": "The mounting wood screws are pulling loose or the deck wood is rotting/splitting.",
+        "solution": "Verify trailer deck thickness. Install backing blocks underneath the deck as shown in Fig 3. If the holes are stripped, use larger lag bolts.",
+        "translation": {
+          "es": {
+            "title": "Los Calzos se Desprenden de la Plataforma",
+            "description": "Los tornillos de montaje para madera se están aflojando o la madera de la plataforma se está pudriendo o agrietando.",
+            "solution": "Verifique el espesor de la plataforma. Instale bloques de soporte debajo de la plataforma como se muestra en la Fig 3. Si los orificios están barridos, use pernos tirafondos más grandes."
+          }
+        }
+      }
+    ]
+  }
+}

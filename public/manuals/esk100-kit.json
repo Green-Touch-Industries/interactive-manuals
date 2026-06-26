@@ -1,0 +1,144 @@
+{
+  "modelId": "esk100-kit",
+  "title": "Engine Support Kit",
+  "subtitle": "SKU: ESK100",
+  "toolsRequired": [
+    "1/2\" Wrench or Socket Set",
+    "7/16\" Wrench or Socket Set"
+  ],
+  "videos": [],
+  "hardwareKey": [
+    {
+      "id": "A",
+      "name": "Engine Support Arm",
+      "specs": "Vertical support arm that mounts directly to the trimmer rack bracket.",
+      "quantity": "1",
+      "image": "/assets/manuals/esk100-kit/hero.png",
+      "translation": {
+        "es": {
+          "name": "Brazo de Soporte del Motor",
+          "specs": "Brazo de soporte vertical que se monta directamente en el soporte del soporte de cortabordes."
+        }
+      }
+    },
+    {
+      "id": "B",
+      "name": "Motor Platform Arm & Bracket",
+      "specs": "Horizontal arm and slider bracket for adjusting the cradle height.",
+      "quantity": "1 set",
+      "image": "/assets/manuals/esk100-kit/hero.png",
+      "translation": {
+        "es": {
+          "name": "Brazo y Soporte de la Plataforma del Motor",
+          "specs": "Brazo horizontal y soporte deslizante para ajustar la altura de la cuna."
+        }
+      }
+    },
+    {
+      "id": "C",
+      "name": "Motor Platform Cradle",
+      "specs": "Padded base platform that supports and cushions the trimmer engine housing.",
+      "quantity": "1",
+      "image": "/assets/manuals/esk100-kit/hero.png",
+      "translation": {
+        "es": {
+          "name": "Cuna de la Plataforma del Motor",
+          "specs": "Plataforma base acolchada que sostiene y amortigua la carcasa del motor del cortabordes."
+        }
+      }
+    },
+    {
+      "id": "D",
+      "name": "Large Bolts (1/2\") & Washers",
+      "specs": "Hex bolts to mount the Support Arm to the trimmer rack's pre-welded bracket.",
+      "quantity": "2 sets",
+      "image": "/assets/manuals/xtreme-pro/hw_long_bolts.jpg",
+      "translation": {
+        "es": {
+          "name": "Pernos Grandes (1/2\") y Arandelas",
+          "specs": "Pernos hexagonales para montar el brazo de soporte en el soporte presoldado del soporte de cortabordes."
+        }
+      }
+    },
+    {
+      "id": "E",
+      "name": "Small Bolts (7/16\") & Washers",
+      "specs": "Hex bolts and washers to join arms and slide brackets.",
+      "quantity": "4 sets",
+      "image": "/assets/manuals/xtreme-pro/hw_wood_screws.jpg",
+      "translation": {
+        "es": {
+          "name": "Pernos Pequeños (7/16\") y Arandelas",
+          "specs": "Pernos hexagonales y arandelas para unir brazos y soportes deslizantes."
+        }
+      }
+    }
+  ],
+  "steps": [
+    {
+      "id": "hardware-identification",
+      "title": "Hardware Identification",
+      "category": "all",
+      "content": "Verify your ESK100 package contents. The kit includes the Engine Support Arm, Motor Platform Arm, Motor Platform cradle, and the large and small bolt hardware sets.",
+      "image": "/assets/manuals/esk100-kit/hero.png",
+      "translation": {
+        "es": {
+          "title": "Identificación de Herrajes",
+          "content": "Verifique el contenido del paquete ESK100. El kit incluye el brazo de soporte del motor, el brazo de la plataforma del motor, la cuna de la plataforma del motor y los juegos de pernos grandes y pequeños."
+        }
+      }
+    },
+    {
+      "id": "secure-support-arm",
+      "title": "Secure Support Arm",
+      "category": "all",
+      "content": "Use the (2) large bolts and (2) large washers to secure the Engine Support Arm to the rear of the trimmer rack. The trimmer rack has a welded bracket with nuts already welded on; these guide the bolts directly into position.",
+      "image": "/assets/manuals/esk100-kit/instructions.jpg",
+      "translation": {
+        "es": {
+          "title": "Asegurar el Brazo de Soporte",
+          "content": "Use los (2) pernos grandes y las (2) arandelas grandes para asegurar el brazo de soporte del motor a la parte trasera del soporte de cortabordes. El soporte de cortabordes tiene una pletina soldada con tuercas ya soldadas; estas guían los pernos directamente a su posición."
+        }
+      }
+    },
+    {
+      "id": "assemble-platform-arm",
+      "title": "Assemble Motor Platform Arm",
+      "category": "all",
+      "content": "Use (2) small bolts and (2) small washers to secure the Motor Platform Arm to the vertical Engine Support Arm and the sliding Engine Support Arm Bracket.",
+      "image": "/assets/manuals/esk100-kit/instructions.jpg",
+      "translation": {
+        "es": {
+          "title": "Ensamblar el Brazo de la Plataforma",
+          "content": "Use (2) pernos pequeños y (2) arandelas pequeñas para asegurar el brazo de la plataforma del motor al brazo de soporte vertical y al soporte deslizante del brazo de soporte."
+        }
+      }
+    },
+    {
+      "id": "attach-motor-platform",
+      "title": "Attach Motor Platform",
+      "category": "all",
+      "content": "Use (2) small bolts and (2) small washers to secure the Motor Platform cradle and the Motor Platform Bracket to the Motor Platform Arm.",
+      "image": "/assets/manuals/esk100-kit/instructions.jpg",
+      "translation": {
+        "es": {
+          "title": "Acoplar la Plataforma del Motor",
+          "content": "Use (2) pernos pequeños y (2) arandelas pequeñas para asegurar la cuna de la plataforma del motor y el soporte de la plataforma al brazo de la plataforma del motor."
+        }
+      }
+    },
+    {
+      "id": "adjust-support-kit",
+      "title": "Adjust Platform Position",
+      "category": "all",
+      "content": "Loosen small bolts on the Motor Platform Bracket to move the platform back and forth until it sits directly under the trimmer engine block. Loosen small bolts on the sliding Engine Support Arm Bracket to slide the Motor Platform Arm up or down until the platform cradles the engine snugly. Tighten all hardware securely once set.",
+      "image": "/assets/manuals/esk100-kit/hero.png",
+      "translation": {
+        "es": {
+          "title": "Ajustar la Posición de la Plataforma",
+          "content": "Afloje los pernos pequeños en el soporte de la plataforma del motor para mover la plataforma hacia adelante y hacia atrás hasta que quede directamente debajo del motor del cortabordes. Afloje los pernos pequeños en el soporte deslizante del brazo de soporte para deslizar el brazo hacia arriba o hacia abajo hasta que la plataforma acune el motor cómodamente. Apriete todos los pernos una vez ajustados."
+        }
+      }
+    }
+  ]
+}

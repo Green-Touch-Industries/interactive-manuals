@@ -1,0 +1,53 @@
+{
+  "modelId": "xf107",
+  "title": "Classic Sprayer Rack",
+  "subtitle": "SKU: XF107-GRE",
+  "toolsRequired": [
+    "Tape Measure",
+    "Drill with 27/64\" Bit",
+    "Socket Set"
+  ],
+  "videos": [],
+  "hardwareKey": [],
+  "steps": [
+    {
+      "id": "hardware-identification",
+      "title": "Hardware Identification",
+      "category": "all",
+      "content": "Verify package contents including sprayer rack frame, straps, and mounting bolts.",
+      "image": "/assets/manuals/xf107/hero.png",
+      "translation": {
+        "es": {
+          "title": "Identificaci\u00f3n de Herrajes",
+          "content": "Verify package contents including sprayer rack frame, straps, and mounting bolts."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Position Base Plate",
+      "category": "all",
+      "content": "Place base plate directly over trailer railing (open) or stud rib (enclosed). Mark drill holes.",
+      "image": "/assets/manuals/xf107/hero.png",
+      "translation": {
+        "es": {
+          "title": "Position Base Plate",
+          "content": "Place base plate directly over trailer railing (open) or stud rib (enclosed). Mark drill holes."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Bolt and Secure",
+      "category": "all",
+      "content": "Drill and bolt frame into place. Wrap tension straps around sprayer tank and pull loop tight to lock it.",
+      "image": "/assets/manuals/xf107/hero.png",
+      "translation": {
+        "es": {
+          "title": "Bolt and Secure",
+          "content": "Drill and bolt frame into place. Wrap tension straps around sprayer tank and pull loop tight to lock it."
+        }
+      }
+    }
+  ]
+}

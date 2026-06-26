@@ -1,0 +1,67 @@
+{
+  "modelId": "vpr21",
+  "title": "Racing Fuel Can Cage",
+  "subtitle": "SKU: VPR21",
+  "toolsRequired": [
+    "Tape Measure",
+    "Marker or Pencil",
+    "Power Drill with 10mm Drill Bit",
+    "10mm Wrench or Socket Set"
+  ],
+  "videos": [],
+  "hardwareKey": [],
+  "steps": [
+    {
+      "id": "hardware-identification",
+      "title": "Hardware Identification",
+      "category": "all",
+      "content": "Verify package contents including the cage body, padlock with keys, and mounting bolts.",
+      "image": "/assets/manuals/vpr21/hero.png",
+      "translation": {
+        "es": {
+          "title": "Identificaci\u00f3n de Herrajes",
+          "content": "Verify package contents including the cage body, padlock with keys, and mounting bolts."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Mounting Location Setup",
+      "category": "all",
+      "content": "Select top rail position on open trailers or wall frame post on enclosed trailers.",
+      "image": "/assets/manuals/vpr21/hero.png",
+      "translation": {
+        "es": {
+          "title": "Mounting Location Setup",
+          "content": "Select top rail position on open trailers or wall frame post on enclosed trailers."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Drill and Bolt",
+      "category": "all",
+      "content": "Secure the cage to rail using the carriage bolts. If mounting in enclosed trailer, secure into wall framing with self-tapping screws.",
+      "image": "/assets/manuals/vpr21/hero.png",
+      "translation": {
+        "es": {
+          "title": "Drill and Bolt",
+          "content": "Secure the cage to rail using the carriage bolts. If mounting in enclosed trailer, secure into wall framing with self-tapping screws."
+        }
+      }
+    },
+    {
+      "id": "step-4",
+      "title": "Base Pad & Adjustments",
+      "category": "all",
+      "content": "Install base rubber padding to cushion the can. Tighten all hardware snug to protect against travel vibration.",
+      "image": "/assets/manuals/vpr21/hero.png",
+      "translation": {
+        "es": {
+          "title": "Base Pad & Adjustments",
+          "content": "Install base rubber padding to cushion the can. Tighten all hardware snug to protect against travel vibration."
+        }
+      }
+    }
+  ]
+}

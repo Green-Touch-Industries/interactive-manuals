@@ -1,0 +1,51 @@
+{
+  "modelId": "x101",
+  "title": "Mid-Mount Hedge Support",
+  "subtitle": "SKU: X101-GRE-OPEN",
+  "toolsRequired": [
+    "1/2\" Wrench or Socket Set"
+  ],
+  "videos": [],
+  "hardwareKey": [],
+  "steps": [
+    {
+      "id": "hardware-identification",
+      "title": "Hardware Identification",
+      "category": "all",
+      "content": "Verify package contents including support bar, clamping bracket, and bolts.",
+      "image": "/assets/manuals/x101/hero.png",
+      "translation": {
+        "es": {
+          "title": "Identificaci\u00f3n de Herrajes",
+          "content": "Verify package contents including support bar, clamping bracket, and bolts."
+        }
+      }
+    },
+    {
+      "id": "step-2",
+      "title": "Clamp to Post",
+      "category": "all",
+      "content": "Clamp the mid-mount support bracket onto the trimmer rack vertical post using the provided bolts.",
+      "image": "/assets/manuals/x101/hero.png",
+      "translation": {
+        "es": {
+          "title": "Clamp to Post",
+          "content": "Clamp the mid-mount support bracket onto the trimmer rack vertical post using the provided bolts."
+        }
+      }
+    },
+    {
+      "id": "step-3",
+      "title": "Adjust Height",
+      "category": "all",
+      "content": "Slide bracket up or down to align with the trimmer's hedge attachment shaft. Tighten bolts once set.",
+      "image": "/assets/manuals/x101/hero.png",
+      "translation": {
+        "es": {
+          "title": "Adjust Height",
+          "content": "Slide bracket up or down to align with the trimmer's hedge attachment shaft. Tighten bolts once set."
+        }
+      }
+    }
+  ]
+}
