@@ -542,5 +542,168 @@
         }
       }
     }
-  ]
+  ],
+  "diagnostics": {
+    "title": "XTREME PRO SERIES FIELD DIAGNOSTICS",
+    "symptoms": [
+      {
+        "id": "handle-rotation",
+        "title": "Handle Rotation Resistance / Obstruction",
+        "question": "Is the internal locking sleeve exhibiting mechanical resistance or complete seizure during the rotation phase?",
+        "translation": {
+          "es": {
+            "title": "Resistencia a la Rotación del Mango / Obstrucción",
+            "question": "¿El manguito de bloqueo interno presenta resistencia mecánica o agarrotamiento completo durante la fase de rotación?"
+          }
+        },
+        "steps": [
+          {
+            "text": "Audit for Organic Debris / Corrosion Build-up",
+            "logic": "Field exposure often results in grass clippings and moisture ingress. This debris can compact between the sleeve and tower, creating significant friction.",
+            "translation": {
+              "es": {
+                "text": "Auditoría de Restos Orgánicos / Acumulación de Corrosión",
+                "logic": "La exposición al campo a menudo resulta en restos de césped y entrada de humedad. Estos restos pueden compactarse entre el manguito y la torre, creando una fricción significativa."
+              }
+            }
+          },
+          {
+            "text": "Internal Stop Bolt (LB100) Structural Audit",
+            "logic": "If the LB100 bolt has sheared or backed out, the internal timing of the handle is compromised, leading to a jammed or 'stuck' sensation.",
+            "action": {
+              "label": "Source Replacement LB100 Stop Bolt",
+              "url": "https://trailerracks.com/products/xtreme-pro-series-oem-limiter-bolt"
+            },
+            "translation": {
+              "es": {
+                "text": "Auditoría Estructural del Perno de Tope Interno (LB100)",
+                "logic": "Si el perno LB100 se ha cizallado o se ha salido, la sincronización interna del mango se ve comprometida, lo que provoca una sensación de atasco o que no se mueve.",
+                "actionLabel": "Comprar Perno de Tope LB100 de Repuesto"
+              }
+            }
+          },
+          {
+            "text": "SPR002 Compression Spring Tension Test",
+            "logic": "Inconsistent handle pressure often points to a fatigued internal spring. A loss of K-factor in the spring prevents the handle from returning to its neutral locked state.",
+            "action": {
+              "label": "Source Replacement SPR002 Spring",
+              "url": "https://trailerracks.com/products/spr002-spring?variant=40515224272985"
+            },
+            "translation": {
+              "es": {
+                "text": "Prueba de Tensión del Resorte de Compresión SPR002",
+                "logic": "La presión inconsistente del mango a menudo indica un resorte interno fatigado. Una pérdida de factor K en el resorte evita que el mango regrese a su estado bloqueado neutro.",
+                "actionLabel": "Comprar Resorte SPR002 de Repuesto"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "security-alignment",
+        "title": "Padlock Hole Misalignment / Security Breach",
+        "question": "Does the padlock alignment aperture on the locking handle fail to synchronize with the tower mounting plate?",
+        "translation": {
+          "es": {
+            "title": "Desalineación del Orificio del Candado / Brecha de Seguridad",
+            "question": "¿La apertura de alineación del candado en el mango de bloqueo no se sincroniza con la placa de montaje de la torre?"
+          }
+        },
+        "steps": [
+          {
+            "text": "LB100 Stop Bolt Failure Analysis",
+            "logic": "When the manual locking handle rotates beyond 180 degrees, the LB100 stop bolt has likely failed. This over-rotation prevents the padlock holes from aligning correctly.",
+            "action": {
+              "label": "Shop for LB100 Critical Fastener",
+              "url": "https://trailerracks.com/products/xtreme-pro-series-oem-limiter-bolt"
+            },
+            "translation": {
+              "es": {
+                "text": "Análisis de Fallo del Perno de Tope LB100",
+                "logic": "Cuando el mango de bloqueo manual gira más de 180 grados, es probable que el perno de tope LB100 haya fallado. Esta rotación excesiva evita que los orificios del candado se alineen correctamente.",
+                "actionLabel": "Comprar Sujetador Crítico LB100"
+              }
+            }
+          },
+          {
+            "text": "Sleeve Deformation / Attempted Theft Audit",
+            "logic": "Physical impact or prying attempts can warp the internal sleeve tolerances. Inspect for 'out-of-round' symptoms in the steel tube.",
+            "translation": {
+              "es": {
+                "text": "Deformación del Manguito / Auditoría de Intento de Robo",
+                "logic": "El impacto físico o los intentos de palanca pueden deformar las tolerancias del manguito interno. Inspeccione si hay síntomas de 'pérdida de redondez' en el tubo de acero."
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "handle-response",
+        "title": "Haptic Feedback & Spring Tension Degradation",
+        "question": "Is the locking handle exhibiting a 'soft' or non-responsive tactile feel when engaged?",
+        "translation": {
+          "es": {
+            "title": "Retroalimentación Háptica y Degradación de la Tensión del Resorte",
+            "question": "¿El mango de bloqueo muestra una sensación táctil 'suave' o que no responde cuando se acciona?"
+          }
+        },
+        "steps": [
+          {
+            "text": "Fatigue Analysis of SPR002 Compression Component",
+            "logic": "Commercial duty usage involves thousands of cycles. We recommend a proactive swap of the SPR002 spring every 12 months to maintain maximum engagement pressure.",
+            "action": {
+              "label": "Acquire SPR002 Maintenance Kit",
+              "url": "https://trailerracks.com/products/spr002-spring?variant=40515224272985"
+            },
+            "video": "spr002-replacement",
+            "translation": {
+              "es": {
+                "text": "Análisis de Fatiga del Componente de Compresión SPR002",
+                "logic": "El uso comercial implica miles de ciclos. Recomendamos un cambio proactivo del resorte SPR002 cada 12 meses para mantener la presión de enganche máxima.",
+                "actionLabel": "Adquirir Kit de Mantenimiento SPR002"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "equipment-stability",
+        "title": "Excessive Torsional Vibration / Chassis Rattle",
+        "question": "Is the trimmer equipment exhibiting secondary movement or high-frequency vibration within the rack assembly?",
+        "translation": {
+          "es": {
+            "title": "Vibración Torsional Excesiva / Ruqueteo del Chasis",
+            "question": "¿El equipo cortabordes muestra un movimiento secundario o una vibración de alta frecuencia dentro del conjunto del soporte?"
+          }
+        },
+        "steps": [
+          {
+            "text": "MTP002 Engine Support Pad Audit",
+            "logic": "These pads are the primary dampening point for the trimmer engine. If the rubber is cracked or compressed, the engine logic will fail to stay static.",
+            "action": {
+              "label": "Source New MTP002 Dampening Pads",
+              "url": "https://trailerracks.com/products/mtp002-motor-pad"
+            },
+            "translation": {
+              "es": {
+                "text": "Auditoría de las Almohadillas de Soporte del Motor MTP002",
+                "logic": "Estas almohadillas son el punto de amortiguación principal para el motor del cortabordes. Si el caucho está agrietado o comprimido, la estabilidad del motor fallará.",
+                "actionLabel": "Comprar Nuevas Almohadillas de Amortiguación MTP002"
+              }
+            }
+          },
+          {
+            "text": "Structural Fastener Integrity Check",
+            "logic": "Verify the torque on the main tower-to-trailer interface. Any gap in the baseplate mounting allows kinetic energy to transfer directly to the rack.",
+            "translation": {
+              "es": {
+                "text": "Comprobación de la Integridad de los Sujetadores Estructurales",
+                "logic": "Verifique el par en la interfaz principal de la torre al remolque. Cualquier espacio en el montaje de la placa base permite que la energía cinética se transfiera directamente al soporte."
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
 }
