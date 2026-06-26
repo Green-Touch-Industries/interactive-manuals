@@ -2194,6 +2194,8 @@ h1, h2, h3, h4, h5, h6 {
   cursor: pointer;
   text-align: left;
   transition: all 0.25s ease;
+  color: var(--text-light);
+  font-family: inherit;
 }
 
 .lockdown-checklist-card:hover {
