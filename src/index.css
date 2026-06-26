@@ -326,6 +326,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 900;
   letter-spacing: -0.01em;
   color: var(--text-white);
+  font-style: italic;
+  text-transform: uppercase;
 }
 
 /* Grid & Dashboard layout */
@@ -1250,4 +1252,114 @@ h1, h2, h3, h4, h5, h6 {
   .lobby-card-arrow {
     display: none;
   }
+}
+
+/* Styling for Large Configuration Selection Cards */
+.config-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.config-large-card {
+  display: flex;
+  align-items: center;
+  position: relative;
+  background: var(--bg-card);
+  border: 1px solid var(--border-dim);
+  border-radius: 6px;
+  padding: 1.75rem 1.5rem;
+  cursor: pointer;
+  text-align: left;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+}
+
+.config-large-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--green-border-hover);
+  box-shadow: 0 8px 24px rgba(50, 205, 50, 0.15);
+  background: var(--bg-card-hover);
+}
+
+.config-large-card.active {
+  border-color: var(--green-primary);
+  background: rgba(50, 205, 50, 0.05);
+  box-shadow: 0 0 20px rgba(50, 205, 50, 0.2);
+}
+
+.config-card-icon-wrapper {
+  color: var(--green-primary);
+  margin-right: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.config-card-content {
+  display: flex;
+  flex-direction: column;
+  z-index: 2;
+}
+
+.config-card-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 800;
+  font-style: italic;
+  text-transform: uppercase;
+  color: var(--text-white);
+  margin: 0;
+  letter-spacing: 0.03em;
+}
+
+.config-large-card.active .config-card-title {
+  color: var(--green-primary);
+}
+
+.config-card-subtitle {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  color: var(--text-gray);
+  margin-top: 0.35rem;
+  line-height: 1.4;
+}
+
+.config-card-watermark {
+  position: absolute;
+  right: -20px;
+  bottom: -20px;
+  color: var(--green-primary);
+  opacity: 0.03;
+  pointer-events: none;
+  transform: rotate(-15deg);
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.config-large-card:hover .config-card-watermark {
+  opacity: 0.06;
+  transform: rotate(-10deg) scale(1.05);
+}
+
+.config-back-btn {
+  background: none;
+  border: none;
+  color: var(--text-gray);
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-top: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.config-back-btn:hover {
+  color: var(--green-primary);
 }
