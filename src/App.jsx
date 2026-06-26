@@ -35,8 +35,8 @@ const productCatalog = [
     ]
   },
   {
-    category: 'Classic Open Trailer Racks',
-    categoryEs: 'Soportes de Remolque Abierto Classic',
+    category: 'Classic Trailer Racks',
+    categoryEs: 'Soportes de Remolque Classic',
     products: [
       { id: 'classic-trimmer', title: 'Classic Trimmer Racks', titleEs: 'Soportes de Cortabordes Classic', subtitle: 'LA011 & LB012', image: '/assets/manuals/classic-trimmer/hero.png', status: 'active' },
       { id: 'classic-enclosed', title: 'Classic Enclosed Trimmer Racks', titleEs: 'Soportes de Cortabordes Cerrados Classic', subtitle: 'SKU: LE015', image: '/assets/manuals/classic-enclosed/hero.png', status: 'active' },
@@ -196,7 +196,7 @@ function App() {
 
   // Navigation states
   const [selectedProduct, setSelectedProduct] = useState(null); // 'xtreme-pro', 'bps100', 'spc21', 'wc001', or null
-  const [selectedCategory, setSelectedCategory] = useState(null); // 'Open Enclosed (Trimmer) Racks', 'Classic Open Trailer Racks', 'Mounting Solutions', or null
+  const [selectedCategory, setSelectedCategory] = useState(null); // 'Open Enclosed (Trimmer) Racks', 'Classic Trailer Racks', 'Mounting Solutions', or null
   const [selectedModel, setSelectedModel] = useState(null); // Sub-model for trimmer racks, or product title for others
   const [selectedConfig, setSelectedConfig] = useState(null); // 'open', 'round', 'advanced', 'enclosed', etc.
   const [showOpenSubOptions, setShowOpenSubOptions] = useState(false);
@@ -613,12 +613,12 @@ function App() {
                 </div>
               </button>
 
-              {/* Category 2: Classic Open Trailer Racks */}
-              <button type="button" className="lobby-category-card" onClick={() => setSelectedCategory('Classic Open Trailer Racks')}>
+              {/* Category 2: Classic Trailer Racks */}
+              <button type="button" className="lobby-category-card" onClick={() => setSelectedCategory('Classic Trailer Racks')}>
                 <div className="lobby-image-wrapper">
                   <img 
                     src={getAssetUrl('/assets/manuals/classic-trimmer/hero.png')} 
-                    alt="Classic Open Trailer Racks" 
+                    alt="Classic Trailer Racks" 
                     className="lobby-image"
                     fetchpriority="high"
                     onError={(e) => { e.target.src = getAssetUrl('/vite.svg'); }}
@@ -626,7 +626,7 @@ function App() {
                 </div>
                 <div className="lobby-card-body">
                   <h2 className="lobby-card-title">
-                    {lang === 'en' ? 'Classic Open Trailer Racks' : 'Soportes de Remolque Abierto Classic'}
+                    {lang === 'en' ? 'Classic Trailer Racks' : 'Soportes de Remolque Classic'}
                   </h2>
                   <p className="lobby-card-subtitle">
                     {lang === 'en' 
@@ -672,7 +672,7 @@ function App() {
                 <h2 className="category-title" style={{ margin: 0 }}>
                   {lang === 'en' 
                     ? selectedCategory 
-                    : selectedCategory === 'Open Enclosed (Trimmer) Racks' ? 'Soportes Abiertos / Cerrados (Trimmer)' : selectedCategory === 'Classic Open Trailer Racks' ? 'Soportes de Remolque Abierto Classic' : 'Soluciones de Montaje'}
+                    : selectedCategory === 'Open Enclosed (Trimmer) Racks' ? 'Soportes Abiertos / Cerrados (Trimmer)' : selectedCategory === 'Classic Trailer Racks' ? 'Soportes de Remolque Classic' : 'Soluciones de Montaje'}
                 </h2>
                 <button 
                   className="toggle-button"
