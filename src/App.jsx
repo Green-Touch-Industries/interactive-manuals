@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import { 
   Check, 
   ShieldAlert, 
-  Clock, 
   Play, 
   Wrench, 
   X, 
@@ -10,7 +9,6 @@ import {
   Info, 
   ChevronRight,
   BookOpen,
-  ArrowRight,
   Settings
 } from 'lucide-react';
 
