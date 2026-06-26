@@ -624,7 +624,8 @@ function App() {
                 }}
               >
                 <ShieldAlert size={16} />
-                {lang === 'en' ? 'Diagnostics' : 'Diagnósticos'}
+                <span>{lang === 'en' ? 'Diagnostics' : 'Diagnósticos'}</span>
+                <ChevronRight size={14} style={{ marginLeft: 'auto' }} />
               </button>
             )}
           </aside>
