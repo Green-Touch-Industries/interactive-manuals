@@ -214,7 +214,7 @@ function App() {
   const [activeSymptom, setActiveSymptom] = useState(null);
   const [lightboxImage, setLightboxImage] = useState(null);
   const [activeVideo, setActiveVideo] = useState(null);
-  const [roadmapExpanded, setRoadmapExpanded] = useState(true);
+  const [roadmapExpanded, setRoadmapExpanded] = useState(() => typeof window !== 'undefined' ? window.innerWidth > 992 : true);
 
   const selectedSymptomObj = manualData && manualData.diagnostics && manualData.diagnostics.symptoms
     ? manualData.diagnostics.symptoms.find(s => s.id === activeSymptom)
@@ -506,6 +506,9 @@ function App() {
       {/* HEADER SECTION */}
       <header className="app-header glass-panel">
         <div className="logo-section" style={{ cursor: 'pointer' }} onClick={resetToMainMenu}>
+          {selectedProduct && manualData && (
+            <h1 className="sr-only">{t(manualData.title)} Interactive Setup Manual</h1>
+          )}
           <div className="logo-title">Green Touch Industries</div>
           <div className="logo-subtitle">
             {selectedProduct && manualData 
@@ -578,7 +581,7 @@ function App() {
           {!selectedCategory ? (
             <div className="lobby-container">
               {/* Category 1: Open Enclosed (Trimmer) Racks */}
-              <div className="lobby-category-card" onClick={() => setSelectedCategory('Open Enclosed (Trimmer) Racks')}>
+              <button type="button" className="lobby-category-card" onClick={() => setSelectedCategory('Open Enclosed (Trimmer) Racks')}>
                 <div className="lobby-image-wrapper">
                   <img 
                     src={getAssetUrl('/assets/manuals/xtreme-pro/hero.png')} 
@@ -588,22 +591,22 @@ function App() {
                   />
                 </div>
                 <div className="lobby-card-body">
-                  <h3 className="lobby-card-title">
+                  <h2 className="lobby-card-title">
                     {lang === 'en' ? 'Open Enclosed (Trimmer) Racks' : 'Soportes Abiertos / Cerrados (Trimmer)'}
-                  </h3>
+                  </h2>
                   <p className="lobby-card-subtitle">
                     {lang === 'en' 
-                      ? 'Premium commercial-grade security racks and lockable cages' 
-                      : 'Soportes de seguridad de grado comercial premium y jaulas con llave'}
+                       ? 'Premium commercial-grade security racks and lockable cages' 
+                       : 'Soportes de seguridad de grado comercial premium y jaulas con llave'}
                   </p>
                 </div>
                 <div className="lobby-card-arrow">
                   &rarr;
                 </div>
-              </div>
+              </button>
 
               {/* Category 2: Classic Open Trailer Racks */}
-              <div className="lobby-category-card" onClick={() => setSelectedCategory('Classic Open Trailer Racks')}>
+              <button type="button" className="lobby-category-card" onClick={() => setSelectedCategory('Classic Open Trailer Racks')}>
                 <div className="lobby-image-wrapper">
                   <img 
                     src={getAssetUrl('/assets/manuals/classic-trimmer/hero.png')} 
@@ -613,22 +616,22 @@ function App() {
                   />
                 </div>
                 <div className="lobby-card-body">
-                  <h3 className="lobby-card-title">
+                  <h2 className="lobby-card-title">
                     {lang === 'en' ? 'Classic Open Trailer Racks' : 'Soportes de Remolque Abierto Classic'}
-                  </h3>
+                  </h2>
                   <p className="lobby-card-subtitle">
                     {lang === 'en' 
-                      ? 'Heavy-duty lockable steel racks for open and enclosed trailers' 
-                      : 'Soportes de acero con cerradura para remolques abiertos y cerrados'}
+                       ? 'Heavy-duty lockable steel racks for open and enclosed trailers' 
+                       : 'Soportes de acero con cerradura para remolques abiertos y cerrados'}
                   </p>
                 </div>
                 <div className="lobby-card-arrow">
                   &rarr;
                 </div>
-              </div>
+              </button>
 
               {/* Category 3: Mounting Solutions */}
-              <div className="lobby-category-card" onClick={() => setSelectedCategory('Mounting Solutions')}>
+              <button type="button" className="lobby-category-card" onClick={() => setSelectedCategory('Mounting Solutions')}>
                 <div className="lobby-image-wrapper">
                   <img 
                     src={getAssetUrl('/assets/manuals/ei086/hero.png')} 
@@ -638,19 +641,19 @@ function App() {
                   />
                 </div>
                 <div className="lobby-card-body">
-                  <h3 className="lobby-card-title">
+                  <h2 className="lobby-card-title">
                     {lang === 'en' ? 'Mounting Solutions' : 'Soluciones de Montaje'}
-                  </h3>
+                  </h2>
                   <p className="lobby-card-subtitle">
                     {lang === 'en' 
-                      ? 'No-drill pocket adapters, engine support kits, UTV rails and wall organization' 
-                      : 'Adaptadores sin perforaciones, soportes de motor y rieles UTV'}
+                       ? 'No-drill pocket adapters, engine support kits, UTV rails and wall organization' 
+                       : 'Adaptadores sin perforaciones, soportes de motor y rieles UTV'}
                   </p>
                 </div>
                 <div className="lobby-card-arrow">
                   &rarr;
                 </div>
-              </div>
+              </button>
             </div>
           ) : (
             /* CATEGORY CATALOG VIEW */
@@ -674,7 +677,8 @@ function App() {
                 {productCatalog
                   .find(cat => cat.category === selectedCategory)
                   ?.products.map((prod) => (
-                    <div 
+                    <button 
+                      type="button"
                       key={prod.id} 
                       className="lobby-category-card"
                       onClick={() => setSelectedProduct(prod.id)}
@@ -696,7 +700,7 @@ function App() {
                       <div className="lobby-card-arrow">
                         &rarr;
                       </div>
-                    </div>
+                    </button>
                   ))}
               </div>
             </div>

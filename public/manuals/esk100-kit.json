@@ -93,7 +93,7 @@
       "title": "Secure Support Arm",
       "category": "all",
       "content": "Use the (2) large bolts and (2) large washers to secure the Engine Support Arm to the rear of the trimmer rack. The trimmer rack has a welded bracket with nuts already welded on; these guide the bolts directly into position.",
-      "image": "/assets/manuals/esk100-kit/instructions.jpg",
+      "image": "/assets/manuals/esk100-kit/step1.jpg",
       "translation": {
         "es": {
           "title": "Asegurar el Brazo de Soporte",
@@ -106,7 +106,7 @@
       "title": "Assemble Motor Platform Arm",
       "category": "all",
       "content": "Use (2) small bolts and (2) small washers to secure the Motor Platform Arm to the vertical Engine Support Arm and the sliding Engine Support Arm Bracket.",
-      "image": "/assets/manuals/esk100-kit/instructions.jpg",
+      "image": "/assets/manuals/esk100-kit/step2.jpg",
       "translation": {
         "es": {
           "title": "Ensamblar el Brazo de la Plataforma",
@@ -119,7 +119,7 @@
       "title": "Attach Motor Platform",
       "category": "all",
       "content": "Use (2) small bolts and (2) small washers to secure the Motor Platform cradle and the Motor Platform Bracket to the Motor Platform Arm.",
-      "image": "/assets/manuals/esk100-kit/instructions.jpg",
+      "image": "/assets/manuals/esk100-kit/step3.jpg",
       "translation": {
         "es": {
           "title": "Acoplar la Plataforma del Motor",
@@ -131,12 +131,37 @@
       "id": "adjust-support-kit",
       "title": "Adjust Platform Position",
       "category": "all",
-      "content": "Loosen small bolts on the Motor Platform Bracket to move the platform back and forth until it sits directly under the trimmer engine block. Loosen small bolts on the sliding Engine Support Arm Bracket to slide the Motor Platform Arm up or down until the platform cradles the engine snugly. Tighten all hardware securely once set.",
-      "image": "/assets/manuals/esk100-kit/hero.png",
+      "content": "Verify correct alignment and maintain the 1/16\" vibration gap under the engine block to secure the assembly.",
+      "image": [
+        "/assets/manuals/esk100-kit/step4.jpg",
+        "/assets/manuals/esk100-kit/vibration_gap.jpg"
+      ],
+      "subSteps": [
+        {
+          "title": "Cradle Height & Slide Adjustment",
+          "text": "Loosen small bolts on the sliding Engine Support Arm Bracket to slide the Motor Platform Arm up or down until the platform cradles the engine snugly.",
+          "translation": {
+            "es": {
+              "title": "Ajuste de Altura y Soporte",
+              "text": "Afloje los pernos pequeños en el soporte deslizante del brazo de soporte para deslizar el brazo hacia arriba o hacia abajo hasta que la plataforma acune el motor cómodamente."
+            }
+          }
+        },
+        {
+          "title": "Vibration Gap Clearance",
+          "text": "Verify a 1/16\" gap clearance is maintained under the engine cover. Securely tighten all bolts on the Motor Platform Bracket once set.",
+          "translation": {
+            "es": {
+              "title": "Espacio de Separación de Vibración",
+              "text": "Verifique que se mantenga una separación de 1/16\" debajo de la cubierta del motor. Apriete firmemente todos los pernos en el soporte de la plataforma del motor una vez ajustados."
+            }
+          }
+        }
+      ],
       "translation": {
         "es": {
           "title": "Ajustar la Posición de la Plataforma",
-          "content": "Afloje los pernos pequeños en el soporte de la plataforma del motor para mover la plataforma hacia adelante y hacia atrás hasta que quede directamente debajo del motor del cortabordes. Afloje los pernos pequeños en el soporte deslizante del brazo de soporte para deslizar el brazo hacia arriba o hacia abajo hasta que la plataforma acune el motor cómodamente. Apriete todos los pernos una vez ajustados."
+          "content": "Verifique la alineación correcta y mantenga el espacio de vibración de 1/16\" debajo del bloque del motor para asegurar el ensamblaje."
         }
       }
     }
