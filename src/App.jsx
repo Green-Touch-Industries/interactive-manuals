@@ -731,107 +731,175 @@ function App() {
               <h2 className="display-title">{getTxt(currentStep, 'title')}</h2>
             </div>
 
-            {/* Dynamic Step Image and Lightbox trigger */}
-            {currentStep.image && (
-              <div 
-                className="step-image-container"
-                onClick={() => {
-                  let imgPath = '';
-                  // Handle dynamic hardware face image depending on model selection
-                  if (currentStep.id === 'hardware-identification' && selectedProduct === 'xtreme-pro') {
-                    imgPath = selectedModel === 'XA102' 
-                      ? '/assets/manuals/xtreme-pro/hw_face_xa.jpg' 
-                      : selectedModel === 'XB103' 
-                      ? '/assets/manuals/xtreme-pro/hw_face_xb.jpg' 
-                      : '/assets/manuals/xtreme-pro/hw_face_xc.jpg';
-                  } else if (Array.isArray(currentStep.image)) {
-                    imgPath = currentStep.image[activeSubStepIndex] || currentStep.image[0];
-                  } else {
-                    imgPath = currentStep.image;
-                  }
-                  setLightboxImage({ src: imgPath, alt: getTxt(currentStep, 'title') });
-                }}
-              >
-                <img 
-                  src={getAssetUrl(
-                    currentStep.id === 'hardware-identification' && selectedProduct === 'xtreme-pro'
-                      ? (selectedModel === 'XA102' 
+            <div className={hasSubSteps ? "instruction-layout-grid" : "instruction-layout-single"}>
+              <div className="instruction-main-column">
+                {/* Dynamic Step Image and Lightbox trigger */}
+                {currentStep.image && (
+                  <div 
+                    className="step-image-container"
+                    onClick={() => {
+                      let imgPath = '';
+                      // Handle dynamic hardware face image depending on model selection
+                      if (currentStep.id === 'hardware-identification' && selectedProduct === 'xtreme-pro') {
+                        imgPath = selectedModel === 'XA102' 
                           ? '/assets/manuals/xtreme-pro/hw_face_xa.jpg' 
                           : selectedModel === 'XB103' 
                           ? '/assets/manuals/xtreme-pro/hw_face_xb.jpg' 
-                          : '/assets/manuals/xtreme-pro/hw_face_xc.jpg')
-                      : Array.isArray(currentStep.image)
-                      ? (currentStep.image[activeSubStepIndex] || currentStep.image[0])
-                      : currentStep.image
-                  )} 
-                  alt={getTxt(currentStep, 'title')} 
-                  className="step-image"
-                  onError={(e) => { e.target.src = getAssetUrl('/vite.svg'); }}
-                />
-                <div className="expand-badge">
-                  <Maximize2 size={12} className="text-green-primary" />
-                  <span className="expand-text">{lang === 'en' ? 'Expand View' : 'Ampliar Vista'}</span>
-                </div>
-              </div>
-            )}
-
-            {/* Step Copy Content */}
-            <p className="step-text">
-              {hasSubSteps && activeSubStep 
-                ? formatMeasurementText(getTxt(activeSubStep, 'text'))
-                : formatMeasurementText(getTxt(currentStep, 'content'))}
-            </p>
-
-            {/* CONFIGURATION SELECTION (Mounting Configuration Step) */}
-            {currentStep.id === 'mounting-configuration' && (
-              <div style={{ marginTop: '2rem', animation: 'fade-in 0.4s' }}>
-                <h3 className="checklist-section-title" style={{ marginBottom: '1.5rem', color: 'var(--green-primary)' }}>
-                  {lang === 'en' ? 'CHOOSE YOUR CONFIGURATION' : 'ELIJA SU CONFIGURACIÓN'}
-                </h3>
-                
-                {selectedProduct === 'xtreme-pro' ? (
-                  /* 2-LEVEL CONFIGURATION FOR XTREME PRO */
-                  !(showOpenSubOptions || (selectedConfig && selectedConfig !== 'enclosed')) ? (
-                    /* Level 1: Open vs Enclosed */
-                    <div className="config-cards-grid">
-                      {/* Open Trailer */}
-                      <button 
-                        className={`config-large-card ${selectedConfig && selectedConfig !== 'enclosed' ? 'active' : ''}`}
-                        onClick={() => setShowOpenSubOptions(true)}
-                      >
-                        <div className="config-card-icon-wrapper">
-                          <Hammer size={32} />
-                        </div>
-                        <div className="config-card-content">
-                          <h4 className="config-card-title">{lang === 'en' ? 'Open Trailer' : 'Remolque Abierto'}</h4>
-                          <p className="config-card-subtitle">{lang === 'en' ? 'Standard, Round, or Advanced Rails' : 'Rieles Estándar, Redondos o Desplazados'}</p>
-                        </div>
-                        <Hammer size={120} className="config-card-watermark" />
-                      </button>
-
-                      {/* Enclosed Unit */}
-                      <button 
-                        className={`config-large-card ${selectedConfig === 'enclosed' ? 'active' : ''}`}
-                        onClick={() => {
-                          setSelectedConfig('enclosed');
-                          handleAdvance();
-                        }}
-                      >
-                        <div className="config-card-icon-wrapper">
-                          <Package size={32} />
-                        </div>
-                        <div className="config-card-content">
-                          <h4 className="config-card-title">{lang === 'en' ? 'Enclosed Unit' : 'Unidad Cerrada'}</h4>
-                          <p className="config-card-subtitle">{lang === 'en' ? 'Interior Wall Installation' : 'Instalación en Pared Interior'}</p>
-                        </div>
-                        <Package size={120} className="config-card-watermark" />
-                      </button>
+                          : '/assets/manuals/xtreme-pro/hw_face_xc.jpg';
+                      } else if (Array.isArray(currentStep.image)) {
+                        imgPath = currentStep.image[activeSubStepIndex] || currentStep.image[0];
+                      } else {
+                        imgPath = currentStep.image;
+                      }
+                      setLightboxImage({ src: imgPath, alt: getTxt(currentStep, 'title') });
+                    }}
+                  >
+                    <img 
+                      src={getAssetUrl(
+                        currentStep.id === 'hardware-identification' && selectedProduct === 'xtreme-pro'
+                          ? (selectedModel === 'XA102' 
+                              ? '/assets/manuals/xtreme-pro/hw_face_xa.jpg' 
+                              : selectedModel === 'XB103' 
+                              ? '/assets/manuals/xtreme-pro/hw_face_xb.jpg' 
+                              : '/assets/manuals/xtreme-pro/hw_face_xc.jpg')
+                          : Array.isArray(currentStep.image)
+                          ? (currentStep.image[activeSubStepIndex] || currentStep.image[0])
+                          : currentStep.image
+                      )} 
+                      alt={getTxt(currentStep, 'title')} 
+                      className="step-image"
+                      onError={(e) => { e.target.src = getAssetUrl('/vite.svg'); }}
+                    />
+                    <div className="expand-badge">
+                      <Maximize2 size={12} className="text-green-primary" />
+                      <span className="expand-text">{lang === 'en' ? 'Expand View' : 'Ampliar Vista'}</span>
                     </div>
-                  ) : (
-                    /* Level 2: Open Trailer sub-options */
-                    <div>
+                  </div>
+                )}
+
+                {/* Step Copy Content */}
+                <p className="step-text">
+                  {hasSubSteps && activeSubStep 
+                    ? formatMeasurementText(getTxt(activeSubStep, 'text'))
+                    : formatMeasurementText(getTxt(currentStep, 'content'))}
+                </p>
+
+                {/* CONFIGURATION SELECTION (Mounting Configuration Step) */}
+                {currentStep.id === 'mounting-configuration' && (
+                  <div style={{ marginTop: '2rem', animation: 'fade-in 0.4s' }}>
+                    <h3 className="checklist-section-title" style={{ marginBottom: '1.5rem', color: 'var(--green-primary)' }}>
+                      {lang === 'en' ? 'CHOOSE YOUR CONFIGURATION' : 'ELIJA SU CONFIGURACIÓN'}
+                    </h3>
+                    
+                    {selectedProduct === 'xtreme-pro' ? (
+                      /* 2-LEVEL CONFIGURATION FOR XTREME PRO */
+                      !(showOpenSubOptions || (selectedConfig && selectedConfig !== 'enclosed')) ? (
+                        /* Level 1: Open vs Enclosed */
+                        <div className="config-cards-grid">
+                          {/* Open Trailer */}
+                          <button 
+                            className={`config-large-card ${selectedConfig && selectedConfig !== 'enclosed' ? 'active' : ''}`}
+                            onClick={() => setShowOpenSubOptions(true)}
+                          >
+                            <div className="config-card-icon-wrapper">
+                              <Hammer size={32} />
+                            </div>
+                            <div className="config-card-content">
+                              <h4 className="config-card-title">{lang === 'en' ? 'Open Trailer' : 'Remolque Abierto'}</h4>
+                              <p className="config-card-subtitle">{lang === 'en' ? 'Standard, Round, or Advanced Rails' : 'Rieles Estándar, Redondos o Desplazados'}</p>
+                            </div>
+                            <Hammer size={120} className="config-card-watermark" />
+                          </button>
+
+                          {/* Enclosed Unit */}
+                          <button 
+                            className={`config-large-card ${selectedConfig === 'enclosed' ? 'active' : ''}`}
+                            onClick={() => {
+                              setSelectedConfig('enclosed');
+                              handleAdvance();
+                            }}
+                          >
+                            <div className="config-card-icon-wrapper">
+                              <Package size={32} />
+                            </div>
+                            <div className="config-card-content">
+                              <h4 className="config-card-title">{lang === 'en' ? 'Enclosed Unit' : 'Unidad Cerrada'}</h4>
+                              <p className="config-card-subtitle">{lang === 'en' ? 'Interior Wall Installation' : 'Instalación en Pared Interior'}</p>
+                            </div>
+                            <Package size={120} className="config-card-watermark" />
+                          </button>
+                        </div>
+                      ) : (
+                        /* Level 2: Open Trailer sub-options */
+                        <div>
+                          <div className="config-cards-grid">
+                            {/* Standard Open */}
+                            <button 
+                              className={`config-large-card ${selectedConfig === 'open' ? 'active' : ''}`}
+                              onClick={() => {
+                                setSelectedConfig('open');
+                                handleAdvance();
+                              }}
+                            >
+                              <div className="config-card-icon-wrapper">
+                                <Hammer size={24} />
+                              </div>
+                              <div className="config-card-content">
+                                <h4 className="config-card-title">{lang === 'en' ? 'Standard Open Top-Rail' : 'Riel Superior Abierto'}</h4>
+                                <p className="config-card-subtitle">{lang === 'en' ? 'Direct mount to open trailer top rail' : 'Montaje directo al riel superior abierto'}</p>
+                              </div>
+                            </button>
+
+                            {/* Round Rail */}
+                            <button 
+                              className={`config-large-card ${selectedConfig === 'round' ? 'active' : ''}`}
+                              onClick={() => {
+                                setSelectedConfig('round');
+                                handleAdvance();
+                              }}
+                            >
+                              <div className="config-card-icon-wrapper">
+                                <Wrench size={24} />
+                              </div>
+                              <div className="config-card-content">
+                                <h4 className="config-card-title">{lang === 'en' ? 'Round Side Rails' : 'Rieles Redondos'}</h4>
+                                <p className="config-card-subtitle">{lang === 'en' ? 'Clamping brackets for round rails' : 'Soportes de sujeción para rieles redondos'}</p>
+                              </div>
+                            </button>
+
+                            {/* Advanced Offset */}
+                            <button 
+                              className={`config-large-card ${selectedConfig === 'advanced' ? 'active' : ''}`}
+                              onClick={() => {
+                                setSelectedConfig('advanced');
+                                handleAdvance();
+                              }}
+                            >
+                              <div className="config-card-icon-wrapper">
+                                <Settings size={24} />
+                              </div>
+                              <div className="config-card-content">
+                                <h4 className="config-card-title">{lang === 'en' ? 'Advanced Offset Brackets' : 'Montaje Desplazado'}</h4>
+                                <p className="config-card-subtitle">{lang === 'en' ? 'Offset brackets for side lips or obstructions' : 'Soportes desviados para pestañas u obstrucciones'}</p>
+                              </div>
+                            </button>
+                          </div>
+
+                          <button 
+                            className="config-back-btn" 
+                            onClick={() => {
+                              setSelectedConfig(null);
+                              setShowOpenSubOptions(false);
+                            }}
+                          >
+                            &larr; {lang === 'en' ? 'Back to Trailer Types' : 'Volver a Tipos de Remolque'}
+                          </button>
+                        </div>
+                      )
+                    ) : (
+                      /* STANDARD 2-CARD VIEW FOR OTHER PRODUCTS */
                       <div className="config-cards-grid">
-                        {/* Standard Open */}
+                        {/* Open Trailer */}
                         <button 
                           className={`config-large-card ${selectedConfig === 'open' ? 'active' : ''}`}
                           onClick={() => {
@@ -840,148 +908,86 @@ function App() {
                           }}
                         >
                           <div className="config-card-icon-wrapper">
-                            <Hammer size={24} />
+                            <Hammer size={32} />
                           </div>
                           <div className="config-card-content">
-                            <h4 className="config-card-title">{lang === 'en' ? 'Standard Open Top-Rail' : 'Riel Superior Abierto'}</h4>
-                            <p className="config-card-subtitle">{lang === 'en' ? 'Direct mount to open trailer top rail' : 'Montaje directo al riel superior abierto'}</p>
+                            <h4 className="config-card-title">{lang === 'en' ? 'Open Trailer' : 'Remolque Abierto'}</h4>
+                            <p className="config-card-subtitle">{lang === 'en' ? 'Standard or flat-bed trailer mounting' : 'Montaje en remolque abierto o plataforma'}</p>
                           </div>
+                          <Hammer size={120} className="config-card-watermark" />
                         </button>
 
-                        {/* Round Rail */}
+                        {/* Enclosed Unit */}
                         <button 
-                          className={`config-large-card ${selectedConfig === 'round' ? 'active' : ''}`}
+                          className={`config-large-card ${selectedConfig === 'enclosed' ? 'active' : ''}`}
                           onClick={() => {
-                            setSelectedConfig('round');
+                            setSelectedConfig('enclosed');
                             handleAdvance();
                           }}
                         >
                           <div className="config-card-icon-wrapper">
-                            <Wrench size={24} />
+                            <Package size={32} />
                           </div>
                           <div className="config-card-content">
-                            <h4 className="config-card-title">{lang === 'en' ? 'Round Side Rails' : 'Rieles Redondos'}</h4>
-                            <p className="config-card-subtitle">{lang === 'en' ? 'Clamping brackets for round rails' : 'Soportes de sujeción para rieles redondos'}</p>
+                            <h4 className="config-card-title">{lang === 'en' ? 'Enclosed Unit' : 'Unidad Cerrada'}</h4>
+                            <p className="config-card-subtitle">{lang === 'en' ? 'Interior Wall / Stud installation' : 'Instalación en pared interior o parantes'}</p>
                           </div>
-                        </button>
-
-                        {/* Advanced Offset */}
-                        <button 
-                          className={`config-large-card ${selectedConfig === 'advanced' ? 'active' : ''}`}
-                          onClick={() => {
-                            setSelectedConfig('advanced');
-                            handleAdvance();
-                          }}
-                        >
-                          <div className="config-card-icon-wrapper">
-                            <Settings size={24} />
-                          </div>
-                          <div className="config-card-content">
-                            <h4 className="config-card-title">{lang === 'en' ? 'Advanced Offset Brackets' : 'Montaje Desplazado'}</h4>
-                            <p className="config-card-subtitle">{lang === 'en' ? 'Offset brackets for side lips or obstructions' : 'Soportes desviados para pestañas u obstrucciones'}</p>
-                          </div>
+                          <Package size={120} className="config-card-watermark" />
                         </button>
                       </div>
+                    )}
 
-                      <button 
-                        className="config-back-btn" 
-                        onClick={() => {
-                          setSelectedConfig(null);
-                          setShowOpenSubOptions(false);
-                        }}
-                      >
-                        &larr; {lang === 'en' ? 'Back to Trailer Types' : 'Volver a Tipos de Remolque'}
-                      </button>
+                    {selectedConfig && (
+                      <div style={{ marginTop: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-gray)', fontSize: '0.85rem' }}>
+                        <Info size={14} className="text-green-primary" />
+                        <span>
+                          {lang === 'en' ? 'Selected Configuration: ' : 'Configuración Seleccionada: '}
+                          <strong className="text-white" style={{ textTransform: 'uppercase' }}>{selectedConfig}</strong>
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+
+              {hasSubSteps && (
+                <div className="instruction-right-column">
+                  {/* SUB-STEPS TIMELINE (e.g. for ESK100 step) */}
+                  <div className="collapsible-panel" style={{ border: '1px solid var(--green-border)' }}>
+                    <div className="panel-header" style={{ borderBottom: '1px solid var(--border-dim)', padding: '1rem' }}>
+                      <div className="panel-header-left">
+                        <span className="panel-indicator-line" style={{ backgroundColor: 'var(--green-primary)' }}></span>
+                        <span className="panel-title" style={{ fontSize: '0.9rem', color: 'var(--green-primary)' }}>
+                          {lang === 'en' ? 'Step Sub-Assembly Procedure' : 'Procedimiento de Subensamblaje'}
+                        </span>
+                      </div>
                     </div>
-                  )
-                ) : (
-                  /* STANDARD 2-CARD VIEW FOR OTHER PRODUCTS */
-                  <div className="config-cards-grid">
-                    {/* Open Trailer */}
-                    <button 
-                      className={`config-large-card ${selectedConfig === 'open' ? 'active' : ''}`}
-                      onClick={() => {
-                        setSelectedConfig('open');
-                        handleAdvance();
-                      }}
-                    >
-                      <div className="config-card-icon-wrapper">
-                        <Hammer size={32} />
+                    <div className="panel-content" style={{ padding: '1.25rem' }}>
+                      {/* Sub-steps stepper navigation */}
+                      <div style={{ display: 'flex', gap: '0.5rem', overflowX: 'auto', paddingBottom: '1rem', borderBottom: '1px solid rgba(255,255,255,0.03)', marginBottom: '1.25rem' }}>
+                        {subSteps.map((sub, sIdx) => (
+                          <button
+                            key={sIdx}
+                            onClick={() => setActiveSubStepIndex(sIdx)}
+                            className={`toggle-button ${sIdx === activeSubStepIndex ? 'active' : ''}`}
+                            style={{ padding: '0.35rem 0.85rem', fontSize: '0.7rem', shrink: 0 }}
+                          >
+                            {sIdx + 1 < 10 ? `0${sIdx + 1}` : sIdx + 1}
+                          </button>
+                        ))}
                       </div>
-                      <div className="config-card-content">
-                        <h4 className="config-card-title">{lang === 'en' ? 'Open Trailer' : 'Remolque Abierto'}</h4>
-                        <p className="config-card-subtitle">{lang === 'en' ? 'Standard or flat-bed trailer mounting' : 'Montaje en remolque abierto o plataforma'}</p>
-                      </div>
-                      <Hammer size={120} className="config-card-watermark" />
-                    </button>
 
-                    {/* Enclosed Unit */}
-                    <button 
-                      className={`config-large-card ${selectedConfig === 'enclosed' ? 'active' : ''}`}
-                      onClick={() => {
-                        setSelectedConfig('enclosed');
-                        handleAdvance();
-                      }}
-                    >
-                      <div className="config-card-icon-wrapper">
-                        <Package size={32} />
-                      </div>
-                      <div className="config-card-content">
-                        <h4 className="config-card-title">{lang === 'en' ? 'Enclosed Unit' : 'Unidad Cerrada'}</h4>
-                        <p className="config-card-subtitle">{lang === 'en' ? 'Interior Wall / Stud installation' : 'Instalación en pared interior o parantes'}</p>
-                      </div>
-                      <Package size={120} className="config-card-watermark" />
-                    </button>
-                  </div>
-                )}
-
-                {selectedConfig && (
-                  <div style={{ marginTop: '1.5rem', display: 'flex', alignItems: 'center', gap: '0.5rem', color: 'var(--text-gray)', fontSize: '0.85rem' }}>
-                    <Info size={14} className="text-green-primary" />
-                    <span>
-                      {lang === 'en' ? 'Selected Configuration: ' : 'Configuración Seleccionada: '}
-                      <strong className="text-white" style={{ textTransform: 'uppercase' }}>{selectedConfig}</strong>
-                    </span>
-                  </div>
-                )}
-              </div>
-            )}
-
-            {/* SUB-STEPS TIMELINE (e.g. for ESK100 step) */}
-            {hasSubSteps && (
-              <div className="collapsible-panel" style={{ marginTop: '1.5rem', border: '1px solid var(--green-border)' }}>
-                <div className="panel-header" style={{ borderBottom: '1px solid var(--border-dim)', padding: '1rem' }}>
-                  <div className="panel-header-left">
-                    <span className="panel-indicator-line" style={{ backgroundColor: 'var(--green-primary)' }}></span>
-                    <span className="panel-title" style={{ fontSize: '0.9rem', color: 'var(--green-primary)' }}>
-                      {lang === 'en' ? 'Step Sub-Assembly Procedure' : 'Procedimiento de Subensamblaje'}
-                    </span>
+                      <h4 style={{ fontFamily: 'var(--font-display)', color: 'white', marginBottom: '0.5rem', fontSize: '1.1rem' }}>
+                        {activeSubStep ? t(activeSubStep.title) : ''}
+                      </h4>
+                      <p style={{ fontSize: '0.9rem', color: 'var(--text-gray)', lineHeight: '1.5' }}>
+                        {activeSubStep ? formatMeasurementText(t(activeSubStep.text)) : ''}
+                      </p>
+                    </div>
                   </div>
                 </div>
-                <div className="panel-content" style={{ padding: '1.25rem' }}>
-                  {/* Sub-steps stepper navigation */}
-                  <div style={{ display: 'flex', gap: '0.5rem', overflowX: 'auto', paddingBottom: '1rem', borderBottom: '1px solid rgba(255,255,255,0.03)', marginBottom: '1.25rem' }}>
-                    {subSteps.map((sub, sIdx) => (
-                      <button
-                        key={sIdx}
-                        onClick={() => setActiveSubStepIndex(sIdx)}
-                        className={`toggle-button ${sIdx === activeSubStepIndex ? 'active' : ''}`}
-                        style={{ padding: '0.35rem 0.85rem', fontSize: '0.7rem', shrink: 0 }}
-                      >
-                        {sIdx + 1 < 10 ? `0${sIdx + 1}` : sIdx + 1}
-                      </button>
-                    ))}
-                  </div>
-
-                  <h4 style={{ fontFamily: 'var(--font-display)', color: 'white', marginBottom: '0.5rem', fontSize: '1.1rem' }}>
-                    {activeSubStep ? t(activeSubStep.title) : ''}
-                  </h4>
-                  <p style={{ fontSize: '0.9rem', color: 'var(--text-gray)', lineHeight: '1.5' }}>
-                    {activeSubStep ? formatMeasurementText(t(activeSubStep.text)) : ''}
-                  </p>
-                </div>
-              </div>
-            )}
+              )}
+            </div>
 
             {/* STEP 1 SPECIFIC: Collapsible Inventory Checklist */}
             {currentStep.id === 'hardware-identification' && manualData.hardwareKey && (

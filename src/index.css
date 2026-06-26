@@ -2015,3 +2015,33 @@ h1, h2, h3, h4, h5, h6 {
 
 .mb-4 { margin-bottom: 1rem !important; }
 .mb-2 { margin-bottom: 0.5rem !important; }
+
+/* 3-Pane Responsive Layout for Sub-Steps */
+.instruction-layout-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .instruction-layout-grid {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    gap: 2.5rem;
+    align-items: start;
+  }
+}
+
+.instruction-layout-single {
+  width: 100%;
+}
+
+.instruction-main-column {
+  width: 100%;
+}
+
+.instruction-right-column {
+  width: 100%;
+  position: sticky;
+  top: 1.5rem;
+}
