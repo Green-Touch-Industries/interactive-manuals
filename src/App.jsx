@@ -72,8 +72,8 @@ const getAssetUrl = (path) => {
   let cleanPath = path.startsWith('/') ? path.slice(1) : path;
   
   // Performance optimization: dynamically serve optimized WebP versions of manual assets
-  if (cleanPath.startsWith('assets/manuals/') && cleanPath.endsWith('.png')) {
-    cleanPath = cleanPath.replace(/\.png$/, '.webp');
+  if (cleanPath.startsWith('assets/manuals/') && (cleanPath.endsWith('.png') || cleanPath.endsWith('.jpg') || cleanPath.endsWith('.jpeg'))) {
+    cleanPath = cleanPath.replace(/\.(png|jpg|jpeg)$/, '.webp');
   }
   
   return `${import.meta.env.BASE_URL}${cleanPath}`;
@@ -761,7 +761,14 @@ function App() {
 
           <div className="dashboard-grid" style={{ maxWidth: '1000px', margin: '0 auto' }}>
             {/* XA102 Card */}
-            <div className="dashboard-card" onClick={() => setSelectedModel('XA102')}>
+            <div 
+              className="dashboard-card" 
+              onClick={() => setSelectedModel('XA102')}
+              role="button"
+              tabIndex={0}
+              aria-label="Select Xtreme Pro Series 2-Position Trimmer Rack Model (XA102)"
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { setSelectedModel('XA102'); } }}
+            >
               <div className="card-image-wrapper">
                 <img 
                   src={getAssetUrl('/assets/manuals/xtreme-pro/rack2.png')} 
@@ -777,7 +784,14 @@ function App() {
             </div>
 
             {/* XB103 Card */}
-            <div className="dashboard-card" onClick={() => setSelectedModel('XB103')}>
+            <div 
+              className="dashboard-card" 
+              onClick={() => setSelectedModel('XB103')}
+              role="button"
+              tabIndex={0}
+              aria-label="Select Xtreme Pro Series 3-Position Trimmer Rack Model (XB103)"
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { setSelectedModel('XB103'); } }}
+            >
               <div className="card-image-wrapper">
                 <img 
                   src={getAssetUrl('/assets/manuals/xtreme-pro/rack3.png')} 
@@ -793,7 +807,14 @@ function App() {
             </div>
 
             {/* XC104 Card */}
-            <div className="dashboard-card" onClick={() => setSelectedModel('XC104')}>
+            <div 
+              className="dashboard-card" 
+              onClick={() => setSelectedModel('XC104')}
+              role="button"
+              tabIndex={0}
+              aria-label="Select Xtreme Pro Series 4-Position Trimmer Rack Model (XC104)"
+              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { setSelectedModel('XC104'); } }}
+            >
               <div className="card-image-wrapper">
                 <img 
                   src={getAssetUrl('/assets/manuals/xtreme-pro/rack4.png')} 
@@ -994,6 +1015,9 @@ function App() {
                               setLockdownCheckedItems(updated);
                               triggerSoundAndHaptic(updated[idx] ? "click" : "pop");
                             }}
+                            role="checkbox"
+                            aria-checked={isChecked}
+                            aria-label={`Confirm: ${itemText}`}
                             className={`lockdown-checklist-card ${isChecked ? "checked" : ""}`}
                           >
                             <div className={`lockdown-checkbox ${isChecked ? "checked" : ""}`}>
@@ -1252,6 +1276,11 @@ function App() {
                                 key={hw.id}
                                 className={`checklist-card ${checkedItems[hw.id] ? 'checked' : ''}`}
                                 onClick={() => toggleCheckItem(hw.id)}
+                                role="checkbox"
+                                tabIndex={0}
+                                aria-checked={checkedItems[hw.id] ? "true" : "false"}
+                                aria-label={`Check ${getTxt(hw, 'name')} - ${getTxt(hw, 'specs')}`}
+                                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { toggleCheckItem(hw.id); } }}
                               >
                                 <div className="card-left">
                                   <div className="checkbox-box">
@@ -1275,6 +1304,11 @@ function App() {
                                 key={hw.id}
                                 className={`checklist-card ${checkedItems[hw.id] ? 'checked' : ''}`}
                                 onClick={() => toggleCheckItem(hw.id)}
+                                role="checkbox"
+                                tabIndex={0}
+                                aria-checked={checkedItems[hw.id] ? "true" : "false"}
+                                aria-label={`Check ${getTxt(hw, 'name')} - ${getTxt(hw, 'specs')}`}
+                                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { toggleCheckItem(hw.id); } }}
                               >
                                 <div className="card-left">
                                   <div className="checkbox-box">
@@ -1301,6 +1335,11 @@ function App() {
                                 key={hw.id}
                                 className={`checklist-card ${checkedItems[hw.id] ? 'checked' : ''}`}
                                 onClick={() => toggleCheckItem(hw.id)}
+                                role="checkbox"
+                                tabIndex={0}
+                                aria-checked={checkedItems[hw.id] ? "true" : "false"}
+                                aria-label={`Check ${getTxt(hw, 'name')} - ${getTxt(hw, 'specs')}`}
+                                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { toggleCheckItem(hw.id); } }}
                               >
                                 <div className="card-left">
                                   <div className="checkbox-box">
@@ -1324,6 +1363,11 @@ function App() {
                                 key={hw.id}
                                 className={`checklist-card ${checkedItems[hw.id] ? 'checked' : ''}`}
                                 onClick={() => toggleCheckItem(hw.id)}
+                                role="checkbox"
+                                tabIndex={0}
+                                aria-checked={checkedItems[hw.id] ? "true" : "false"}
+                                aria-label={`Check ${getTxt(hw, 'name')} - ${getTxt(hw, 'specs')}`}
+                                onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { toggleCheckItem(hw.id); } }}
                               >
                                 <div className="card-left">
                                   <div className="checkbox-box">
@@ -1349,6 +1393,16 @@ function App() {
                               key={hw.id}
                               className={`checklist-card ${checkedItems[hw.id] ? 'checked' : ''}`}
                               onClick={() => toggleCheckItem(hw.id)}
+                              tabIndex={0}
+                              role="checkbox"
+                              aria-checked={!!checkedItems[hw.id]}
+                              aria-label={`Mark ${getTxt(hw, 'name')} as verified`}
+                              onKeyDown={(e) => {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                  e.preventDefault();
+                                  toggleCheckItem(hw.id);
+                                }
+                              }}
                               style={{ width: '100%', boxSizing: 'border-box' }}
                             >
                               <div className="card-left">

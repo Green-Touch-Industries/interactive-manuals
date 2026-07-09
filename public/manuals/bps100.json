@@ -11,11 +11,29 @@
   ],
   "videos": [
     {
-      "title": "BPS100 Setup Guide",
-      "url": "https://www.youtube.com/watch?v=mcONXeAmIy8",
+      "title": "BPS100 Assembly Instructions",
+      "url": "https://www.youtube.com/watch?v=LnV3B83ljcE",
       "translation": {
         "es": {
-          "title": "Guía de Configuración BPS100"
+          "title": "Instrucciones de Montaje del BPS100"
+        }
+      }
+    },
+    {
+      "title": "BPS100 Open Trailer Demo",
+      "url": "https://www.youtube.com/watch?v=GJR4LkFK-tw",
+      "translation": {
+        "es": {
+          "title": "Demostración de Remolque Abierto del BPS100"
+        }
+      }
+    },
+    {
+      "title": "BPS100 Enclosed Trailer Demo",
+      "url": "https://www.youtube.com/watch?v=ygLSHa7mMSA",
+      "translation": {
+        "es": {
+          "title": "Demostración de Remolque Cerrado del BPS100"
         }
       }
     }

@@ -7,7 +7,17 @@
     "Drill with 27/64\" Bit",
     "Socket Set"
   ],
-  "videos": [],
+  "videos": [
+    {
+      "title": "XF107 Sprayer Rack Installation Instructions",
+      "url": "https://www.youtube.com/watch?v=_Ie0nvlyy08",
+      "translation": {
+        "es": {
+          "title": "Instrucciones de Instalación del Bastidor del Rociador XF107"
+        }
+      }
+    }
+  ],
   "hardwareKey": [],
   "steps": [
     {
