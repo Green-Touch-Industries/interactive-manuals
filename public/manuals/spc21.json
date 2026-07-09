@@ -8,17 +8,7 @@
     "10mm Wrench or Socket Set",
     "Phillips Head Screwdriver"
   ],
-  "videos": [
-    {
-      "title": "Sprayer Equipment Mounting and Setup",
-      "url": "https://www.youtube.com/watch?v=_Ie0nvlyy08",
-      "translation": {
-        "es": {
-          "title": "Montaje y Configuración del Equipo Pulverizador"
-        }
-      }
-    }
-  ],
+  "videos": [],
   "hardwareKey": [
     {
       "id": "A",
